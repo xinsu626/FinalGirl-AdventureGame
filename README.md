@@ -1,1 +1,1 @@
-# comp170_text_based_game
+# comp170 text based game
