@@ -9,7 +9,7 @@
 
 # Project Description
 - Development description: This game is a basic RPG game. The way the game works is based on text that runs on the command line.
-- - Basic game logic: There are many different levels of maps in the game. There are different monsters in each map. Players need to beat monsters to complete mission. Use different ranges of random numbers on different levels of maps to generate monster attack power. Use random numbers to determine if the player or monster can escape successfully.
+- Basic game logic: There are many different levels of maps in the game. There are different monsters in each map. Players need to beat monsters to complete mission. Use different ranges of random numbers on different levels of maps to generate monster attack power. Use random numbers to determine if the player or monster can escape successfully.
 
 
 # Resource 
