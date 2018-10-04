@@ -1,40 +1,56 @@
 import java.util.Set;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
+
 /**
- * Class Room - a room in a haunted mansion.
- * A "Room" represents one location in the map of the game.
+ * Class Room - a room in an adventure game.
+ *
+ * This class is part of the "World of Zuul" application.
+ * "World of Zuul" is a very simple, text based adventure game.
+ *
+ * A "Room" represents one location in the scenery of the game.  It is
+ * connected to other rooms via exits.  For each existing exit, the room
+ * stores a reference to the neighboring room.
+ *
+ * @author  Michael Kolling and David J. Barnes
+ * modified by Andrew Harrington to use FileUtil and ResourceUtil,
+ * and to take all data from a file.
+ * @version 2018.09.20
  */
+
 public class Room
 {
-    private String name;
     private String description;
-    private int mapRow;
-    private int mapCol;
-    public String getName(){
-        return name;
+    private int xCoord;
+    private int yCoord;
+
+    public int getXCoord(){
+        return xCoord;
     }
-    public void setName(String name){
-        this.name = name;
+
+    public void setXCoord(int xCoord){
+        this.xCoord = xCoord;
     }
-    public String getDescription(){
-        return description;
+
+    public int getYCoord(){
+        return yCoord;
     }
-    public void setDescription(String description){
+
+    public void setYCoord(int yCoord){
+        this.yCoord = yCoord;
+    }
+
+    /**
+     * Create a room, given its description. Initially, it has
+     * no exits. Description is something like "a kitchen" or
+     * "an open court yard\nwith flowers all around".
+     * @param description The room's description.
+     */
+    public Room(String description)
+    {
         this.description = description;
     }
-    public int getMapRow(){
-        return mapRow;
-    }
-    public void setMapRow(int mapRow){
-        this.mapRow = mapRow;
-    }
-    public int getMapCol(){
-        return mapCol;
-    }
-    public void setMapCol(int mapCol){
-        this.mapCol = mapCol;
-    }
+
     /**
      * Create rooms and their interconnections by taking room names, exit data
      * and descriptions from a file Scanner, and return a map of room names
@@ -45,23 +61,23 @@ public class Room
      * @param in is the Scanner delivering all the room data
      * @return A map of room names to rooms
      */
-    public static ArrayList<Room> createRooms(Scanner in)
+    public static HashMap<String, Room> createRooms(Scanner in)
     {
         // Map to return
-        ArrayList<Room> rooms = new ArrayList<>();
+        HashMap<String, Room> rooms = new HashMap<String, Room>();
+
+        // temporary Map to delay recording exits until all rooms exist
+        HashMap<String, String> exitStrings = new HashMap<String, String>();
+
         while (in.hasNext()) {
             String name = FileUtil.getNonCommentLine(in);
-            String row = FileUtil.getNonCommentLine(in);
-            String col = FileUtil.getNonCommentLine(in);
+            String exitPairs = FileUtil.getNonCommentLine(in);
             String description = FileUtil.readParagraph(in);
-            Room newRoom = new Room();
-            newRoom.setName(name);
-            newRoom.setDescription(description);
-            newRoom.setMapRow(Integer.parseInt(row));
-            newRoom.setMapCol(Integer.parseInt(col));
-            rooms.add(newRoom);
+            rooms.put(name, new Room(description));
+            exitStrings.put(name, exitPairs);
         }
         in.close();
+
         return rooms;
     }
 }

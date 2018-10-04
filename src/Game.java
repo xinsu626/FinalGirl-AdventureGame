@@ -1,10 +1,6 @@
 import java.util.HashMap;
-import java.util.Map;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
-//THIS IS MAP-TEST-BRANCH
 /**
  *  This class is the main class of the "Exciting Campus" application.
  *  "Exciting Campus" is a very simple, text based adventure game.  Users
@@ -29,65 +25,93 @@ import java.util.Scanner;
  * @author  Michael Kolling and David J. Barnes
  * @version 2006.03.30
  */
+
 public class Game
 {
     private Room currentRoom;
-    private ArrayList<Room> rooms;
+    private HashMap<String, Room> rooms; //allows all rooms to be found by name
     private String welcomeString;
-    private Room[] map;
+
     /** Make a Game playable from the command line.
      * @param args No commandline arguments needed
      */
     public static void main(String[] args) {
         Game game = new Game("startData.txt");
+        game.play();
     }
-    public ArrayList<ArrayList<Room>> buildMap(ArrayList<Room> rooms){
-        ArrayList<Room> nullList = new ArrayList<>(Arrays.asList(null, null, null, null, null));
-        ArrayList<Room> topRooms = new ArrayList<>(Arrays.asList(null, rooms.get(0), rooms.get(1), rooms.get(2), null));
-        ArrayList<Room> hallway = new ArrayList<>(Arrays.asList(null, rooms.get(3), rooms.get(4), rooms.get(5), null));
-        ArrayList<Room> bottomRooms = new ArrayList<>(Arrays.asList(null, rooms.get(6), rooms.get(7), rooms.get(8), null));
-        ArrayList<ArrayList<Room>> map = new ArrayList<>();
-        map.add(nullList);
-        map.add(topRooms);
-        map.add(hallway);
-        map.add(bottomRooms);
-        map.add(nullList);
-//        for(int i = 0; i < map.size(); i++){
-//            ArrayList<String> aList = new ArrayList<>();
-//            for(int j = 0; j < map.get(i).size(); j++){
-//                if(map.get(i).get(j) != null){
-//                    aList.add(map.get(i).get(j).getName());
-//                } else{
-//                    aList.add("null");
-//                }
-//            }
-//            System.out.println(aList);
-//        }
-        return map;
+
+    /** Return the current room. */
+    public Room getCurrentRoom() {
+        return currentRoom;
     }
+
+    /**
+     * Return the Room associated with a name.
+     * @param roomName The name of the desired Room.
+     * @return the associated Room.
+     */
+    public Room getNamedRoom(String roomName) {
+        return rooms.get(roomName);
+    }
+
+    /**
+     * Set the current room.
+     * @param newRoom The new current Room.
+     */
+    public void setCurrentRoom(Room newRoom) {
+        currentRoom = newRoom;
+    }
+
     /**
      * Create the game and initialise its internal map
      * @param worldData World initialization data file name.
      */
-    //constructor
     public Game(String worldData)
     {   // world data: starting room line,
-        // welcome and help intro paragraphs, then Room data
+        //    welcome and help intro paragraphs, then Room data
         Scanner dataIn = ResourceUtil.openFileScanner(worldData);
+        String startingRoom = FileUtil.getNonCommentLine(dataIn).trim();
+        welcomeString = FileUtil.readParagraph(dataIn);
+        String helpIntro = FileUtil.readParagraph(dataIn);
         rooms = Room.createRooms(dataIn);
-        buildMap(rooms);
+        currentRoom = rooms.get(startingRoom);
+
+        CommandMapper.init(this, helpIntro); // data for some Responses
     }
+
+    /**
+     *  Main play routine.  Loops until end of play.
+     */
+    public void play()
+    {
+        System.out.println(welcomeString);
+        System.out.println(currentRoom.getLongDescription());
+
+        // Enter the main command loop.  Here we repeatedly read commands and
+        // execute them until the game is over.
+
+        while (! processCommand())
+            ;  // convention with isolated semicolon for an empty loop
+        System.out.println("Thank you for playing.  Good bye.");
+    }
+
+    /**
+     * Main loop actions: Get user input ... execute the command.
+     * @return true if the command ends the game, false otherwise.
+     */
+    private boolean processCommand()
+    {
+        String line = UI.promptLine("> ");
+
+        String[] tokens = line.trim().split("\\s+");
+
+        if ((tokens.length == 0) || !CommandMapper.isCommand(tokens[0])) {
+            System.out.println("I don't know what you mean...");
+            return false;
+        }
+
+        Response response = CommandMapper.getResponse(tokens[0]);
+        return response.execute(tokens);
+    }
+
 }
-//**********************************
-//*          *          *          *
-//* Ballroom * Kitchen  *  Dining  *
-//*          *          *          *
-//**********************************
-//*                                *
-//* Hallway                        *  Stairs
-//*                                *
-//**********************************
-//*          *          *          *
-//* Billiard *  Lounge  * Library  *
-//*          *          *          *
-//**********************************
