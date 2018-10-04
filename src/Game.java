@@ -67,22 +67,10 @@ public class Game
 
     public void buildMap(HashMap<String, Room> rooms){
         ArrayList<ArrayList<Room>> map = new ArrayList<>();
-        ArrayList<Room> nullList = new ArrayList<>(Arrays.asList(null, null, null, null, null));
 
         for(int i = 0; i < 5; i++){
-            map.add(nullList);
+            map.add(new ArrayList<>(Arrays.asList(null, null, null, null, null)));
         }
-
-//        map.add(nullList);
-//        for(int i = 1; i < 4; i++){
-//            map.add(new ArrayList<Room>());
-//            map.get(i).add(null);
-//            map.get(i).add(new Room("-"));
-//            map.get(i).add(new Room("-"));
-//            map.get(i).add(new Room("-"));
-//            map.get(i).add(null);
-//        }
-//        map.add(nullList);
 
         for(Map.Entry x: rooms.entrySet()){
             Room newRoom = (Room)x.getValue();
@@ -90,7 +78,6 @@ public class Game
             int col = newRoom.getYCoord();
 
             map.get(row).set(col, newRoom);
-            System.out.println(map.get(row));
         }
 
 //        for(int i = 0; i < map.size(); i++){
