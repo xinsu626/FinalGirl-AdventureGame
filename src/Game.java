@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+//THIS IS MAP-TEST-BRANCH
 /**
  *  This class is the main class of the "Exciting Campus" application.
  *  "Exciting Campus" is a very simple, text based adventure game.  Users
@@ -28,34 +29,29 @@ import java.util.Scanner;
  * @author  Michael Kolling and David J. Barnes
  * @version 2006.03.30
  */
-
 public class Game
 {
     private Room currentRoom;
     private ArrayList<Room> rooms;
     private String welcomeString;
     private Room[] map;
-
     /** Make a Game playable from the command line.
      * @param args No commandline arguments needed
      */
     public static void main(String[] args) {
         Game game = new Game("startData.txt");
     }
-
     public ArrayList<ArrayList<Room>> buildMap(ArrayList<Room> rooms){
         ArrayList<Room> nullList = new ArrayList<>(Arrays.asList(null, null, null, null, null));
         ArrayList<Room> topRooms = new ArrayList<>(Arrays.asList(null, rooms.get(0), rooms.get(1), rooms.get(2), null));
         ArrayList<Room> hallway = new ArrayList<>(Arrays.asList(null, rooms.get(3), rooms.get(4), rooms.get(5), null));
         ArrayList<Room> bottomRooms = new ArrayList<>(Arrays.asList(null, rooms.get(6), rooms.get(7), rooms.get(8), null));
-
         ArrayList<ArrayList<Room>> map = new ArrayList<>();
         map.add(nullList);
         map.add(topRooms);
         map.add(hallway);
         map.add(bottomRooms);
         map.add(nullList);
-
 //        for(int i = 0; i < map.size(); i++){
 //            ArrayList<String> aList = new ArrayList<>();
 //            for(int j = 0; j < map.get(i).size(); j++){
@@ -69,7 +65,6 @@ public class Game
 //        }
         return map;
     }
-
     /**
      * Create the game and initialise its internal map
      * @param worldData World initialization data file name.
@@ -83,8 +78,6 @@ public class Game
         buildMap(rooms);
     }
 }
-
-
 //**********************************
 //*          *          *          *
 //* Ballroom * Kitchen  *  Dining  *
@@ -98,5 +91,3 @@ public class Game
 //* Billiard *  Lounge  * Library  *
 //*          *          *          *
 //**********************************
-
-
