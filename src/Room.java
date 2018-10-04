@@ -20,9 +20,22 @@ import java.util.Scanner;
 
 public class Room
 {
+    private String name;
     private String description;
     private int xCoord;
     private int yCoord;
+
+    public String getDescription(){
+        return description;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
 
     public int getXCoord(){
         return xCoord;
@@ -71,10 +84,16 @@ public class Room
 
         while (in.hasNext()) {
             String name = FileUtil.getNonCommentLine(in);
-            String exitPairs = FileUtil.getNonCommentLine(in);
+            String x = FileUtil.getNonCommentLine(in);
+            String y = FileUtil.getNonCommentLine(in);
             String description = FileUtil.readParagraph(in);
-            rooms.put(name, new Room(description));
-            exitStrings.put(name, exitPairs);
+
+            Room newRoom = new Room(description);
+            newRoom.setName(name);
+            newRoom.setXCoord(Integer.parseInt(x));
+            newRoom.setYCoord(Integer.parseInt(y));
+
+            rooms.put(name, newRoom);
         }
         in.close();
 
