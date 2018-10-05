@@ -1,16 +1,17 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.HashMap;
 
+public class FinalGirl
 
-public class FinalGirl {
+{
 
     public int health, strength;
     public String name;
-    public ArrayList<Item> backpack;
+    public HashMap backpack = new HashMap();
 
     public FinalGirl() {
         this.name = name;
-        backpack = new ArrayList<>();
 
     }
 
@@ -24,7 +25,11 @@ public class FinalGirl {
 
     }
 
-     public String getName() {
+    public HashMap getBackpack() {
+        return backpack;
+    }
+
+    public String getName() {
         return name;
 
     }
@@ -43,7 +48,6 @@ public class FinalGirl {
 
     }
 
-
     public int getStrength() {
             return strength;
         }
@@ -53,10 +57,14 @@ public class FinalGirl {
         FinalGirl player = new FinalGirl();
         player.setName();
 
-        Weapon slingshot = new Weapon();
+
+        Weapon slingshot = new Weapon(), knife = new Weapon();
+        knife.setName("knife");
+        knife.setWeight(5);
         slingshot.setName("slingshot");
         slingshot.setWeight(10);
-        player.backpack.add(slingshot);
+        player.backpack.put(slingshot, slingshot.getWeight());
+        player.backpack.put(knife, knife.getWeight());
         System.out.println(player.backpack);
 
 

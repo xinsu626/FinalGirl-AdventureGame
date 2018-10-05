@@ -1,6 +1,6 @@
 public abstract class Item {
 
-    private String name;
+    public String name;
     private int weight;
 
     public Item() {
@@ -23,11 +23,8 @@ public abstract class Item {
         this.name = name;
     }
 
-    public String printItem() {
-        String itemStr;
-        itemStr = String.format("Item: %s \n Weight: %d", name, weight);
-
-        return itemStr;
+    public String toString() {
+        return name;
 
     }
 
