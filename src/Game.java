@@ -105,6 +105,9 @@ public class Game
                 System.out.println(dashString);
             }
         }
+
+        System.out.println();
+        System.out.println("You are " + currentRoom.getDescription());
     }
 
     public String roomsForMap(ArrayList<ArrayList<Room>> map, int row){
@@ -125,7 +128,7 @@ public class Game
      */
     public Game(String worldData)
     {   // world data: starting room line,
-        //    welcome and help intro paragraphs, then Room data
+        // welcome and help intro paragraphs, then Room data
         Scanner dataIn = ResourceUtil.openFileScanner(worldData);
 //        String startingRoom = FileUtil.getNonCommentLine(dataIn).trim();
 //        welcomeString = FileUtil.readParagraph(dataIn);
@@ -134,8 +137,15 @@ public class Game
 //        currentRoom = rooms.get(startingRoom);
 
 //        CommandMapper.init(this, helpIntro); // data for some Responses
+        setCurrentRoom(rooms.get("Hallway1"));
         ArrayList<ArrayList<Room>> map = buildMap(rooms);
         viewMap(map);
+
+        for(Map.Entry<String, Room> entry: rooms.entrySet()){
+            if(entry.getValue().getLocked()){
+                System.out.println(entry.getValue().getName() + " is locked.");
+            }
+        }
     }
 
     /**

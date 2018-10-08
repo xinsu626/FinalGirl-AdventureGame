@@ -21,6 +21,7 @@ import java.util.Scanner;
 public class Room
 {
     private String name;
+    private Boolean locked;
     private String description;
     private int xCoord;
     private int yCoord;
@@ -35,6 +36,14 @@ public class Room
 
     public void setName(String name){
         this.name = name;
+    }
+
+    public Boolean getLocked(){
+        return locked;
+    }
+
+    public void setLocked(Boolean locked){
+        this.locked = locked;
     }
 
     public int getXCoord(){
@@ -81,12 +90,14 @@ public class Room
 
         while (in.hasNext()) {
             String name = FileUtil.getNonCommentLine(in);
+            Boolean locked = Boolean.parseBoolean(FileUtil.getNonCommentLine(in));
             String x = FileUtil.getNonCommentLine(in);
             String y = FileUtil.getNonCommentLine(in);
             String description = FileUtil.readParagraph(in);
 
             Room newRoom = new Room(description);
             newRoom.setName(name);
+            newRoom.setLocked(locked);
             newRoom.setXCoord(Integer.parseInt(x));
             newRoom.setYCoord(Integer.parseInt(y));
 
