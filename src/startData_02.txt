@@ -1,16 +1,16 @@
 # rooms data follows
 # for each room: name line, description lines, x-coordinate, y-coordinate
-Ballroom
+Master
 1
 1
-in the ballroom.
+in the master bedroom.
 
-Kitchen
+Closet
 1
 2
-in the kitchen.
+in the closet.
 
-Dining
+Bathroom
 1
 3
 in the dining room.
@@ -30,18 +30,18 @@ Hallway3
 3
 in the hallway.
 
-Billiard
+Bedroom1
 3
 1
-in the billiard room.
+in bedroom #1.
 
-Lounge
+Bedroom2
 3
 2
-in the lounge.
+in the bedroom #2.
 
-Library
+Dressing
 3
 3
-in the library.
+in the dressing rom.
 

@@ -79,9 +79,6 @@ public class Room
         // Map to return
         HashMap<String, Room> rooms = new HashMap<String, Room>();
 
-        // temporary Map to delay recording exits until all rooms exist
-        HashMap<String, String> exitStrings = new HashMap<String, String>();
-
         while (in.hasNext()) {
             String name = FileUtil.getNonCommentLine(in);
             String x = FileUtil.getNonCommentLine(in);
