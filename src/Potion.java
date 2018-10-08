@@ -1,17 +1,18 @@
 public class Potion extends Item {
 
-    FinalGirl player;
+    //FinalGirl player;
 
-    public Potion() {
+    //public Potion() {
 
-    }
+    public void printIt() {
+        System.out.println("printed");
 
-    public void increaseHealth() {
-        int health, weight;
-        health = player.getHealth();
-        weight = Potion.getWeight();
+    //public void increaseHealth() {
+      //  int health, weight;
+        //health = player.getHealth();
+        //weight = Potion.getWeight();
 
-        player.setHealth(health + weight);
+        //player.setHealth(health + weight);
 
     }
 

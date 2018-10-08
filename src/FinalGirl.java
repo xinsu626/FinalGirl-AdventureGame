@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.HashMap;
 
@@ -52,6 +51,10 @@ public class FinalGirl
             return strength;
         }
 
+    public void checkStatus() {
+        String status = name + "'s Status:\nHealth: " + health + "\nStrength: " + strength + "\nBackpack contents: " + backpack;
+        System.out.println(status);
+    }
 
     public static void main(String [] args) {
         FinalGirl player = new FinalGirl();
@@ -65,7 +68,7 @@ public class FinalGirl
         slingshot.setWeight(10);
         player.backpack.put(slingshot, slingshot.getWeight());
         player.backpack.put(knife, knife.getWeight());
-        System.out.println(player.backpack);
+        player.checkStatus();
 
 
 

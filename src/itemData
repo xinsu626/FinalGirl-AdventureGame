@@ -1,0 +1,47 @@
+//Item data as follows
+//Name, type, weight, description
+
+Slingshot
+Weapon
+5
+Slingshot is a Weapon
+
+Knife
+Weapon
+5
+Knife is a Weapon
+
+Axe
+Weapon
+
+
+FlameThrower
+Weapon
+30
+FlameThrower is a Weapon
+
+SliverSword
+Weapon
+40
+SliverSword is a Weapon
+
+HolyCrossbow
+Weapon
+40
+HolyCrossbow is a Weapon
+
+PurplePotion
+Potion
+20
+PurplePotion is a Potion
+
+SuperPotion
+Potion
+40
+SuperPotion is a Potion
+
+
+KeyOne
+Key
+0
+KeyOne is a Key
