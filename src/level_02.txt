@@ -1,22 +1,22 @@
 # rooms data follows
 # for each room: name line, description lines, x-coordinate, y-coordinate
-Master
+Library
 true
 1
 1
-in the master bedroom.
+in the library.
 
-Closet
+Study
 false
 1
 2
-in the closet.
+in the study.
 
-Bathroom
+Game Room
 false
 1
 3
-in the dining room.
+in the game room.
 
 Hallway1
 false
@@ -36,21 +36,21 @@ false
 3
 in the hallway.
 
-Bedroom1
+Lounge
 false
 3
 1
-in bedroom #1.
+in the lounge.
 
-Bedroom2
+Drawing Room
 true
 3
 2
-in the bedroom #2.
+in the drawing room.
 
-Dressing
+Den
 false
 3
 3
-in the dressing room.
+in the den.
 

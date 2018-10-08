@@ -39,7 +39,7 @@ public class Game
      * @param args No commandline arguments needed
      */
     public static void main(String[] args) {
-        Game game = new Game("startData_02.txt");
+        Game game = new Game("level_01.txt");
 //        game.play();
     }
 
@@ -84,9 +84,9 @@ public class Game
     }
 
     public void viewMap(ArrayList<ArrayList<Room>> map){
-        String lineString = "**********************************";
-        String dashString = "*          *          *          *";
-        String hallString = "*  Hallway                       * Stairs";
+        String lineString = "*************************************************";
+        String dashString = "|               |               |               |";
+        String hallString = "| Hallway                                       | Stairs";
 
         for(int i = 0; i < 11; i++){
             if(i == 0 || i == 4 || i == 6 || i == 10){
@@ -111,13 +111,13 @@ public class Game
     }
 
     public String roomsForMap(ArrayList<ArrayList<Room>> map, int row){
-        String roomLine = "* ";
+        String roomLine = "| ";
         for(int i = 1; i < 4; i++){
             String roomName = map.get(row).get(i).getName();
-            while(roomName.length() < 9){
+            while(roomName.length() < 14){
                 roomName += " ";
             }
-            roomLine += roomName + "* ";
+            roomLine += roomName + "| ";
         }
         return roomLine;
     }
@@ -184,15 +184,3 @@ public class Game
 //    }
 
 }
-
-//**********************************
-//*          *          *          *
-//*  Master  *  Closet  * Bathroom *
-//*          *          *          *
-//**********************************
-//*  Hallway                       * Stairs
-//**********************************
-//*          *          *          *
-//* Bedroom1 * Bedroom2 * Dressing *
-//*          *          *          *
-//**********************************
