@@ -1,12 +1,8 @@
 # Final Girl Adventure
 
 ### Project Description
-- Development description: This game is a basic RPG game. The way the game works is based on text that runs on the command line.
-- Our hero, Final Girl has woken up in the attic of a haunted house with nothing but _____! She has to fight her way downstairs and out of the house. 
+- [Narration](https://docs.google.com/document/d/1I9MeaRCakQu30utni3ocPaDhMlR_T0T2443dPikmWsc/edit?ts=5bbbfc69)
 
-
-
-***
 ### Course Site
 
 - [Course Site](http://anh.cs.luc.edu/170/)
