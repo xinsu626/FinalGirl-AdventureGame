@@ -1,6 +1,7 @@
 public class Inspect implements Action{
 
-    private Room room, Player player;
+    private Room room;
+    private Player player;
 
     public boolean execute(String[] tokens){
         if (tokens.length == 1){
