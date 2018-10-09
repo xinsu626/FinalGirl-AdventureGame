@@ -33,13 +33,12 @@ public class Game
 {
     private Room currentRoom;
     private HashMap<String, Room> rooms; //allows all rooms to be found by name
-    private String welcomeString;
 
     /** Make a Game playable from the command line.
      * @param args No commandline arguments needed
      */
     public static void main(String[] args) {
-        Game game = new Game("startData_02.txt");
+        Game game = new Game("level_01.txt");
 //        game.play();
     }
 
@@ -65,7 +64,7 @@ public class Game
         currentRoom = newRoom;
     }
 
-    public void buildMap(HashMap<String, Room> rooms){
+    public ArrayList<ArrayList<Room>> buildMap(HashMap<String, Room> rooms){
         ArrayList<ArrayList<Room>> map = new ArrayList<>();
 
         for(int i = 0; i < 5; i++){
@@ -80,18 +79,46 @@ public class Game
             map.get(row).set(col, newRoom);
         }
 
-//        for(int i = 0; i < map.size(); i++){
-//            System.out.println(map.get(i));
-//        }
+        return map;
+    }
 
-//        for(int i = 0; i < map.size(); i++){
-//            for(int j = 0; j < map.get(i).size(); j++){
-//                if(map.get(i).get(j) != null){
-//                    System.out.println(map.get(i).get(j).getName());
-//                }
-//            }
-//        }
+    public void viewMap(ArrayList<ArrayList<Room>> map){
+        String lineString = "*************************************************";
+        String dashString = "|               |               |               |";
+        String hallString = "| Hallway                                       | Stairs";
 
+        for(int i = 0; i < 11; i++){
+            if(i == 0 || i == 4 || i == 6 || i == 10){
+                System.out.println(lineString);
+            }
+            else if(i == 2){
+                System.out.println(roomsForMap(map, 1));
+            }
+            else if(i == 5){
+                System.out.println(hallString);
+            }
+            else if(i == 8){
+                System.out.println(roomsForMap(map, 3));
+            }
+            else{
+                System.out.println(dashString);
+            }
+        }
+
+        System.out.println();
+        System.out.println("You are " + currentRoom.getDescription());
+    }
+
+    public String roomsForMap(ArrayList<ArrayList<Room>> map, int row){
+        String roomLine = "| ";
+        for(int i = 1; i < 4; i++){
+            String roomName = map.get(row).get(i).getName();
+            while(roomName.length() < 14){
+                roomName += " ";
+            }
+            roomLine += roomName + "| ";
+        }
+        return roomLine;
     }
 
     /**
@@ -100,7 +127,7 @@ public class Game
      */
     public Game(String worldData)
     {   // world data: starting room line,
-        //    welcome and help intro paragraphs, then Room data
+        // welcome and help intro paragraphs, then Room data
         Scanner dataIn = ResourceUtil.openFileScanner(worldData);
 //        String startingRoom = FileUtil.getNonCommentLine(dataIn).trim();
 //        welcomeString = FileUtil.readParagraph(dataIn);
@@ -109,7 +136,9 @@ public class Game
 //        currentRoom = rooms.get(startingRoom);
 
 //        CommandMapper.init(this, helpIntro); // data for some Responses
-        buildMap(rooms);
+        setCurrentRoom(rooms.get("Hallway1"));
+        ArrayList<ArrayList<Room>> map = buildMap(rooms);
+        viewMap(map);
     }
 
     /**
