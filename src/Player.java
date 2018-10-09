@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.HashMap;
 
-public class FinalGirl
+public class Player
 
 {
 
@@ -9,7 +9,7 @@ public class FinalGirl
     public String name;
     public HashMap backpack = new HashMap();
 
-    public FinalGirl() {
+    public Player() {
         this.name = name;
 
     }
@@ -38,7 +38,7 @@ public class FinalGirl
     }
 
     public void setStrength(int strength) {
-            this.strength = strength;
+        this.strength = strength;
     }
 
     public int getHealth() {
@@ -47,8 +47,8 @@ public class FinalGirl
     }
 
     public int getStrength() {
-            return strength;
-        }
+        return strength;
+    }
 
     public void checkStatus() {
         String status = name + "'s Status:\nHealth: " + health + "\nStrength: " + strength + "\nBackpack contents: " + backpack;
@@ -56,7 +56,7 @@ public class FinalGirl
     }
 
     public static void main(String [] args) {
-        FinalGirl player = new FinalGirl();
+        Player player = new Player();
         player.setName();
 
 
@@ -72,6 +72,5 @@ public class FinalGirl
 
 
 
-        }
+    }
 }
-

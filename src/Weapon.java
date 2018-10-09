@@ -1,17 +1,21 @@
 public class Weapon extends Item {
 
-    //FinalGirl player;
+    int weight;
+    Player player;
 
-    //public Weapon() {}
-
+    public Weapon() {
+    }
+//
     public void printIt() {
         System.out.println("printed");
-        }
-    //public void increaseStrength() {
-      //  int strength, weight;
-        //strength = player.getStrength();
-        //weight = Weapon.getWeight();
+}
 
-        //player.setStrength(strength + weight);
+//
+//    public void increaseStrength() {
+//        int strength, weight;
+//        strength = player.getStrength();
+//        weight = Weapon.getWeight();
+//
+//        player.setStrength(strength + weight);
 
 }
