@@ -46,6 +46,13 @@ public class Monster{
 		return monsters
 	}
 
+	// setters 
+	public void setCurrentHealth(int newHealth)
+	{
+		this.currentHealth = newHealth
+	}
+
+
 	// getters
 	public int getCurrentHealth(){
 		return currentHealth;
@@ -58,6 +65,12 @@ public class Monster{
 	}
 	public int getcategory(){
 		return category;
+	}
+
+	public void checkStatus()
+	{
+		System.out.println(name + "'s strength: " + currentStrength);
+		System.out.println(name + "'s health: " + currentHealth);
 	}
 
 }
