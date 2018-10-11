@@ -1,4 +1,4 @@
-public class Inspect 
+public class Inspect implements Action
 {
 	public Room currentRoom;
 	public String itemInRoom;
