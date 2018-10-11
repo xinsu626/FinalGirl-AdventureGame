@@ -53,7 +53,7 @@ public class Game{
 		// rooms
 		Scanner levelScanner = ResourceUtil.openFileScanner(level01Txt);
 		rooms = Room.createRooms(levelScanner);
-		String startingRoom = "hallway01";
+		String startingRoom = "hallway1";
 		currentRoom = rooms.get(startingRoom);
 
 		// items
