@@ -17,6 +17,7 @@ public class Game{
 	private HashMap<String, Item> items; // allow all items to be found by name
 	private Player currentPlayer;
 	private Scanner userInputScanner;
+	private String welcomeString;
 
 	// getters and settes for room
 
@@ -47,7 +48,7 @@ public class Game{
 	{
 		// welcome 
 		Scanner worldDataScanner = ResourceUtil.openFileScanner(weclomeTxt); // create a scanner object, read txt file in
-		String welcomeString = FileUtil.readParagraph(worldDataScanner);   
+		welcomeString = FileUtil.readParagraph(worldDataScanner);
 
 		// rooms
 		Scanner levelScanner = ResourceUtil.openFileScanner(level01Txt);
@@ -64,8 +65,9 @@ public class Game{
 
 		// user input scanner 
 		userInputScanner = new Scanner(System.in);
+
 		// initialize command mapper
-		CommandMapper.init(this);	// get rid of helpintro here
+		CommandMapper.init(this, currentRoom, currentPlayer);
 	}
 
 	private boolean processCommand()
@@ -79,7 +81,7 @@ public class Game{
 			return false;
 		}
 
-		Response action = CommandMapper.getResponse(tokens[0]); // the response here is any "object" implement response interface
+		Action action = CommandMapper.getAction(tokens[0]); // the response here is any "object" implement response interface
 		return action.execute(tokens);
 	}
 
@@ -87,16 +89,18 @@ public class Game{
 	{
 		System.out.println(welcomeString);
 		System.out.println("You are in " + currentRoom.getName());
-		ArrayList<ArrayList<Room>> map = Room.buildMap(rooms);
-		Room.viewMap(map);
+		//ArrayList<ArrayList<Room>> map = Room.buildMap(rooms);
+		//Room.viewMap(map);
 		currentPlayer.checkStatus();
-		System.out.println("What would you like to do?");
-		System.out.println("inspect");
-		System.out.println("Go to other places. If so, please enter room name.");
-		System.out.println("quit");
+		System.out.println("What would you like to do? 'inspect', 'move','quit');
+
 
 		while (! processCommand())
 			;
 		System.out.println("Thank you for playing our game. Bye")
+	}
+
+	public HashMap<String,Room> getRooms(){
+	    return rooms;
 	}
 }

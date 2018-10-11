@@ -21,7 +21,7 @@ null
 3
 in the bathroom.
 
-Hallway1
+Hallway
 null
 null
 2

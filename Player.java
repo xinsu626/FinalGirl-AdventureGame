@@ -21,7 +21,7 @@ public class Player{
 		Scanner userInput = new Scanner(System.in);
 
 		System.out.println("Enter a name for your player: ");
-		String playerName = userInput.nextline();
+		String playerName = userInput.nextLine();
 		System.out.println("Your player's name is now " + playerName)
 
 		Player newPlayer = new Player(playerName);

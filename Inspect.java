@@ -1,4 +1,4 @@
-public class Inspect 
+public class Inspect implements Action
 {
 	public Room currentRoom;
 	public String itemInRoom;
@@ -35,5 +35,9 @@ public class Inspect
 	public String help()
 	{
 		return "please just enter: inspect"
+	}
+
+	public String getCommandName(){
+		return "inspect";
 	}
 }
