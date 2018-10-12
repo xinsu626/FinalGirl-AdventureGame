@@ -4,7 +4,6 @@ public class Player{
 	// declare instance variables 
 	public String name;
 	public int health;
-	public int strength;
 	public Item currentWeapon;
 
 	// consturctor
@@ -12,43 +11,42 @@ public class Player{
 	{
 		this.name = name;
 		this.health = 100; //initial health
-		this.strength = 5; //initial strength
-		this.currentWeapon = new Item("slingshot");
+		this.currentWeapon = new Item("slingshot", "weapon", 5);
 	}
 
 	// create player
 	public static Player createPlayer(){
-		Scanner userInput = new Scanner(System.in);
-
-		System.out.println("Enter a name for your player: ");
-		String playerName = userInput.nextLine();
-		System.out.println("Your player's name is now " + playerName)
-
+		String playerName = UI.promptLine("Enter a name for your player: ").trim();
 		Player newPlayer = new Player(playerName);
-		
-		userInput.close();
+		System.out.println("Your player's name is now " + playerName);
+		return newPlayer;
+	}
 
-		return newPlayer;}
-
-	// setters 
-	public void setHealth(int health){
-		this.health = health;}
-
-	public void setStrength(int strength){
-		this.strength = strength;}
-
-	public void setCurrentWeapon(Item Weapon){
-		this.currentWeapon = weapon;}
-
-	// getters 
 	public int getHealth(){
-		return health;}
+		return health;
+	}
 
-	public int getStrength(){
-		return strength;}
+	//public void incrementStrength(int x){
+	//	strength += x;
+	//}
+
+	public Item getCurrentWeapon(){
+		return currentWeapon;
+	}
+
+	public void setCurrentWeapon(Item weapon){
+		currentWeapon = weapon;}
+
+	public void incrementHealth(int x){
+		health += x;
+	}
+
+	//public int getStrength(){
+	//	return strength;}
 
 	public void checkStatus(){
 	System.out.println("\tYour health: " + health);
-	System.out.println("\tYour strength: " + strength);
-	System.out.println("\tYou have: " + currentWeapon.name + " in hand.")} 
+	//System.out.println("\tYour strength: " + strength);
+	System.out.println("\tYou have: " + currentWeapon.name + " in hand.");
+	}
 } 

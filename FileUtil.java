@@ -11,6 +11,10 @@ public class FileUtil{
 		return line;
 	}
 
+	public static int getInt(Scanner in){
+	    return Integer.parseInt(getNonCommentLine(in));
+	}
+
 	public static String wordWrap(String s, int columns) 
     {
         String wrapped = "";

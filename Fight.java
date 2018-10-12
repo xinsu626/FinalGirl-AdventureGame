@@ -10,9 +10,9 @@ public class Fight
 		Random rand = new Random();
 		int healthPotionDropPercentage = 50; 
 
-		System.out.println(currentMonster.getName() + " is coming!!!!")
+		System.out.println(currentMonster.getName() + " is coming!!!!");
 		
-		while (currentMonster > 0)
+		while (currentMonster.getCurrentHealth() > 0)
 		{
 			currentPlayer.checkStatus();
 			currentMonster.checkStatus();
@@ -25,17 +25,17 @@ public class Fight
 
 			if (userInput.equals("1"))
 			{
-				int damage = rand.nextInt(currentPlayer.getStrength());
-				int damageTaken = rand.nextInt(currentMonster.getCurrentStrength());
+				int damage = rand.nextInt(currentPlayer.getCurrentWeapon().getAttribute());
+				int damageTaken = -rand.nextInt(currentMonster.getCurrentStrength());
 				currentMonster.setCurrentHealth(currentMonster.getCurrentHealth() - damage);
-				currentPlayer.setHealth(currentPlayer.getHealth() - damageTaken);
+				currentPlayer.incrementHealth(damageTaken);
 				currentPlayer.checkStatus();
 				currentMonster.checkStatus();
 
 				if (currentPlayer.getHealth() < 1)
 				{
 					System.out.println("You will die soon.");
-					break
+					break;
 				}
 			}
 
@@ -52,7 +52,7 @@ public class Fight
 
 			else
 			{
-				System.out.println("Wrong input.")
+				System.out.println("Wrong input.");
 			}
 
 		}
@@ -60,11 +60,10 @@ public class Fight
 		if (currentPlayer.getHealth() < 5)
 		{
 			System.out.println("Your health is really low.");
-			break;
 		}
 
-		System.out.println("-------------------------------------------")
-		System.out.println(currentMonster.getName() + " was defeated!")
+		System.out.println("-------------------------------------------");
+		System.out.println(currentMonster.getName() + " was defeated!");
 		currentPlayer.checkStatus();
 
 		if (rand.nextInt(100) < healthPotionDropPercentage)

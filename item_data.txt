@@ -1,35 +1,37 @@
 # Welcome to our item production base
 # Please find our production format below:
 # item name, category, attribute(either increase health or strength)
-
+#
 Slingshot
 Weapon
 5
-
+#
 Knife
 Weapon
 5
-
+#
 Axe
 Weapon
 5
-
+#
 FlameThrower
 Weapon
 30
-
+#
 SliverSword
 Weapon
 40
-
+#
 HolyCrossbow
 Weapon
 40
-
+#
 PurplePotion
 Potion
 20
-
+#
 SuperPotion
 Potion
 40
+
+

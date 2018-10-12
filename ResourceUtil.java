@@ -14,7 +14,8 @@ public class ResourceUtil{
 
 		if (stream == null){
 			System.out.println("File not found: " + fileName);
-			return null；}
+			return null;
+		}
 
 		return new Scanner(stream);
 	}

@@ -1,6 +1,6 @@
-import java.util.Set;
 import java.util.HashMap;
 import java.util.Scanner;
+//import java.util.ArrayList;
 
 public class Room{
 	// declare instance variables
@@ -9,14 +9,16 @@ public class Room{
 	private Item item;
 	private int xCoord;
 	private int yCoord;
+	private String description;
 
-	// consturctor 
-	public Room(String name, Monster monster, Item item, int x, int y){
+	// constructor
+	public Room(String name, Monster monster, Item item, int x, int y, String description){
 		this.name = name;
 		this.monster = monster;
 		this.item = item;
 		this.xCoord = x;
 		this.yCoord = y;
+		this.description = description;
 	}
 
 
@@ -26,59 +28,90 @@ public class Room{
 		// empty rooms hashmap
 		HashMap<String, Room> rooms = new HashMap<String, Room>();
 
+		// create HashMap of monsters
+		Scanner monsterScanner = ResourceUtil.openFileScanner("monster_data.txt");
+		HashMap<String, Monster> monsters = Monster.createMonsters(monsterScanner);
+
+		// create HashMap of items
+		Scanner itemScanner = ResourceUtil.openFileScanner("item_data.txt");
+		HashMap<String, Item> items = Item.createItems(itemScanner);
+
 		while (in.hasNext()){
 			String name = FileUtil.getNonCommentLine(in);
 			String monsterName = FileUtil.getNonCommentLine(in);
 			String itemName = FileUtil.getNonCommentLine(in);
-			String x = FileUtil.getNonCommentLine(in);
-			String y = FileUtil.getNonCommentLine(in);
+			int x = FileUtil.getInt(in);
+			int y = FileUtil.getInt(in);
+			String description = FileUtil.readParagraph(in);
+			Monster monster;
+			Item item;
 
-			Room newRoom = new Room(name, monsterName, itemName, x, y);
+			if (!monsterName.equals("null")){
+				monster = monsters.get(monsterName);
+			}
+			else{
+				monster = null;
+			}
+
+			if (!itemName.equals("null")){
+				item = items.get(monsterName);
+			}
+			else{
+				item = null;
+			}
+
+			Room newRoom = new Room(name, monster, item, x, y, description);
 			rooms.put(name, newRoom);
 		}
 		
 		in.close();
 
-		return rooms;}
+		return rooms;
+	}
 
 	// setters
-	public void setName(String name){
-		this.name = name;}
+	//public void setName(String name){
+	//	this.name = name;}
 
-	public void setMonster(String monsterName){
-		this.monster = monsters.get(monsterName);}
+	//public void setMonster(String monsterName){
+	//	this.monster = monsters.get(monsterName);}
 	
-	public void setItem(String itemName){
-		this.item = items.get(itemName);}
+	//public void setItem(String itemName){
+	//	this.item = items.get(itemName);}
 	
-	public void setXCoord(int xCoord){
-		this.xCoord = xCoord;}
+	//public void setXCoord(int xCoord){
+	//	this.xCoord = xCoord;}
 
-	public void setYCoord(int yCoord){
-		this.yCoord = yCoord;}
+	//public void setYCoord(int yCoord){
+	//	this.yCoord = yCoord;}
 
 	// getters 
 	public String getName(){
 		return name;}
 
-	public String getMonster(){
+	public Monster getMonster(){
 		return monster;}
 
-	public String getItem(){
+	public Item getItem(){
 		return item;}
 
-	public int getXCoord(){
-		return xCoord;}
+	public String getDescription(){
+		return description;
+	}
 
-	public int getYCoord(){
-		return yCoord;}
+	//public int getXCoord(){
+	//	return xCoord;}
+
+	//public int getYCoord(){
+	//	return yCoord;}
 
 	// maps
+	/*
 	public static ArrayList<ArrayList<Room>> buildMap(HashMap<String, Room> rooms){
 		ArrayList<ArrayList<Room>> map = new ArrayList<>();
 
 		for(int i = 0; i < 5; i++){
-			map.add(new ArrayList<>(Arrays.asList(null, null, null, null, null)));
+			map.add(new ArrayList<>(ArrayList.asList(null, null, null, null, null)));
 		}
 
 		for(Map.Entry x: rooms.entrySet()){
@@ -88,7 +121,8 @@ public class Room{
 			map.get(row).set(col, newRoom);
 		}
 
-		return map;}
+		return map;
+	}
 
 	// generate map view 
 	public static void viewMap(ArrayList<ArrayList<Room>> map){
@@ -121,5 +155,5 @@ public class Room{
 			roomLine += roomName + "| ";}
 
 		return roomLine;}
-	
+	*/
 }

@@ -1,24 +1,27 @@
 import java.util.Random;
+import java.util.Scanner;
+import java.util.HashMap;
 
 public class Monster{
-	// class variables to controll number of monster
+	// class variables to control number of monster
 	
 	// create a random object
 	Random rand = new Random();
-
 
 	// declare variables
 	private int maxMonsterHealth;
 	private int miniMonsterHealth;
 	private int maxMonsterStrength;
 	private int miniMonsterStrength;
+	private String monsterName;
 	private String category; //["boss", "easy"]
 	private int currentHealth;
 	private int currentStrength;
 	// private String name; //["Zombie", "Skeletons", "Ghost"] ["Mummy", "Werewolf", "Vampire"]
 
 	// constructor 
-	public Monster(int maxMonsterHealth, int miniMonsterHealth, int maxMonsterStrength, int miniMonsterStrength, String category){
+	public Monster(String monsterName, int maxMonsterHealth, int miniMonsterHealth, int maxMonsterStrength, int miniMonsterStrength, String category){
+		this.monsterName = monsterName;
 		this.maxMonsterStrength = maxMonsterStrength;
 		this.miniMonsterStrength = miniMonsterStrength;
 		this.maxMonsterHealth = maxMonsterHealth;
@@ -29,27 +32,29 @@ public class Monster{
 	}
 
 	// Create a monster 
-	public static Monster createMonsters(Scanner in){
+	public static HashMap<String, Monster> createMonsters(Scanner in){
 		HashMap<String, Monster> monsters = new HashMap<String, Monster>();
 
 		while(in.hasNext()){
-			String name = FileUtil.getNonCommentLine(in); // read monster name from txt file 
-			int maxMonsterHealth = FileUtil.getNonCommentLine(in); // read monster max health from txt file 
-			int miniMonsterHealth = FileUtil.getNonCommentLine(in); // read monster minimum health from txt file 
-			int maxMonsterStrength = FileUtil.getNonCommentLine(in); // read monster max strength from txt file 
-			int miniMonsterStrength = FileUtil.getNonCommentLine(in); // read monster minimum strength from txt file
+			String monsterName = FileUtil.getNonCommentLine(in); // read monster name from txt file
+			int maxMonsterHealth = FileUtil.getInt(in); // read monster max health from txt file
+			int miniMonsterHealth = FileUtil.getInt(in); // read monster minimum health from txt file
+			int maxMonsterStrength = FileUtil.getInt(in); // read monster max strength from txt file
+			int miniMonsterStrength = FileUtil.getInt(in); // read monster minimum strength from txt file
+
 			String category = FileUtil.getNonCommentLine(in); // read monster category("easy" or "boss") from txt file
-			monsters.put(name, new Monster(maxMonsterHealth, miniMonsterHealth, maxMonsterStrength, miniMonsterStrength, category))	// put the pairs in Hashmap instantiate monsters 
+			monsters.put(monsterName, new Monster(monsterName, maxMonsterHealth, miniMonsterHealth,
+					maxMonsterStrength, miniMonsterStrength, category));	// put the pairs in Hashmap instantiate monsters
 		}
 		in.close(); // close the scanner object 
 
-		return monsters
+		return monsters;
 	}
 
 	// setters 
 	public void setCurrentHealth(int newHealth)
 	{
-		this.currentHealth = newHealth
+		this.currentHealth = newHealth;
 	}
 
 
@@ -60,17 +65,19 @@ public class Monster{
 	public int getCurrentStrength(){
 		return currentStrength;
 	}
-	public int getName(){
-		return name;
+	public String getName(){
+		return monsterName;
 	}
-	public int getcategory(){
+
+	public String getcategory()
+	{
 		return category;
 	}
 
 	public void checkStatus()
 	{
-		System.out.println(name + "'s strength: " + currentStrength);
-		System.out.println(name + "'s health: " + currentHealth);
+		System.out.println(monsterName + "'s strength: " + currentStrength);
+		System.out.println(monsterName + "'s health: " + currentHealth);
 	}
 
 }

@@ -5,10 +5,10 @@ public class Item {
 	// declare instance variable(for now there is no weight)
 	public String name;
 	public String category;
-	public String attribute; //ethier incease health(potion) or increase strength(weapon)
+	public int attribute; //either increase health(potion) or increase strength(weapon)
 
-	// consturctor
-	public Item(String name, String category, String attribute) {
+	// constructor
+	public Item(String name, String category, int attribute) {
 		this.name = name;
 		this.category = category;
 		this.attribute = attribute;
@@ -22,7 +22,7 @@ public class Item {
 		while (in.hasNext()) {
 			String name = FileUtil.getNonCommentLine(in);
 			String category = FileUtil.getNonCommentLine(in);
-			String attribute = FileUtil.getNonCommentLine(in);
+			int attribute = FileUtil.getInt(in);
 
 			Item newItem = new Item(name, category, attribute);
 			items.put(name, newItem);
@@ -39,8 +39,9 @@ public class Item {
 	public void setCategory(String category){
 		this.category = category;}
 
-	public void setAttibute(String attribute){
-		this.attribute = attribute;}
+	public void setAttribute(int attribute){
+		this.attribute = attribute;
+	}
 
 	// getters 
 	public String getName(){
@@ -49,7 +50,7 @@ public class Item {
 	public String getCategory(){
 		return category;}
 
-	public String getAttribute(){
+	public int getAttribute(){
 		return attribute;}		
 
 }

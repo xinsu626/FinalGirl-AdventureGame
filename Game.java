@@ -1,11 +1,9 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class Game{
 
 	public static void main(String[] args) {
-		Game game = new Game("startData.txt", "level_01.txt", "item_data.txt");
+		Game game = new Game("starting_data.txt", "level_01.txt", "item_data.txt");
 		game.play();
 	}
 
@@ -16,8 +14,9 @@ public class Game{
 	private Item currentWeapon;
 	private HashMap<String, Item> items; // allow all items to be found by name
 	private Player currentPlayer;
-	private Scanner userInputScanner;
+	//private Scanner userInputScanner;
 	private String welcomeString;
+	private HashMap<String, Monster> monsters; // allow all monsters to be found by name
 
 	// getters and settes for room
 
@@ -44,27 +43,22 @@ public class Game{
 	}
 
 	// constructor
-	public Game(String weclomeTxt, String level01Txt, String itemTxt)
+	public Game(String welcomeTxt, String level01Txt, String itemTxt)
 	{
 		// welcome 
-		Scanner worldDataScanner = ResourceUtil.openFileScanner(weclomeTxt); // create a scanner object, read txt file in
+		Scanner worldDataScanner = ResourceUtil.openFileScanner(welcomeTxt); // create a scanner object, read txt file in
 		welcomeString = FileUtil.readParagraph(worldDataScanner);
 
 		// rooms
 		Scanner levelScanner = ResourceUtil.openFileScanner(level01Txt);
 		rooms = Room.createRooms(levelScanner);
-		String startingRoom = "hallway1";
-		currentRoom = rooms.get(startingRoom);
-
-		// items
-		Scanner itemScanner = ResourceUtil.openFileScanner(itemTxt);
-		items = Item.createItems(itemScanner);
+		currentRoom = rooms.get("hallway");
 
 		// player
 		currentPlayer = Player.createPlayer();
 
 		// user input scanner 
-		userInputScanner = new Scanner(System.in);
+		//userInputScanner = new Scanner(System.in);
 
 		// initialize command mapper
 		CommandMapper.init(this, currentRoom, currentPlayer);
@@ -72,17 +66,21 @@ public class Game{
 
 	private boolean processCommand()
 	{
-		String line = UI.promptLine("> "); // get user input
-		String[] tokens = line.trim().split("\\s+"); // split user input to tokens in a list
-		
-		if ((tokens.length == 0) || !CommandMapper.isCommand(tokens[0]))
+		String line = UI.promptLine("> ").trim(); // get user input
+		//String[] tokens = line.trim().split("\\s+"); // split user input to tokens in a list
+
+		if (line == "quit"){
+			return true;
+		}
+
+		if (line.length() == 0 || !CommandMapper.isCommand(line))
 		{
 			System.out.println("I don't know what you mean...");
 			return false;
 		}
 
-		Action action = CommandMapper.getAction(tokens[0]); // the response here is any "object" implement response interface
-		return action.execute(tokens);
+		Action action = CommandMapper.getAction(line); // the response here is any "object" implement response interface
+		return action.execute();
 	}
 
 	private void play()
@@ -92,12 +90,12 @@ public class Game{
 		//ArrayList<ArrayList<Room>> map = Room.buildMap(rooms);
 		//Room.viewMap(map);
 		currentPlayer.checkStatus();
-		System.out.println("What would you like to do? 'inspect', 'move','quit');
+		System.out.println("What would you like to do? 'inspect', 'go', 'quit'");
 
-
-		while (! processCommand())
+		while (! processCommand()) {
 			;
-		System.out.println("Thank you for playing our game. Bye")
+		}
+		System.out.println("Thank you for playing our game. Bye");
 	}
 
 	public HashMap<String,Room> getRooms(){
