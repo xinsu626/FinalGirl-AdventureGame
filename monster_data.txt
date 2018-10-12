@@ -1,0 +1,50 @@
+# Welcome to the monster production base
+# The blueprint for monster production is：
+# - name 
+# - maxMonsterHealth
+# - miniMonsterHealth
+# - maxMonsterStrength
+# - miniMonsterStrength
+# - category
+
+Zombie
+50
+25
+5
+1
+easy
+
+Skeleton
+50
+25
+5
+1
+easy
+
+Ghost
+50
+25
+5
+1
+easy
+
+Mummy
+100
+80
+10
+5
+boss
+
+Werewolf
+100
+80
+10
+5
+boss
+
+Vampire
+100
+80
+10
+5
+boss
