@@ -7,17 +7,13 @@ public class Room{
 	private String name;
 	private Monster monster;
 	private Item item;
-	private int xCoord;
-	private int yCoord;
 	private String description;
 
 	// constructor
-	public Room(String name, Monster monster, Item item, int x, int y, String description){
+	public Room(String name, Monster monster, Item item, String description){
 		this.name = name;
 		this.monster = monster;
 		this.item = item;
-		this.xCoord = x;
-		this.yCoord = y;
 		this.description = description;
 	}
 
@@ -40,8 +36,6 @@ public class Room{
 			String name = FileUtil.getNonCommentLine(in);
 			String monsterName = FileUtil.getNonCommentLine(in);
 			String itemName = FileUtil.getNonCommentLine(in);
-			int x = FileUtil.getInt(in);
-			int y = FileUtil.getInt(in);
 			String description = FileUtil.readParagraph(in);
 			Monster monster;
 			Item item;
@@ -60,7 +54,7 @@ public class Room{
 				item = null;
 			}
 
-			Room newRoom = new Room(name, monster, item, x, y, description);
+			Room newRoom = new Room(name, monster, item, description);
 			rooms.put(name, newRoom);
 		}
 
@@ -76,7 +70,12 @@ public class Room{
 	public void killMonster(){
 		monster = null;
 	}
-	
+
+	public void killItem()
+	{
+		item =null;
+	}
+
 	//public void setItem(String itemName){
 	//	this.item = items.get(itemName);}
 	

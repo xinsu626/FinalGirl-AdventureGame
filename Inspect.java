@@ -21,16 +21,18 @@ public class Inspect implements Action
 		}
 		else
 		{
-			System.out.print("There is a " + itemInRoom.getName());
+			System.out.print("There is a " + itemInRoom.getName() + " ");
 
 			if (itemInRoom.getCategory().equals("potion")){
 				player.incrementHealth(itemInRoom.getAttribute());
+				System.out.println(game.getCurrentRoom().getDescription()+"You drink it! Your health increases by " + itemInRoom.getAttribute());
 			}
 			else if (itemInRoom.getCategory().equals("weapon")){
 				player.setCurrentWeapon(itemInRoom);
 			}
+			game.getCurrentRoom().killItem();
 		}
-		System.out.println(" " + game.getCurrentRoom().getDescription());
+
 		player.checkStatus();
 
 		if (monsterInRoom == null){

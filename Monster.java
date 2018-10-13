@@ -20,7 +20,7 @@ public class Monster{
 	// private String name; //["Zombie", "Skeletons", "Ghost"] ["Mummy", "Werewolf", "Vampire"]
 
 	// constructor 
-	public Monster(String monsterName, int maxMonsterHealth, int miniMonsterHealth, int maxMonsterStrength, int miniMonsterStrength, String category){
+	public Monster(String monsterName, int maxMonsterHealth, int miniMonsterHealth, int maxMonsterStrength, int miniMonsterStrength){
 		this.monsterName = monsterName;
 		this.maxMonsterStrength = maxMonsterStrength;
 		this.miniMonsterStrength = miniMonsterStrength;
@@ -42,9 +42,8 @@ public class Monster{
 			int maxMonsterStrength = FileUtil.getInt(in); // read monster max strength from txt file
 			int miniMonsterStrength = FileUtil.getInt(in); // read monster minimum strength from txt file
 
-			String category = FileUtil.getNonCommentLine(in); // read monster category("easy" or "boss") from txt file
 			monsters.put(monsterName, new Monster(monsterName, maxMonsterHealth, miniMonsterHealth,
-					maxMonsterStrength, miniMonsterStrength, category));	// put the pairs in Hashmap instantiate monsters
+					maxMonsterStrength, miniMonsterStrength));	// put the pairs in Hashmap instantiate monsters
 		}
 		in.close(); // close the scanner object 
 

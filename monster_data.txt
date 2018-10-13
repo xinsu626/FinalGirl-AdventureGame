@@ -12,42 +12,36 @@ zombie
 25
 5
 1
-easy
 #
 skeleton
 50
 25
 5
 1
-easy
 #
 ghost
 50
 25
 5
 1
-easy
 #
 mummy
 100
 80
 10
 5
-boss
 #
 werewolf
 100
 80
 10
 5
-boss
 #
 vampire
 100
 80
 10
 5
-boss
 
 
 
