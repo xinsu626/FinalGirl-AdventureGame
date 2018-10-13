@@ -9,7 +9,7 @@ public class CommandMapper
 	public static void init(Game game, Room currentRoom, Player currentPlayer)
 	{
 		actions = new HashMap<>();
-		Action[] actionArray = {new Goer(game), new Inspect(currentRoom, currentPlayer)};
+		Action[] actionArray = {new Goer(game), new Inspect(game)};
 		allCmds = "Your command words are:";
 		for (Action r: actionArray)
 		{

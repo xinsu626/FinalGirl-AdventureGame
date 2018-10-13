@@ -2,36 +2,36 @@
 # Please find our production format below:
 # item name, category, attribute(either increase health or strength)
 #
-Slingshot
-Weapon
+slingshot
+weapon
 5
 #
-Knife
-Weapon
+knife
+weapon
 5
 #
-Axe
-Weapon
+axe
+weapon
 5
 #
-FlameThrower
-Weapon
+flameThrower
+weapon
 30
 #
-SliverSword
-Weapon
+sliverSword
+weapon
 40
 #
-HolyCrossbow
-Weapon
+holyCrossbow
+weapon
 40
 #
-PurplePotion
-Potion
+purplePotion
+potion
 20
 #
-SuperPotion
-Potion
+superPotion
+potion
 40
 
 

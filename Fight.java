@@ -3,27 +3,20 @@ import java.util.Random;
 
 public class Fight
 {
+	private static Random rand = new Random();
 
-	public static void fight(Monster currentMonster, Player currentPlayer)
+	public static boolean fight(Monster currentMonster, Player currentPlayer)
 	{
-		Scanner in = new Scanner(System.in);
-		Random rand = new Random();
-		int healthPotionDropPercentage = 50; 
-
+		int healthPotionDropPercentage = 50;
 		System.out.println(currentMonster.getName() + " is coming!!!!");
 		
 		while (currentMonster.getCurrentHealth() > 0)
 		{
 			currentPlayer.checkStatus();
 			currentMonster.checkStatus();
-			System.out.println("What would you want to do?");
-			System.out.println("1. Attack");
-			System.out.println("2. Drink a potion");
-			System.out.println("3. Run");
+			Boolean toFight = UI.agree("Do you want to fight? If you decline, you will attempt to flee.");
 
-			String userInput = in.nextLine();
-
-			if (userInput.equals("1"))
+			if (toFight)
 			{
 				int damage = rand.nextInt(currentPlayer.getCurrentWeapon().getAttribute());
 				int damageTaken = -rand.nextInt(currentMonster.getCurrentStrength());
@@ -32,29 +25,24 @@ public class Fight
 				currentPlayer.checkStatus();
 				currentMonster.checkStatus();
 
-				if (currentPlayer.getHealth() < 1)
+				if (currentPlayer.getHealth() <= 0)
 				{
-					System.out.println("You will die soon.");
-					break;
+					System.out.println("You're dead!");
+					return true;
 				}
 			}
-
-			else if (userInput.equals("2"))
-			{
-				// need to figure out how to run potion
-			}
-
-			else if (userInput.equals("3"))
-			{
-				System.out.println("You have run away");
-				continue;
-			}
-
 			else
 			{
-				System.out.println("Wrong input.");
+				/*public int next() {
+				if (random.nextBoolean()) {
+					System.out.println("You successfully fled from the monster.");
+					return move.hallway;
+				} else {
+					System.out.println("You slipped and fell, and the monster attacked.");
+					return player.health - 10;
+				}*/
+				;
 			}
-
 		}
 
 		if (currentPlayer.getHealth() < 5)
@@ -70,6 +58,8 @@ public class Fight
 		{
 			// need to figure out how to run potion
 		}
+
+		return false;
 	}
 
 }

@@ -1,20 +1,20 @@
 public class Inspect implements Action
 {
-	public Room currentRoom;
+	public Game game;
 	public Item itemInRoom;
 	public Monster monsterInRoom;
-	public Player currentPlayer;
 
-	public Inspect(Room currentRoom, Player currentPlayer)
+	public Inspect(Game game)
 	{
-		this.currentRoom = currentRoom;
-		this.currentPlayer = currentPlayer;
+		this.game = game;
 	}
 
 	public boolean execute()
 	{
-		this.itemInRoom = currentRoom.getItem();
-		this.monsterInRoom = currentRoom.getMonster();
+		Player player = game.getPlayer();
+
+		itemInRoom = game.getCurrentRoom().getItem();
+		monsterInRoom = game.getCurrentRoom().getMonster();
 
 		if (itemInRoom == null){
 			System.out.print("There are no items");
@@ -22,20 +22,24 @@ public class Inspect implements Action
 		else
 		{
 			System.out.print("There is a " + itemInRoom.getName());
-			currentPlayer.incrementStrength(itemInRoom.getAttribute());
-			System.out.println("You now have " + currentPlayer.strength +" strength.");
+
+			if (itemInRoom.getCategory().equals("potion")){
+				player.incrementHealth(itemInRoom.getAttribute());
+			}
+			else if (itemInRoom.getCategory().equals("weapon")){
+				player.setCurrentWeapon(itemInRoom);
+			}
 		}
-		System.out.println(" " + currentRoom.getDescription());
+		System.out.println(" " + game.getCurrentRoom().getDescription());
+		player.checkStatus();
 
 		if (monsterInRoom == null){
-			System.out.println("There are no monsters");
+			System.out.print("There are no monsters " + game.getCurrentRoom().getDescription());
 		}
-		{
-			System.out.println("There is a " + monsterInRoom.getName());
-			System.out.println("What do you want to do? fight or run.");
+		else {
+			System.out.println("There is a " + monsterInRoom.getName() + " " + game.getCurrentRoom().getDescription());
+			return Fight.fight(monsterInRoom, game.getPlayer());
 		}
-		System.out.println(" " + currentRoom.getDescription());
-
 		return false;
 	}
 

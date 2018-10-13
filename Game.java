@@ -31,6 +31,10 @@ public class Game{
 		this.currentRoom = newRoom;
 	}
 
+	public Player getPlayer(){
+		return currentPlayer;
+	}
+
 	// getters and setters for weapon
 	public Item getCurrentWeapon()
 	{
@@ -93,7 +97,7 @@ public class Game{
 		System.out.println("What would you like to do? 'inspect', 'go', 'quit'");
 
 		while (! processCommand()) {
-			;
+			System.out.println("What would you like to do? 'inspect', 'go', 'quit'");
 		}
 		System.out.println("Thank you for playing our game. Bye");
 	}

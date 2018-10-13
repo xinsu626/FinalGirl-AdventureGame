@@ -24,10 +24,11 @@ public class Goer implements Action {
 			System.out.println(roomName);
 		}
 
+		//add loop to check for bad input
 		String roomChosen = UI.promptLine("Which room do you want to enter?").trim().toLowerCase();
 
 		game.setCurrentRoom(game.getRooms().get(roomChosen));
-		System.out.println("You are now in " + game.getCurrentRoom());
+		System.out.println("You are now " + game.getCurrentRoom().getDescription());
 
 		return false;
 	}

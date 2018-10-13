@@ -45,8 +45,8 @@ public class Player{
 	//	return strength;}
 
 	public void checkStatus(){
-	System.out.println("\tYour health: " + health);
-	//System.out.println("\tYour strength: " + strength);
-	System.out.println("\tYou have: " + currentWeapon.name + " in hand.");
+		System.out.println("Your health: " + health);
+		System.out.println("You have: " + currentWeapon.name + " in hand.");
+		// Put in current room
 	}
 } 

@@ -15,7 +15,7 @@ null
 in the closet.
 
 bathroom
-Ghost
+ghost
 null
 1
 3
