@@ -73,7 +73,7 @@ public class Game{
 		String line = UI.promptLine("> ").trim(); // get user input
 		//String[] tokens = line.trim().split("\\s+"); // split user input to tokens in a list
 
-		if (line == "quit"){
+		if (line.equals("quit")){
 			return true;
 		}
 

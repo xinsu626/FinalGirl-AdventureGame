@@ -16,7 +16,7 @@ in the closet.
 
 bathroom
 ghost
-null
+knife
 1
 3
 in the bathroom.

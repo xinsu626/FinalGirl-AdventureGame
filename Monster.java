@@ -76,8 +76,12 @@ public class Monster{
 
 	public void checkStatus()
 	{
-		System.out.println(monsterName + "'s strength: " + currentStrength);
-		System.out.println(monsterName + "'s health: " + currentHealth);
+		if (currentHealth > 0)
+		{
+			System.out.println(monsterName + "'s strength: " + currentStrength);
+			System.out.println(monsterName + "'s health: " + currentHealth);
+		}
+
 	}
 
 }

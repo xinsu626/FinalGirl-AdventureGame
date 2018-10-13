@@ -28,8 +28,13 @@ public class Goer implements Action {
 		String roomChosen = UI.promptLine("Which room do you want to enter?").trim().toLowerCase();
 
 		game.setCurrentRoom(game.getRooms().get(roomChosen));
-		System.out.println("You are now " + game.getCurrentRoom().getDescription());
-
+		Monster monsterInRoom = game.getCurrentRoom().getMonster();
+		if(monsterInRoom != null) {
+			System.out.println("There is a " + monsterInRoom.getName() + " " + game.getCurrentRoom().getDescription());
+			if(Fight.fight(game.getPlayer(), game.getCurrentRoom())) {
+				return true;
+			}
+		}
 		return false;
 	}
 

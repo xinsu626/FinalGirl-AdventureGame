@@ -5,17 +5,20 @@ public class Fight
 {
 	private static Random rand = new Random();
 
-	public static boolean fight(Monster currentMonster, Player currentPlayer)
+	public static boolean fight(Player currentPlayer, Room currentRoom)
 	{
+		Monster currentMonster = currentRoom.getMonster();
+
 		int healthPotionDropPercentage = 50;
 		System.out.println(currentMonster.getName() + " is coming!!!!");
-		
+		currentPlayer.checkStatus();
+		currentMonster.checkStatus();
+
+
 		while (currentMonster.getCurrentHealth() > 0)
 		{
-			currentPlayer.checkStatus();
-			currentMonster.checkStatus();
 			Boolean toFight = UI.agree("Do you want to fight? If you decline, you will attempt to flee.");
-
+			System.out.println("-------------------");
 			if (toFight)
 			{
 				int damage = rand.nextInt(currentPlayer.getCurrentWeapon().getAttribute());
@@ -24,6 +27,7 @@ public class Fight
 				currentPlayer.incrementHealth(damageTaken);
 				currentPlayer.checkStatus();
 				currentMonster.checkStatus();
+
 
 				if (currentPlayer.getHealth() <= 0)
 				{
@@ -50,8 +54,9 @@ public class Fight
 			System.out.println("Your health is really low.");
 		}
 
-		System.out.println("-------------------------------------------");
+		System.out.println("------------------fight over-------------------------");
 		System.out.println(currentMonster.getName() + " was defeated!");
+		currentRoom.killMonster();
 		currentPlayer.checkStatus();
 
 		if (rand.nextInt(100) < healthPotionDropPercentage)

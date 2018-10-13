@@ -22,7 +22,7 @@ public class Room{
 	}
 
 
-	// create rooms 
+	// create rooms
 	public static HashMap<String, Room> createRooms(Scanner in){
 
 		// empty rooms hashmap
@@ -54,7 +54,7 @@ public class Room{
 			}
 
 			if (!itemName.equals("null")){
-				item = items.get(monsterName);
+				item = items.get(itemName);
 			}
 			else{
 				item = null;
@@ -63,7 +63,7 @@ public class Room{
 			Room newRoom = new Room(name, monster, item, x, y, description);
 			rooms.put(name, newRoom);
 		}
-		
+
 		in.close();
 
 		return rooms;
@@ -73,8 +73,9 @@ public class Room{
 	//public void setName(String name){
 	//	this.name = name;}
 
-	//public void setMonster(String monsterName){
-	//	this.monster = monsters.get(monsterName);}
+	public void killMonster(){
+		monster = null;
+	}
 	
 	//public void setItem(String itemName){
 	//	this.item = items.get(itemName);}

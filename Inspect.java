@@ -37,8 +37,7 @@ public class Inspect implements Action
 			System.out.print("There are no monsters " + game.getCurrentRoom().getDescription());
 		}
 		else {
-			System.out.println("There is a " + monsterInRoom.getName() + " " + game.getCurrentRoom().getDescription());
-			return Fight.fight(monsterInRoom, game.getPlayer());
+
 		}
 		return false;
 	}
