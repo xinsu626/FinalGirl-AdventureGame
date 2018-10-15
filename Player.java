@@ -5,19 +5,21 @@ public class Player{
 	public String name;
 	public int health;
 	public Item currentWeapon;
+	public Room currentRoom;
 
 	// consturctor
-	public Player(String name)
+	public Player(String name, Game game)
 	{
 		this.name = name;
-		this.health = 100; //initial health
-		this.currentWeapon = new Item("slingshot", "weapon", 5);
+		health = 100; //initial health
+		currentWeapon = new Item("slingshot", "weapon", 5);
+		currentRoom = game.getCurrentRoom();
 	}
 
 	// create player
-	public static Player createPlayer(){
+	public static Player createPlayer(Game game){
 		String playerName = UI.promptLine("Enter a name for your player: ").trim();
-		Player newPlayer = new Player(playerName);
+		Player newPlayer = new Player(playerName, game);
 		System.out.println("Your player's name is now " + playerName);
 		return newPlayer;
 	}
@@ -25,10 +27,6 @@ public class Player{
 	public int getHealth(){
 		return health;
 	}
-
-	//public void incrementStrength(int x){
-	//	strength += x;
-	//}
 
 	public Item getCurrentWeapon(){
 		return currentWeapon;
@@ -46,7 +44,8 @@ public class Player{
 
 	public void checkStatus(){
 		System.out.println("Your health: " + health);
-		System.out.println("You have: " + currentWeapon.name + " in hand.");
+		System.out.println("Your weapon: " + currentWeapon.name);
+		System.out.println("Current room: " + currentRoom.getName());
 		// Put in current room
 	}
 } 

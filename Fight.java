@@ -28,7 +28,6 @@ public class Fight
 				currentPlayer.checkStatus();
 				currentMonster.checkStatus();
 
-
 				if (currentPlayer.getHealth() <= 0)
 				{
 					System.out.println("You're dead!");

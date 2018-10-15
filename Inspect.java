@@ -17,7 +17,7 @@ public class Inspect implements Action
 		monsterInRoom = game.getCurrentRoom().getMonster();
 
 		if (itemInRoom == null){
-			System.out.print("There are no items");
+			System.out.println("There are no items.");
 		}
 		else
 		{
@@ -35,12 +35,10 @@ public class Inspect implements Action
 
 		player.checkStatus();
 
-		if (monsterInRoom == null){
-			System.out.print("There are no monsters " + game.getCurrentRoom().getDescription());
-		}
-		else {
+//		if (monsterInRoom == null){
+//			System.out.print("There are no monsters " + game.getCurrentRoom().getDescription());
+//		}
 
-		}
 		return false;
 	}
 

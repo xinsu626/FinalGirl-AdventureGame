@@ -1,42 +1,20 @@
 # rooms data follows
 # for each room: name line, monster lines, item lines,x-coordinate, y-coordinate
 conservatory
-zombie
-null
 in the conservatory.
 
 closet
-null
-null
 in the closet.
 
-bathroom
-ghost
-knife
-in the bathroom.
-
 hallway
-null
-null
 in the hallway.
 
-bedroom 1
-null
-superPotion
-in bedroom 1.
+bedroom
+in the bedroom.
 
-bedroom 2
-null
-null
-in bedroom 2.
-
-dressing room
-null
-null
-in the dressing room.
+study
+in the study.
 
 stairway
-mummy
-null
 in the stairway.
 

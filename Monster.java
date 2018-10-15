@@ -14,7 +14,6 @@ public class Monster{
 	private int maxMonsterStrength;
 	private int miniMonsterStrength;
 	private String monsterName;
-	private String category; //["boss", "easy"]
 	private int currentHealth;
 	private int currentStrength;
 	// private String name; //["Zombie", "Skeletons", "Ghost"] ["Mummy", "Werewolf", "Vampire"]
@@ -26,7 +25,6 @@ public class Monster{
 		this.miniMonsterStrength = miniMonsterStrength;
 		this.maxMonsterHealth = maxMonsterHealth;
 		this.miniMonsterHealth = miniMonsterHealth;
-		this.category = category;
 		this.currentHealth = rand.nextInt(maxMonsterHealth - miniMonsterHealth) + miniMonsterHealth; //genrate random number from range
 		this.currentStrength = rand.nextInt(maxMonsterStrength - miniMonsterStrength) + miniMonsterStrength;
 	}
@@ -66,11 +64,6 @@ public class Monster{
 	}
 	public String getName(){
 		return monsterName;
-	}
-
-	public String getcategory()
-	{
-		return category;
 	}
 
 	public void checkStatus()

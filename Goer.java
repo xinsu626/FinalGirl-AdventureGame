@@ -19,13 +19,13 @@ public class Goer implements Action {
 		//String roomName = tokens[1];
 		//Room nextRoom = game.getNamedRoom(roomName);
 
-		System.out.println("The rooms you can enter are:");
+		System.out.println("Select a room to enter:");
 		for (String roomName : game.getRooms().keySet()) {
-			System.out.println(roomName);
+			System.out.println('\t'+roomName);
 		}
 
 		//add loop to check for bad input
-		String roomChosen = UI.promptLine("Which room do you want to enter?").trim().toLowerCase();
+		String roomChosen = UI.promptLine("Select a room to enter:").trim().toLowerCase();
 
 		game.setCurrentRoom(game.getRooms().get(roomChosen));
 		Monster monsterInRoom = game.getCurrentRoom().getMonster();

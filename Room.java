@@ -1,25 +1,27 @@
 import java.util.HashMap;
 import java.util.Scanner;
-//import java.util.ArrayList;
+import java.util.Random;
 
 public class Room{
 	// declare instance variables
 	private String name;
-	private Monster monster;
 	private Item item;
 	private String description;
+    private Monster monster;
 
 	// constructor
-	public Room(String name, Monster monster, Item item, String description){
+	public Room(String name, Item item, String description, Monster monster){
 		this.name = name;
-		this.monster = monster;
 		this.item = item;
 		this.description = description;
+        this.monster = monster;
 	}
 
 
 	// create rooms
 	public static HashMap<String, Room> createRooms(Scanner in){
+		// Random object created to assign monsters and items
+	    Random random = new Random();
 
 		// empty rooms hashmap
 		HashMap<String, Room> rooms = new HashMap<String, Room>();
@@ -27,34 +29,44 @@ public class Room{
 		// create HashMap of monsters
 		Scanner monsterScanner = ResourceUtil.openFileScanner("monster_data.txt");
 		HashMap<String, Monster> monsters = Monster.createMonsters(monsterScanner);
+		String[] monsterKeys = monsters.keySet().toArray(new String[monsters.size()]);
 
 		// create HashMap of items
 		Scanner itemScanner = ResourceUtil.openFileScanner("item_data.txt");
 		HashMap<String, Item> items = Item.createItems(itemScanner);
+        String[] itemKeys = items.keySet().toArray(new String[items.size()]);
 
 		while (in.hasNext()){
+            Monster monster;
+            Item item;
+
 			String name = FileUtil.getNonCommentLine(in);
-			String monsterName = FileUtil.getNonCommentLine(in);
-			String itemName = FileUtil.getNonCommentLine(in);
 			String description = FileUtil.readParagraph(in);
-			Monster monster;
-			Item item;
 
-			if (!monsterName.equals("null")){
-				monster = monsters.get(monsterName);
-			}
-			else{
-				monster = null;
-			}
+			if(!name.equals("stairway")){
+                Random probability = new Random();
+                if(probability.nextInt(3) == 0){
+                    int randomNum = random.nextInt(monsterKeys.length);
+                    String monsterName = monsterKeys[randomNum];
+                    monster = monsters.get(monsterName);
+                } else {
+                    monster = null;
+                }
 
-			if (!itemName.equals("null")){
-				item = items.get(itemName);
-			}
-			else{
-				item = null;
-			}
+                if(probability.nextInt(3) == 0){
+                    int randomNum = random.nextInt(itemKeys.length);
+                    String itemName = itemKeys[randomNum];
+                    item = items.get(itemName);
+                } else{
+                    item = null;
+                }
+            }
+            else{
+                monster = monsters.get("mummy");
+                item = null;
+            }
 
-			Room newRoom = new Room(name, monster, item, description);
+			Room newRoom = new Room(name, item, description, monster);
 			rooms.put(name, newRoom);
 		}
 
@@ -63,9 +75,6 @@ public class Room{
 		return rooms;
 	}
 
-	// setters
-	//public void setName(String name){
-	//	this.name = name;}
 
 	public void killMonster(){
 		monster = null;
@@ -75,15 +84,6 @@ public class Room{
 	{
 		item =null;
 	}
-
-	//public void setItem(String itemName){
-	//	this.item = items.get(itemName);}
-	
-	//public void setXCoord(int xCoord){
-	//	this.xCoord = xCoord;}
-
-	//public void setYCoord(int yCoord){
-	//	this.yCoord = yCoord;}
 
 	// getters 
 	public String getName(){
@@ -124,7 +124,7 @@ public class Room{
 		return map;
 	}
 
-	// generate map view 
+	// generate map view
 	public static void viewMap(ArrayList<ArrayList<Room>> map){
 		String lineString = "*************************************************";
 		String dashString = "|               |               |               |";

@@ -14,13 +14,12 @@ public class Game{
 	private Item currentWeapon;
 	private HashMap<String, Item> items; // allow all items to be found by name
 	private Player currentPlayer;
+
 	//private Scanner userInputScanner;
 	private String welcomeString;
 	private HashMap<String, Monster> monsters; // allow all monsters to be found by name
 
-	// getters and settes for room
-
-
+	// getters and setters for room
 	public Room getCurrentRoom()
 	{
 		return currentRoom;
@@ -59,7 +58,7 @@ public class Game{
 		currentRoom = rooms.get("hallway");
 
 		// player
-		currentPlayer = Player.createPlayer();
+		currentPlayer = Player.createPlayer(this);
 
 		// user input scanner 
 		//userInputScanner = new Scanner(System.in);
@@ -79,7 +78,7 @@ public class Game{
 
 		if (line.length() == 0 || !CommandMapper.isCommand(line))
 		{
-			System.out.println("I don't know what you mean...");
+			System.out.println("Pleas enter a command.");
 			return false;
 		}
 
@@ -90,14 +89,14 @@ public class Game{
 	private void play()
 	{
 		System.out.println(welcomeString);
-		System.out.println("You are in " + currentRoom.getName());
-		//ArrayList<ArrayList<Room>> map = Room.buildMap(rooms);
-		//Room.viewMap(map);
+		System.out.println("You are " + currentRoom.getDescription());
+//		ArrayList<ArrayList<Room>> map = Room.buildMap(rooms);
+//		Room.viewMap(map);
 		currentPlayer.checkStatus();
-		System.out.println("What would you like to do? 'inspect', 'go', 'quit'");
+		System.out.println("What would you like to do? [INSPECT, GO, QUIT]");
 
-		while (! processCommand()) {
-			System.out.println("What would you like to do? 'inspect', 'go', 'quit'");
+		while (!processCommand()) {
+			System.out.println("What would you like to do? [INSPECT, GO, QUIT]");
 		}
 		System.out.println("Thank you for playing our game. Bye");
 	}
