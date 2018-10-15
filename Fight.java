@@ -45,11 +45,6 @@ public class Fight
 		currentRoom.killMonster();
 		currentPlayer.checkStatus();
 
-		if (random.nextInt(100) < healthPotionDropPercentage)
-		{
-			// need to figure out how to run potion
-		}
-
 		return "won";
 	}
 

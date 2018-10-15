@@ -64,13 +64,12 @@ public class Game{
 		//userInputScanner = new Scanner(System.in);
 
 		// initialize command mapper
-		CommandMapper.init(this, currentRoom, currentPlayer);
+		CommandMapper.init(this);
 	}
 
 	private boolean processCommand()
 	{
-		String line = UI.promptLine("> ").trim(); // get user input
-		//String[] tokens = line.trim().split("\\s+"); // split user input to tokens in a list
+		String line = UI.promptLine("> ").trim().toUpperCase(); // get user input
 
 		if (line.equals("quit")){
 			return true;
@@ -82,7 +81,7 @@ public class Game{
 			return false;
 		}
 
-		Action action = CommandMapper.getAction(line); // the response here is any "object" implement response interface
+		Action action = CommandMapper.getAction(line);
 		return action.execute();
 	}
 
@@ -93,12 +92,12 @@ public class Game{
 //		ArrayList<ArrayList<Room>> map = Room.buildMap(rooms);
 //		Room.viewMap(map);
 		currentPlayer.checkStatus();
-		System.out.println("What would you like to do? [INSPECT, GO, QUIT]");
+		System.out.println("Please select an action to take. [INSPECT, GO, HELP, QUIT]");
 
 		while (!processCommand()) {
-			System.out.println("What would you like to do? [INSPECT, GO, QUIT]");
+			System.out.println("Please select an action to take. [INSPECT, GO, HELP, QUIT]");
 		}
-		System.out.println("Thank you for playing our game. Bye");
+		System.out.println("Thank you for playing our game. Bye!");
 	}
 
 	public HashMap<String,Room> getRooms(){

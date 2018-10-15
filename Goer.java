@@ -24,9 +24,12 @@ public class Goer implements Action {
 			System.out.println('\t' + roomName);
 		}
 
-		//add loop to check for bad input
 		String roomChosen = UI.promptLine("Select a room to enter:").trim().toLowerCase();
 
+		while (!game.getRooms().keySet().contains(roomChosen)){
+			System.out.println("Not a room. Enter another one.");
+			roomChosen = UI.promptLine("Select a room to enter:").trim().toLowerCase();
+		}
 		game.setCurrentRoom(game.getRooms().get(roomChosen));
 		Monster monsterInRoom = game.getCurrentRoom().getMonster();
 
@@ -43,10 +46,10 @@ public class Goer implements Action {
 	}
 
 	public String getCommandName () {
-		return "go";
+		return "GO";
 	}
 
 	public String help () {
-		return "Please enter: go roomName";
+		return "Enter GO to see a list of rooms to enter.";
 	}
 }

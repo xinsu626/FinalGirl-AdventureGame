@@ -25,7 +25,7 @@ public class Inspect implements Action
 
 			if (itemInRoom.getCategory().equals("potion")){
 				player.incrementHealth(itemInRoom.getAttribute());
-				System.out.println(game.getCurrentRoom().getDescription()+"You drink it! Your health increases by " + itemInRoom.getAttribute());
+				System.out.println(game.getCurrentRoom().getDescription()+"You drink " + itemInRoom.getName() + "! Your health increases by " + itemInRoom.getAttribute());
 			}
 			else if (itemInRoom.getCategory().equals("weapon")){
 				player.setCurrentWeapon(itemInRoom);
@@ -44,10 +44,10 @@ public class Inspect implements Action
 
 	public String help()
 	{
-		return "please just enter: inspect";
+		return "Enter INSPECT to see the contents of the room.";
 	}
 
 	public String getCommandName(){
-		return "inspect";
+		return "INSPECT";
 	}
 }
