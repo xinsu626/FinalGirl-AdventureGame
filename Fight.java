@@ -1,11 +1,10 @@
-import java.util.Scanner;
 import java.util.Random;
 
 public class Fight
 {
-	private static Random rand = new Random();
+	private static Random random = new Random();
 
-	public static boolean fight(Player currentPlayer, Room currentRoom)
+	public static String fight(Player currentPlayer, Room currentRoom)
 	{
 		Monster currentMonster = currentRoom.getMonster();
 
@@ -14,37 +13,25 @@ public class Fight
 		currentPlayer.checkStatus();
 		currentMonster.checkStatus();
 
-
 		while (currentMonster.getCurrentHealth() > 0)
 		{
-			Boolean toFight = UI.agree("Do you want to fight? If you decline, you will attempt to flee.");
+			Boolean toFlee = UI.agree("Do you want to flee?");
 			System.out.println("-------------------");
-			if (toFight)
-			{
-				int damage = rand.nextInt(currentPlayer.getCurrentWeapon().getAttribute());
-				int damageTaken = -rand.nextInt(currentMonster.getCurrentStrength());
-				currentMonster.setCurrentHealth(currentMonster.getCurrentHealth() - damage);
-				currentPlayer.incrementHealth(damageTaken);
-				currentPlayer.checkStatus();
-				currentMonster.checkStatus();
 
-				if (currentPlayer.getHealth() <= 0)
-				{
-					System.out.println("You're dead!");
-					return true;
+			if (toFlee){
+				if (random.nextBoolean()) {
+					System.out.println("You successfully fled from the monster. You're back in the hallways.");
+					return "fled";
+				} else{
+					System.out.println("You slipped and fell, and the monster got a second attack.");
+					if (damageTaken(currentPlayer, currentMonster)){
+						return "dead";
+					}
 				}
 			}
-			else
-			{
-				/*public int next() {
-				if (random.nextBoolean()) {
-					System.out.println("You successfully fled from the monster.");
-					return move.hallway;
-				} else {
-					System.out.println("You slipped and fell, and the monster attacked.");
-					return player.health - 10;
-				}*/
-				;
+
+			if (damageTaken(currentPlayer, currentMonster)){
+				return "dead";
 			}
 		}
 
@@ -58,12 +45,28 @@ public class Fight
 		currentRoom.killMonster();
 		currentPlayer.checkStatus();
 
-		if (rand.nextInt(100) < healthPotionDropPercentage)
+		if (random.nextInt(100) < healthPotionDropPercentage)
 		{
 			// need to figure out how to run potion
 		}
 
-		return false;
+		return "won";
 	}
 
+	private static boolean damageTaken(Player currentPlayer, Monster currentMonster){
+		int damage = random.nextInt(currentPlayer.getCurrentWeapon().getAttribute());
+		int damageTaken = -random.nextInt(currentMonster.getCurrentStrength());
+
+		currentMonster.setCurrentHealth(currentMonster.getCurrentHealth() - damage);
+		currentPlayer.incrementHealth(damageTaken);
+		currentPlayer.checkStatus();
+		currentMonster.checkStatus();
+
+		if (currentPlayer.getHealth() <= 0)
+		{
+			System.out.println("You're dead!");
+			return true;
+		}
+		return false;
+	}
 }
