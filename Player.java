@@ -5,7 +5,7 @@ public class Player{
 	public String name;
 	public int health;
 	public Item currentWeapon;
-	public Room currentRoom;
+	private Game game;
 
 	// consturctor
 	public Player(String name, Game game)
@@ -13,7 +13,7 @@ public class Player{
 		this.name = name;
 		health = 100; //initial health
 		currentWeapon = new Item("slingshot", "weapon", 5);
-		currentRoom = game.getCurrentRoom();
+		this.game = game;
 	}
 
 	// create player
@@ -45,7 +45,6 @@ public class Player{
 	public void checkStatus(){
 		System.out.println("Your health: " + health);
 		System.out.println("Your weapon: " + currentWeapon.name);
-		System.out.println("Current room: " + currentRoom.getName());
-		// Put in current room
+		System.out.println("Current room: " + game.getCurrentRoom().getName());
 	}
 } 

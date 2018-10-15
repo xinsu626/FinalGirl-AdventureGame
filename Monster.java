@@ -48,7 +48,6 @@ public class Monster{
 			monsters.put(monsterName, new Monster(monsterName, monsterPic, maxMonsterHealth, miniMonsterHealth,
 					maxMonsterStrength, miniMonsterStrength));	 // put the pairs in HashMap instantiate monsters
 		}
-		in.close(); // close the scanner object 
 
 		return monsters;
 	}

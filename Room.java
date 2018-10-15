@@ -27,13 +27,11 @@ public class Room{
 		HashMap<String, Room> rooms = new HashMap<String, Room>();
 
 		// create HashMap of monsters
-		Scanner monsterScanner = ResourceUtil.openFileScanner("monster_data.txt");
-		HashMap<String, Monster> monsters = Monster.createMonsters(monsterScanner);
+		HashMap<String, Monster> monsters = Monster.createMonsters(in);
 //		String[] monsterKeys = monsters.keySet().toArray(new String[monsters.size()]);
 
 		// create HashMap of items
-		Scanner itemScanner = ResourceUtil.openFileScanner("item_data.txt");
-		HashMap<String, Item> items = Item.createItems(itemScanner);
+		HashMap<String, Item> items = Item.createItems(in);
 //        String[] itemKeys = items.keySet().toArray(new String[items.size()]);
 
 		while (true){

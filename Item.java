@@ -31,7 +31,6 @@ public class Item {
 			items.put(name, newItem);
 		}
 
-		in.close();
 		return items;
 	}
 

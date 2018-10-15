@@ -46,7 +46,7 @@ public class Game{
 	}
 
 	// constructor
-	public Game(String welcomeTxt, String level01Txt, String itemTxt)
+	public Game(String welcomeTxt, String level01Txt)
 	{
 		// welcome 
 		Scanner worldDataScanner = ResourceUtil.openFileScanner(welcomeTxt); // create a scanner object, read txt file in
