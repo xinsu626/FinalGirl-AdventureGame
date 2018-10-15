@@ -11,6 +11,8 @@ public class Fight
 
 		int healthPotionDropPercentage = 50;
 		System.out.println(currentMonster.getName() + " is coming!!!!");
+		currentMonster.printMonster();
+
 		currentPlayer.checkStatus();
 		currentMonster.checkStatus();
 

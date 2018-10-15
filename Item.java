@@ -16,11 +16,14 @@ public class Item {
 
 	// create items
 	public static HashMap<String, Item> createItems(Scanner in) {
-		// empty items hashmap
+		// empty items HashMap
 		HashMap<String, Item> items = new HashMap<String, Item>();
 
-		while (in.hasNext()) {
+		while (true) {
 			String name = FileUtil.getNonCommentLine(in);
+			if(name.equals("****************************************")){
+				break;
+			}
 			String category = FileUtil.getNonCommentLine(in);
 			int attribute = FileUtil.getInt(in);
 

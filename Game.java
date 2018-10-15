@@ -3,7 +3,7 @@ import java.util.*;
 public class Game{
 
 	public static void main(String[] args) {
-		Game game = new Game("starting_data.txt", "level_01.txt", "item_data.txt");
+		Game game = new Game("starting_data.txt", "level_1_master.txt");
 		game.play();
 	}
 
@@ -60,9 +60,6 @@ public class Game{
 		// player
 		currentPlayer = Player.createPlayer(this);
 
-		// user input scanner 
-		//userInputScanner = new Scanner(System.in);
-
 		// initialize command mapper
 		CommandMapper.init(this, currentRoom, currentPlayer);
 	}
@@ -70,7 +67,6 @@ public class Game{
 	private boolean processCommand()
 	{
 		String line = UI.promptLine("> ").trim(); // get user input
-		//String[] tokens = line.trim().split("\\s+"); // split user input to tokens in a list
 
 		if (line.equals("quit")){
 			return true;
@@ -90,8 +86,6 @@ public class Game{
 	{
 		System.out.println(welcomeString);
 		System.out.println("You are " + currentRoom.getDescription());
-//		ArrayList<ArrayList<Room>> map = Room.buildMap(rooms);
-//		Room.viewMap(map);
 		currentPlayer.checkStatus();
 		System.out.println("What would you like to do? [INSPECT, GO, QUIT]");
 

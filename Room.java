@@ -29,42 +29,29 @@ public class Room{
 		// create HashMap of monsters
 		Scanner monsterScanner = ResourceUtil.openFileScanner("monster_data.txt");
 		HashMap<String, Monster> monsters = Monster.createMonsters(monsterScanner);
-		String[] monsterKeys = monsters.keySet().toArray(new String[monsters.size()]);
+//		String[] monsterKeys = monsters.keySet().toArray(new String[monsters.size()]);
 
 		// create HashMap of items
 		Scanner itemScanner = ResourceUtil.openFileScanner("item_data.txt");
 		HashMap<String, Item> items = Item.createItems(itemScanner);
-        String[] itemKeys = items.keySet().toArray(new String[items.size()]);
+//        String[] itemKeys = items.keySet().toArray(new String[items.size()]);
 
-		while (in.hasNext()){
-            Monster monster;
-            Item item;
-
+		while (true){
 			String name = FileUtil.getNonCommentLine(in);
+			if(name.equals("****************************************")){
+				break;
+			}
 			String description = FileUtil.readParagraph(in);
+			Monster monster;
+			Item item;
 
-			if(!name.equals("stairway")){
-                Random probability = new Random();
-                if(probability.nextInt(3) == 0){
-                    int randomNum = random.nextInt(monsterKeys.length);
-                    String monsterName = monsterKeys[randomNum];
-                    monster = monsters.get(monsterName);
-                } else {
-                    monster = null;
-                }
+			if(name.equals("stairway")){
+				monster = monsters.get("mummy");
+			} else{
+				monster = null;
+			}
 
-                if(probability.nextInt(3) == 0){
-                    int randomNum = random.nextInt(itemKeys.length);
-                    String itemName = itemKeys[randomNum];
-                    item = items.get(itemName);
-                } else{
-                    item = null;
-                }
-            }
-            else{
-                monster = monsters.get("mummy");
-                item = null;
-            }
+			item = null;
 
 			Room newRoom = new Room(name, item, description, monster);
 			rooms.put(name, newRoom);
@@ -73,6 +60,10 @@ public class Room{
 		in.close();
 
 		return rooms;
+	}
+
+	public static void randomMonsters(){
+
 	}
 
 
