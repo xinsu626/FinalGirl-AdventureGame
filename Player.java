@@ -17,10 +17,9 @@ public class Player{
 	}
 
 	// create player
-	public static Player createPlayer(Game game){
-		String playerName = UI.promptLine("Enter a name for your player: ").trim();
-		Player newPlayer = new Player(playerName, game);
-		System.out.println("Your player's name is now " + playerName);
+	public static Player createPlayer(Game game, String name){
+		Player newPlayer = new Player(name, game);
+		System.out.println("Your player's name is now " + name);
 		return newPlayer;
 	}
 

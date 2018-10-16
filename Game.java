@@ -3,8 +3,21 @@ import java.util.*;
 public class Game{
 
 	public static void main(String[] args) {
-		Game game = new Game("starting_data.txt", "level_01.txt", "item_data.txt");
-		game.play();
+
+		String[] itemDataList = {"level_1_master.txt", "level_2_master.txt", "level_3_master.txt"};
+		Game game;
+
+		String playerName = UI.promptLine("Enter a name for your player: ").trim();
+
+		for (String i: itemDataList){
+			game = new Game(i, playerName);
+			game.play();
+			if (game.getPlayer().health <= 0){
+				return;
+			}
+		}
+
+		System.out.println("Congratulations, you've escaped the haunted house!\n");
 	}
 
 
@@ -46,24 +59,16 @@ public class Game{
 	}
 
 	// constructor
-	public Game(String welcomeTxt, String level01Txt, String itemTxt)
+	public Game(String txt, String name)
 	{
-		// welcome 
-		Scanner worldDataScanner = ResourceUtil.openFileScanner(welcomeTxt); // create a scanner object, read txt file in
-		welcomeString = FileUtil.readParagraph(worldDataScanner);
-
-		// rooms
-		Scanner levelScanner = ResourceUtil.openFileScanner(level01Txt);
+		Scanner levelScanner = ResourceUtil.openFileScanner(txt);
+		welcomeString = FileUtil.readParagraph(levelScanner);
 		rooms = Room.createRooms(levelScanner);
 		currentRoom = rooms.get("hallway");
 
 		// player
-		currentPlayer = Player.createPlayer(this);
+		currentPlayer = Player.createPlayer(this, name);
 
-		// user input scanner 
-		//userInputScanner = new Scanner(System.in);
-
-		// initialize command mapper
 		CommandMapper.init(this);
 	}
 
