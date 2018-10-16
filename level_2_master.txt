@@ -79,16 +79,16 @@ weapon
 # rooms data follows
 # for each room: name line, monster lines, item lines,x-coordinate, y-coordinate
 library
-in the conservatory.
+in the library.
 
 bathroom
-in the closet.
+in the bathroom.
 
 bedroom2
-in the bedroom.
+in the bedroom2.
 
 gameroom
-in the study.
+in the gameroom.
 
 hallway
 in the hallway.
