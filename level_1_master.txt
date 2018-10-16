@@ -92,7 +92,7 @@ in the study.
 hallway
 in the hallway.
 
-stairway
-in the stairway.
+exit
+in the exit.
 
 ****************************************
