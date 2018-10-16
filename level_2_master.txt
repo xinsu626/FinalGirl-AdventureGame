@@ -1,0 +1,99 @@
+
+Ah, you've made it to the next level of the house. Let's see what this floor has in store...
+
+# Welcome to the monster production base
+# The blueprint for monster production is：
+# - name
+# - maxMonsterHealth
+# - miniMonsterHealth
+# - maxMonsterStrength
+# - miniMonsterStrength
+# - category
+zombie
+75
+40
+5
+1
+ ╱▔▔▔▔▔▔▔▔▔╲
+▕     x     ▏
+▕  @     @  ▏
+▕     L   x ▏
+▕   ╭━━━╮   ▏
+▕ x ╰━━━╯   ▏
+ ╲_________╱
+
+skeleton
+75
+40
+5
+1
+ ╱▔▔▔▔▔▔▔▔▔╲
+▕           ▏
+▕  ╭╮   ╭╮  ▏
+▕  ╰╯   ╰╯  ▏
+▕     ^     ▏
+ ╲ ||||||| ╱
+   |||||||
+  ▕_______▏
+
+ghost
+75
+40
+5
+1
+ ╱▔▔▔▔▔▔▔▔╲
+▕  ╭━╮ ╭━╮ ▏
+▕  ┃╭╯ ╰╮┃ ▏
+▕  ╰╯╭━╮╰╯ ▏
+▕    ┃ ┃   ▏
+▕    ╰━╯   ▏
+▕╱╲╱╲╱╲╱╲╱╲▏
+
+werewolf
+100
+80
+10
+5
+  A________A
+ ╱          ╲
+ ╱ ___  ___ ╲
+ ╱  ╰╯  ╰╯  ╲
+ ╱    ╰╯    ╲
+ ╱   VVVVV  ╲
+ ╱   ^^^^^  ╲
+  ╲________╱
+
+****************************************
+potion
+potion
+20
+#
+superPotion
+potion
+40
+#
+silverSword
+weapon
+40
+****************************************
+# rooms data follows
+# for each room: name line, monster lines, item lines,x-coordinate, y-coordinate
+library
+in the conservatory.
+
+bathroom
+in the closet.
+
+bedroom2
+in the bedroom.
+
+gameroom
+in the study.
+
+hallway
+in the hallway.
+
+stairway
+in the stairway.
+
+****************************************
