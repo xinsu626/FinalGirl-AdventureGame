@@ -8,7 +8,6 @@ public class Fight
 	{
 		Monster currentMonster = currentRoom.getMonster();
 
-		int healthPotionDropPercentage = 50;
 		System.out.println(currentMonster.getName() + " is coming!!!!");
 		currentPlayer.checkStatus();
 		currentMonster.checkStatus();

@@ -2,23 +2,24 @@ import java.util.Scanner;
 
 public class Player{
 	// declare instance variables 
-	public String name;
-	public int health;
-	public Item currentWeapon;
+	private String name;
+	private int health;
+	private Item currentWeapon;
 	private Game game;
+	private boolean hasPowerWeapon;
 
-	// consturctor
-	public Player(String name, Game game)
+	// constructor
+	public Player(String name, Game game, Item currentWeapon)
 	{
 		this.name = name;
+		this.currentWeapon = currentWeapon;
 		health = 100; //initial health
-		currentWeapon = new Item("slingshot", "weapon", 5);
 		this.game = game;
 	}
 
 	// create player
-	public static Player createPlayer(Game game, String name){
-		Player newPlayer = new Player(name, game);
+	public static Player createPlayer(Game game, String name, Item currentWeapon){
+		Player newPlayer = new Player(name, game, currentWeapon);
 		System.out.println("Your player's name is now " + name);
 		return newPlayer;
 	}
@@ -34,12 +35,17 @@ public class Player{
 	public void setCurrentWeapon(Item weapon){
 		currentWeapon = weapon;}
 
-	public void incrementHealth(int x){
+	public void incrementHealth(int x) {
 		health += x;
 	}
 
-	//public int getStrength(){
-	//	return strength;}
+	public void hasPowerWeapon(){
+		hasPowerWeapon = true;
+	}
+
+	public boolean checkPowerWeapon(){
+		return hasPowerWeapon;
+	}
 
 	public void checkStatus(){
 		System.out.println("Your health: " + health);

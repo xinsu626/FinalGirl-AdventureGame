@@ -30,6 +30,12 @@ public class Goer implements Action {
 			System.out.println("Not a room. Enter another one.");
 			roomChosen = UI.promptLine("Select a room to enter:").trim().toLowerCase();
 		}
+
+		if(game.getCurrentRoom().getName().equals("exit") && !game.getPlayer().checkPowerWeapon()){
+			System.out.println("I don't think I should go here yet...\nMaybe once I have a more powerful weapon.");
+			return false;
+		}
+
 		game.setCurrentRoom(game.getRooms().get(roomChosen));
 		Monster monsterInRoom = game.getCurrentRoom().getMonster();
 

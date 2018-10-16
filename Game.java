@@ -8,13 +8,15 @@ public class Game{
 		Game game;
 
 		String playerName = UI.promptLine("Enter a name for your player: ").trim();
+		Item currentWeapon = new Item("slingshot", "weapon", 5);
 
-		for (String i: itemDataList){
-			game = new Game(i, playerName);
+		for (String dataFile: itemDataList){
+			game = new Game(dataFile, playerName, currentWeapon);
 			game.play();
-			if (game.getPlayer().health <= 0){
+			if (game.getPlayer().getHealth() <= 0){
 				return;
 			}
+			currentWeapon = game.getPlayer().getCurrentWeapon();
 		}
 
 		System.out.println("Congratulations, you've escaped the haunted house!\n");
@@ -59,7 +61,7 @@ public class Game{
 	}
 
 	// constructor
-	public Game(String txt, String name)
+	public Game(String txt, String name, Item currentWeapon)
 	{
 		Scanner levelScanner = ResourceUtil.openFileScanner(txt);
 		welcomeString = FileUtil.readParagraph(levelScanner);
@@ -67,7 +69,7 @@ public class Game{
 		currentRoom = rooms.get("hallway");
 
 		// player
-		currentPlayer = Player.createPlayer(this, name);
+		currentPlayer = Player.createPlayer(this, name, currentWeapon);
 
 		CommandMapper.init(this);
 	}

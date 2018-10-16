@@ -29,6 +29,7 @@ public class Inspect implements Action
 			}
 			else if (itemInRoom.getCategory().equals("weapon")){
 				player.setCurrentWeapon(itemInRoom);
+				player.hasPowerWeapon();
 			}
 			game.getCurrentRoom().killItem();
 		}
