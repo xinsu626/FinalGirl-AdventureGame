@@ -1,0 +1,98 @@
+Welcome to FINAL GIRL'S ADVENTURE (unless you save her!).
+
+# Welcome to the monster production base
+# The blueprint for monster production is：
+# - name
+# - maxMonsterHealth
+# - miniMonsterHealth
+# - maxMonsterStrength
+# - miniMonsterStrength
+# - category
+zombie
+50
+25
+5
+1
+ ╱▔▔▔▔▔▔▔▔▔╲
+▕     x     ▏
+▕  @     @  ▏
+▕     L   x ▏
+▕   ╭━━━╮   ▏
+▕ x ╰━━━╯   ▏
+ ╲_________╱
+
+skeleton
+50
+25
+5
+1
+ ╱▔▔▔▔▔▔▔▔▔╲
+▕           ▏
+▕  ╭╮   ╭╮  ▏
+▕  ╰╯   ╰╯  ▏
+▕     ^     ▏
+ ╲ ||||||| ╱
+   |||||||
+  ▕_______▏
+
+ghost
+50
+25
+5
+1
+ ╱▔▔▔▔▔▔▔▔╲
+▕  ╭━╮ ╭━╮ ▏
+▕  ┃╭╯ ╰╮┃ ▏
+▕  ╰╯╭━╮╰╯ ▏
+▕    ┃ ┃   ▏
+▕    ╰━╯   ▏
+▕╱╲╱╲╱╲╱╲╱╲▏
+
+mummy
+100
+80
+10
+5
+ ╱▔▔▔▔▔▔▔▔▔╲
+▕ ┈╲┈┈┈┈╱┈  ▏
+▕┈╭╮ ┈┈ ╭╮┈ ▏
+▕┈╰╯ ┈┈ ╰╯ ┈▏
+▕ ┈┈┈╰┈┈┈┈  ▏
+▕ ┈╭━━━━╮ ┈ ▏
+▕ ┈╰━━━━╯ ┈ ▏
+┈╲_________╱┈
+
+****************************************
+potion
+potion
+20
+#
+superPotion
+potion
+40
+#
+flameThrower
+weapon
+30
+****************************************
+# rooms data follows
+# for each room: name line, monster lines, item lines,x-coordinate, y-coordinate
+conservatory
+in the conservatory.
+
+closet
+in the closet.
+
+bedroom
+in the bedroom.
+
+study
+in the study.
+
+hallway
+in the hallway.
+
+exit
+in the exit.
+
+****************************************
