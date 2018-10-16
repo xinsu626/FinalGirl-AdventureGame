@@ -36,6 +36,10 @@ public class Goer implements Action {
 			return false;
 		}
 
+		if (game.getCurrentRoom().getName().equals("exit")){
+			System.out.println("I think I'm going to need to fight this monster before I get to the next floor...")
+		}
+
 		game.setCurrentRoom(game.getRooms().get(roomChosen));
 		Monster monsterInRoom = game.getCurrentRoom().getMonster();
 
