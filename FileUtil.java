@@ -32,8 +32,6 @@ public class FileUtil{
         return wrapped;        
     }
 
-
-
 	public static String lineWrap(Scanner in){
 		String line = getNonCommentLine(in); // read first non comment line 
 		if (line == null){

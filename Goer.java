@@ -34,11 +34,13 @@ public class Goer implements Action {
 		game.setCurrentRoom(game.getRooms().get(roomChosen));
 		Monster monsterInRoom = game.getCurrentRoom().getMonster();
 
+
 		if (monsterInRoom != null) {
 			System.out.println("There is a " + monsterInRoom.getName() + " " + game.getCurrentRoom().getDescription());
 			String outcome = Fight.fight(game.getPlayer(), game.getCurrentRoom());
 			if (outcome.equals("dead")) {
 				Game.setGameIsOver();
+
 				return true;
 			} else if (outcome.equals("fled")) {
 				game.setCurrentRoom(game.getRooms().get("hallway"));

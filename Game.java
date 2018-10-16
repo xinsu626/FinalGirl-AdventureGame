@@ -6,6 +6,7 @@ public class Game{
 
 	public static void main(String[] args) {
 
+
 		String[] itemDataList = {"level_1_master.txt", "level_2_master.txt", "level_3_master.txt"};
 		Game game;
 
@@ -27,8 +28,8 @@ public class Game{
 		}
 
 		System.out.println("Congratulations, you've escaped the haunted house!\nBut unfortunately, the princess is in another house...");
-	}
 
+	}
 
 	// declare instance variable
 	private Room currentRoom;
@@ -68,6 +69,7 @@ public class Game{
 	}
 
 	// constructor
+
 	public Game(String txt, String name, Item currentWeapon)
 	{
 		Scanner levelScanner = ResourceUtil.openFileScanner(txt);
@@ -79,11 +81,15 @@ public class Game{
 		currentPlayer = Player.createPlayer(this, name, currentWeapon);
 
 		CommandMapper.init(this);
+
 	}
 
 	private boolean processCommand()
 	{
+
+
 		String line = UI.promptLine("> ").trim().toUpperCase(); // get user input
+
 
 		if (line.equals("quit")){
 			return true;
@@ -104,8 +110,6 @@ public class Game{
 		System.out.println(welcomeString);
 		currentRoom = new Room("hallway", null, "in the hallway", null);
 		System.out.println("You are " + currentRoom.getDescription());
-//		ArrayList<ArrayList<Room>> map = Room.buildMap(rooms);
-//		Room.viewMap(map);
 		currentPlayer.checkStatus();
 		System.out.println("Please select an action to take. [INSPECT, GO, HELP, QUIT]");
 

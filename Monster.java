@@ -1,6 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Monster{
 	// class variables to control number of monster
@@ -14,18 +15,19 @@ public class Monster{
 	private int maxMonsterStrength;
 	private int miniMonsterStrength;
 	private String monsterName;
+	private String monsterPic;
 	private int currentHealth;
 	private int currentStrength;
-	// private String name; //["Zombie", "Skeletons", "Ghost"] ["Mummy", "Werewolf", "Vampire"]
 
 	// constructor 
-	public Monster(String monsterName, int maxMonsterHealth, int miniMonsterHealth, int maxMonsterStrength, int miniMonsterStrength){
+	public Monster(String monsterName, String monsterPic, int maxMonsterHealth, int miniMonsterHealth, int maxMonsterStrength, int miniMonsterStrength){
 		this.monsterName = monsterName;
+		this.monsterPic = monsterPic;
 		this.maxMonsterStrength = maxMonsterStrength;
 		this.miniMonsterStrength = miniMonsterStrength;
 		this.maxMonsterHealth = maxMonsterHealth;
 		this.miniMonsterHealth = miniMonsterHealth;
-		this.currentHealth = rand.nextInt(maxMonsterHealth - miniMonsterHealth) + miniMonsterHealth; //genrate random number from range
+		this.currentHealth = rand.nextInt(maxMonsterHealth - miniMonsterHealth) + miniMonsterHealth; //generate random number from range
 		this.currentStrength = rand.nextInt(maxMonsterStrength - miniMonsterStrength) + miniMonsterStrength;
 	}
 
@@ -33,19 +35,30 @@ public class Monster{
 	public static HashMap<String, Monster> createMonsters(Scanner in){
 		HashMap<String, Monster> monsters = new HashMap<String, Monster>();
 
-		/*while(in.hasNext()){
+
+		while(true){
+
 			String monsterName = FileUtil.getNonCommentLine(in); // read monster name from txt file
-			int maxMonsterHealth = FileUtil.getInt(in); // read monster max health from txt file
-			int miniMonsterHealth = FileUtil.getInt(in); // read monster minimum health from txt file
-			int maxMonsterStrength = FileUtil.getInt(in); // read monster max strength from txt file
-			int miniMonsterStrength = FileUtil.getInt(in); // read monster minimum strength from txt file
+			if(monsterName.equals("****************************************")){
+				break;
+			}
+			int maxMonsterHealth = FileUtil.getInt(in); 		 // read monster max health from txt file
+			int miniMonsterHealth = FileUtil.getInt(in); 		 // read monster minimum health from txt file
+			int maxMonsterStrength = FileUtil.getInt(in); 		 // read monster max strength from txt file
+			int miniMonsterStrength = FileUtil.getInt(in); 		 // read monster minimum strength from txt file
+			String monsterPic = FileUtil.readParagraph(in);
 
-			monsters.put(monsterName, new Monster(monsterName, maxMonsterHealth, miniMonsterHealth,
-					maxMonsterStrength, miniMonsterStrength));	// put the pairs in Hashmap instantiate monsters
-		}*/
 
-		monsters.put("zombie", new Monster("zombie", 50, 25, 5, 1));
+			monsters.put(monsterName, new Monster(monsterName, monsterPic, maxMonsterHealth, miniMonsterHealth,
+					maxMonsterStrength, miniMonsterStrength));	 // put the pairs in HashMap instantiate monsters
+		}
+
+
+		}
+
+
 		in.close(); // close the scanner object 
+
 
 		return monsters;
 	}
@@ -55,7 +68,6 @@ public class Monster{
 	{
 		this.currentHealth = newHealth;
 	}
-
 
 	// getters
 	public int getCurrentHealth(){
@@ -68,12 +80,16 @@ public class Monster{
 		return monsterName;
 	}
 
+	public void printMonster() {
+		System.out.println(monsterPic);
+	}
+
 	public void checkStatus()
 	{
 		if (currentHealth > 0)
 		{
-			System.out.println(monsterName + "'s strength: " + currentStrength);
-			System.out.println(monsterName + "'s health: " + currentHealth);
+			System.out.println(monsterName + " strength: " + currentStrength);
+			System.out.println(monsterName + " health: " + currentHealth);
 		}
 
 	}

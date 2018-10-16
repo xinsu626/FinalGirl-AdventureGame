@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Player{
 	// declare instance variables 
+
 	private String name;
 	private int health;
 	private Item currentWeapon;
@@ -10,10 +11,12 @@ public class Player{
 
 	// constructor
 	public Player(String name, Game game, Item currentWeapon)
+
 	{
 		this.name = name;
 		this.currentWeapon = currentWeapon;
 		health = 100; //initial health
+
 		this.game = game;
 	}
 

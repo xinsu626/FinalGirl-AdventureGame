@@ -9,6 +9,8 @@ public class Fight
 		Monster currentMonster = currentRoom.getMonster();
 
 		System.out.println(currentMonster.getName() + " is coming!!!!");
+		currentMonster.printMonster();
+
 		currentPlayer.checkStatus();
 		currentMonster.checkStatus();
 

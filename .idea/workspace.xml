@@ -7,6 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1376fa44-005c-4c70-aa87-b13758d5d202" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,6 +17,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
@@ -52,6 +54,7 @@
                 <element signature="e#855#856#0" expanded="true" />
                 <element signature="e#873#874#0" expanded="true" />
               </folding>
+
             </state>
           </provider>
         </entry>
@@ -59,52 +62,32 @@
       <file leaf-file-name="ResourceUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ResourceUtil.java">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="206">
               <caret line="19" selection-start-line="19" selection-end-line="19" />
+
             </state>
           </provider>
         </entry>
       </file>
+
       <file leaf-file-name="Audio.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Audio.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="206">
               <caret line="188" column="7" selection-start-line="188" selection-start-column="7" selection-end-line="188" selection-end-column="7" />
+
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Item.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Item.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1066#1067#0" expanded="true" />
-                <element signature="e#1099#1100#0" expanded="true" />
+
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Room.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Room.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="73" column="84" lean-forward="true" selection-start-line="73" selection-start-column="84" selection-end-line="73" selection-end-column="84" />
-              <folding>
-                <element signature="e#2373#2374#0" expanded="true" />
-                <element signature="e#2394#2395#0" expanded="true" />
-                <element signature="e#2422#2423#0" expanded="true" />
-                <element signature="e#2439#2440#0" expanded="true" />
-                <element signature="e#2620#2621#0" expanded="true" />
-                <element signature="e#2645#2646#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+
       <file leaf-file-name="Goer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Goer.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -116,15 +99,18 @@
                 <element signature="e#1848#1849#0" expanded="true" />
                 <element signature="e#1905#1906#0" expanded="true" />
               </folding>
+
             </state>
           </provider>
         </entry>
       </file>
+
       <file leaf-file-name="Fight.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Fight.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="629">
               <caret line="58" column="54" selection-start-line="58" selection-start-column="54" selection-end-line="58" selection-end-column="54" />
+
             </state>
           </provider>
         </entry>
@@ -152,6 +138,7 @@
       <file leaf-file-name="level_1_master.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/level_1_master.txt">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="1258">
               <caret line="74" column="6" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
             </state>
@@ -173,10 +160,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+
         <option value="$PROJECT_DIR$/item_data.txt" />
         <option value="$PROJECT_DIR$/Help.java" />
         <option value="$PROJECT_DIR$/CommandMapper.java" />
         <option value="$PROJECT_DIR$/Inspect.java" />
+
         <option value="$PROJECT_DIR$/Player.java" />
         <option value="$PROJECT_DIR$/PlayMusic.java" />
         <option value="$PROJECT_DIR$/SimpleAudioPlayer.java" />
@@ -186,8 +175,10 @@
         <option value="$PROJECT_DIR$/Monster.java" />
         <option value="$PROJECT_DIR$/Room.java" />
         <option value="$PROJECT_DIR$/Game.java" />
+
         <option value="$PROJECT_DIR$/Fight.java" />
         <option value="$PROJECT_DIR$/Goer.java" />
+
       </list>
     </option>
   </component>
@@ -219,11 +210,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
+
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -346,6 +339,7 @@
       <option name="project" value="LOCAL" />
       <updated>1539650292496</updated>
     </task>
+
     <task id="LOCAL-00006" summary="commit">
       <created>1539650537145</created>
       <option name="number" value="00006" />
@@ -368,13 +362,16 @@
       <updated>1539731548565</updated>
     </task>
     <option name="localTasksCounter" value="9" />
+
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="696" extended-state="6" />
     <editor active="true" />
     <layout>
+
       <window_info anchor="right" id="Palette" order="4" />
+
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.3298292" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
@@ -402,13 +399,69 @@
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="4" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Learn" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.24606581" />
+      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50858366" side_tool="true" visible="true" weight="0.28674698" />
+      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.49927744" weight="0.32907802" />
+      <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.48211733" weight="0.32771084" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.4914163" visible="true" weight="0.28674698" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Palette&#9;" order="1" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="randomize monster and item initialization" />
+    <option name="LAST_COMMIT_MESSAGE" value="randomize monster and item initialization" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -466,6 +519,7 @@
         </state>
       </provider>
     </entry>
+
     <entry file="file://$PROJECT_DIR$/Monster.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -485,12 +539,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Inspect.java">
+
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
         </state>
       </provider>
     </entry>
+
     <entry file="file://$PROJECT_DIR$/Goer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -538,6 +594,9 @@
             <element signature="e#1357#1358#0" expanded="true" />
             <element signature="e#1386#1387#0" expanded="true" />
           </folding>
+
+          
+          
         </state>
       </provider>
     </entry>
@@ -555,6 +614,7 @@
         </state>
       </provider>
     </entry>
+
     <entry file="file://$PROJECT_DIR$/SimpleAudioPlayer.java" />
     <entry file="file://$USER_HOME$/Desktop/pumpkinsong.wav" />
     <entry file="file://$PROJECT_DIR$/Inspect.java">
@@ -620,10 +680,12 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1066#1067#0" expanded="true" />
             <element signature="e#1099#1100#0" expanded="true" />
+
           </folding>
         </state>
       </provider>
     </entry>
+
     <entry file="file://$PROJECT_DIR$/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -643,10 +705,12 @@
             <element signature="e#2945#2946#0" expanded="true" />
             <element signature="e#2977#2978#0" expanded="true" />
             <element signature="e#3001#3002#0" expanded="true" />
+
           </folding>
         </state>
       </provider>
     </entry>
+
     <entry file="file://$PROJECT_DIR$/Goer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -657,22 +721,26 @@
             <element signature="e#1848#1849#0" expanded="true" />
             <element signature="e#1905#1906#0" expanded="true" />
           </folding>
+
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Player.java">
+    <entry file="file://$PROJECT_DIR$/Room.java">
       <provider selected="true" editor-type-id="text-editor">
+
         <state relative-caret-position="663">
           <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
           <folding>
             <element signature="e#855#856#0" expanded="true" />
             <element signature="e#873#874#0" expanded="true" />
+
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Monster.java">
       <provider selected="true" editor-type-id="text-editor">
+
         <state relative-caret-position="-379">
           <caret line="46" column="68" selection-start-line="46" selection-start-column="68" selection-end-line="46" selection-end-column="68" />
           <folding>
@@ -708,6 +776,7 @@
             <element signature="e#2620#2621#0" expanded="true" />
             <element signature="e#2645#2646#0" expanded="true" />
           </folding>
+
         </state>
       </provider>
     </entry>
