@@ -1,6 +1,8 @@
 import java.util.HashMap;
 import java.util.Scanner;
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.Collections;
 
 public class Room{
 	// declare instance variables
@@ -17,22 +19,17 @@ public class Room{
         this.monster = monster;
 	}
 
-
 	// create rooms
 	public static HashMap<String, Room> createRooms(Scanner in){
-		// Random object created to assign monsters and items
-	    Random random = new Random();
 
 		// empty rooms hashmap
 		HashMap<String, Room> rooms = new HashMap<String, Room>();
 
 		// create HashMap of monsters
 		HashMap<String, Monster> monsters = Monster.createMonsters(in);
-//		String[] monsterKeys = monsters.keySet().toArray(new String[monsters.size()]);
 
 		// create HashMap of items
 		HashMap<String, Item> items = Item.createItems(in);
-//        String[] itemKeys = items.keySet().toArray(new String[items.size()]);
 
 		while (true){
 			String name = FileUtil.getNonCommentLine(in);
@@ -43,7 +40,7 @@ public class Room{
 			Monster monster;
 			Item item;
 
-			if(name.equals("stairway")){
+			if(name.equals("exit")){
 				monster = monsters.get("mummy");
 			} else{
 				monster = null;
@@ -57,11 +54,59 @@ public class Room{
 
 		in.close();
 
+		// create ArrayList of room names
+		Set<String> roomNameSet = rooms.keySet();
+		String[] roomNameList = roomNameSet.toArray(new String[roomNameSet.size()]);
+		ArrayList<String> roomNameArrayList = new ArrayList<String>();
+		for(String roomName: roomNameList){
+			roomNameArrayList.add(roomName);
+		}
+
+		roomNameArrayList.remove(roomNameArrayList.indexOf("hallway"));
+		roomNameArrayList.remove(roomNameArrayList.indexOf("exit"));
+
+		// create ArrayList of monster names
+		Set<String> monsterNameSet = monsters.keySet();
+		String[] monsterNameList = monsterNameSet.toArray(new String[monsterNameSet.size()]);
+		ArrayList<String> monsterNameArrayList = new ArrayList<String>();
+		for(String monsterName: monsterNameList){
+			monsterNameArrayList.add(monsterName);
+		}
+
+		// create ArrayList of item names
+		Set<String> itemNameSet = items.keySet();
+		String[] itemNameList = itemNameSet.toArray(new String[itemNameSet.size()]);
+		ArrayList<String> itemNameArrayList = new ArrayList<String>();
+		for(String itemName: itemNameList){
+			itemNameArrayList.add(itemName);
+		}
+
+		monsterNameArrayList.remove(monsterNameArrayList.indexOf("mummy"));
+
+		Collections.shuffle(roomNameArrayList);
+
+		assignMonsters(roomNameArrayList, monsterNameArrayList, rooms, monsters);
+		assignItems(roomNameArrayList, itemNameArrayList, rooms, items);
+
 		return rooms;
 	}
 
-	public static void randomMonsters(){
+	private static void assignMonsters(ArrayList<String> roomNameArrayList, ArrayList<String> monsterNameArrayList, HashMap<String, Room> rooms, HashMap<String, Monster> monsters){
+		for(int i = 0; i < monsterNameArrayList.size(); i++){
+			String roomName = roomNameArrayList.get(i);
+			String monsterName = monsterNameArrayList.get(i);
 
+			rooms.get(roomName).setMonster(monsters.get(monsterName));
+		}
+	}
+
+	private static void assignItems(ArrayList<String> roomNameArrayList, ArrayList<String> itemNameArrayList, HashMap<String, Room> rooms, HashMap<String, Item> items){
+		for(int i = 0; i < itemNameArrayList.size(); i++){
+			String roomName = roomNameArrayList.get(i);
+			String itemName = itemNameArrayList.get(i);
+
+			rooms.get(roomName).setItem(items.get(itemName));
+		}
 	}
 
 
@@ -88,61 +133,12 @@ public class Room{
 		return description;
 	}
 
-	//public int getXCoord(){
-	//	return xCoord;}
-
-	//public int getYCoord(){
-	//	return yCoord;}
-
-	// maps
-	/*
-	public static ArrayList<ArrayList<Room>> buildMap(HashMap<String, Room> rooms){
-		ArrayList<ArrayList<Room>> map = new ArrayList<>();
-
-		for(int i = 0; i < 5; i++){
-			map.add(new ArrayList<>(ArrayList.asList(null, null, null, null, null)));
-		}
-
-		for(Map.Entry x: rooms.entrySet()){
-			Room newRoom = (Room)x.getValue();
-			int row = newRoom.getXCoord();
-			int col = newRoom.getYCoord();
-			map.get(row).set(col, newRoom);
-		}
-
-		return map;
+	// setters
+	private void setMonster(Monster monster){
+		this.monster = monster;
 	}
 
-	// generate map view
-	public static void viewMap(ArrayList<ArrayList<Room>> map){
-		String lineString = "*************************************************";
-		String dashString = "|               |               |               |";
-		String hallString = "| Hallway                                       | Stairs";
-
-		for(int i = 0; i < 11; i++){
-			if(i == 0 || i == 4 || i == 6 || i == 10){;}
-			else if (i == 2){
-				System.out.println(lineString);}
-			else if (i == 5){
-				 System.out.println(Room.roomsForMap(map, 1));}
-			else if (i == 8){
-				System.out.println(hallString);}
-			else{
-				System.out.println(Room.roomsForMap(map, 3));}}
-
-		System.out.println();
-		System.out.println("You are " + currentRoom.getDescription());}
-
-	// rooms for map
-	public static String roomsForMap(ArrayList<ArrayList<Room>> map, int row){
-		String roomLine = "| ";
-		for(int i = 1; i < 4; i++){
-			String roomName = map.get(row).get(i).getName();
-			while(roomName.length() < 14){
-				roomName += " ";}
-
-			roomLine += roomName + "| ";}
-
-		return roomLine;}
-	*/
+	private void setItem(Item item){
+		this.item = item;
+	}
 }

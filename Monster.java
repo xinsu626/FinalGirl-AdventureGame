@@ -1,6 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Monster{
 	// class variables to control number of monster
@@ -57,7 +58,6 @@ public class Monster{
 	{
 		this.currentHealth = newHealth;
 	}
-
 
 	// getters
 	public int getCurrentHealth(){

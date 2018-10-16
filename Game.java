@@ -3,10 +3,9 @@ import java.util.*;
 public class Game{
 
 	public static void main(String[] args) {
-		Game game = new Game("starting_data.txt", "level_1_master.txt");
+		Game game = new Game("level_1_master.txt");
 		game.play();
 	}
-
 
 	// declare instance variable
 	private Room currentRoom;
@@ -46,15 +45,14 @@ public class Game{
 	}
 
 	// constructor
-	public Game(String welcomeTxt, String level01Txt)
+	public Game(String level01Txt)
 	{
 		// welcome 
-		Scanner worldDataScanner = ResourceUtil.openFileScanner(welcomeTxt); // create a scanner object, read txt file in
+		Scanner worldDataScanner = ResourceUtil.openFileScanner(level01Txt); // create a scanner object, read txt file in
 		welcomeString = FileUtil.readParagraph(worldDataScanner);
 
 		// rooms
-		Scanner levelScanner = ResourceUtil.openFileScanner(level01Txt);
-		rooms = Room.createRooms(levelScanner);
+		rooms = Room.createRooms(worldDataScanner);
 		currentRoom = rooms.get("hallway");
 
 		// player
