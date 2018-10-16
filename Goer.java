@@ -31,13 +31,14 @@ public class Goer implements Action {
 			roomChosen = UI.promptLine("Select a room to enter:").trim().toLowerCase();
 		}
 
+		//roomChosen
 		if(game.getCurrentRoom().getName().equals("exit") && !game.getPlayer().checkPowerWeapon()){
 			System.out.println("I don't think I should go here yet...\nMaybe once I have a more powerful weapon.");
 			return false;
 		}
 
 		if (game.getCurrentRoom().getName().equals("exit")){
-			System.out.println("I think I'm going to need to fight this monster before I get to the next floor...")
+			System.out.println("I think I'm going to need to fight this monster before I get to the next floor...");
 		}
 
 		game.setCurrentRoom(game.getRooms().get(roomChosen));
