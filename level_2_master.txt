@@ -1,4 +1,5 @@
-Welcome to FINAL GIRL'S ADVENTURE (unless you save her!).
+
+Ah, you've made it to the next level of the house. Let's see what this floor has in store...
 
 # Welcome to the monster production base
 # The blueprint for monster production is：
@@ -9,8 +10,8 @@ Welcome to FINAL GIRL'S ADVENTURE (unless you save her!).
 # - miniMonsterStrength
 # - category
 zombie
-50
-25
+65
+30
 5
 1
 ..╱▔▔▔▔▔▔▔▔▔╲..
@@ -22,8 +23,8 @@ zombie
 ..╲_________╱..
 
 skeleton
-50
-25
+65
+30
 5
 1
 ..╱▔▔▔▔▔▔▔▔▔╲..
@@ -36,8 +37,8 @@ skeleton
 ...▕_______▏...
 
 ghost
-50
-25
+65
+30
 5
 1
 ..╱▔▔▔▔▔▔▔▔╲..
@@ -48,19 +49,19 @@ ghost
 .▕    ╰━╯   ▏.
 .▕╱╲╱╲╱╲╱╲╱╲▏.
 
-mummy
+werewolf
 100
 80
 10
 5
-..╱▔▔▔▔▔▔▔▔▔╲..
-.▕ ┈╲┈┈┈┈╱┈  ▏.
-.▕┈╭╮ ┈┈ ╭╮┈ ▏.
-.▕┈╰╯ ┈┈ ╰╯ ┈▏.
-.▕ ┈┈┈╰┈┈┈┈  ▏.
-.▕ ┈╭━━━━╮ ┈ ▏.
-.▕ ┈╰━━━━╯ ┈ ▏.
-.┈╲_________╱┈.
+..A________A..
+.╱          ╲.
+.╱ ___  ___ ╲.
+.╱  ╰╯  ╰╯  ╲.
+.╱    ╰╯    ╲.
+.╱   VVVVV  ╲.
+.╱   ^^^^^  ╲.
+..╲________╱..
 
 ****************************************
 potion
@@ -71,28 +72,28 @@ superPotion
 potion
 40
 #
-flameThrower
+silverSword
 weapon
-30
+40
 ****************************************
 # rooms data follows
 # for each room: name line, monster lines, item lines,x-coordinate, y-coordinate
-conservatory
-in the conservatory.
+library
+in the library.
 
-closet
-in the closet.
+bathroom
+in the bathroom.
 
-bedroom
-in the bedroom.
+bedroom2
+in the bedroom2.
 
-study
-in the study.
+gameroom
+in the gameroom.
 
 hallway
 in the hallway.
 
-exit
+exit.
 in the exit.
 
 ****************************************
