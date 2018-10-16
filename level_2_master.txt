@@ -10,8 +10,8 @@ Ah, you've made it to the next level of the house. Let's see what this floor has
 # - miniMonsterStrength
 # - category
 zombie
-75
-40
+65
+30
 5
 1
  ╱▔▔▔▔▔▔▔▔▔╲
@@ -23,8 +23,8 @@ zombie
  ╲_________╱
 
 skeleton
-75
-40
+65
+30
 5
 1
  ╱▔▔▔▔▔▔▔▔▔╲
@@ -37,8 +37,8 @@ skeleton
   ▕_______▏
 
 ghost
-75
-40
+65
+30
 5
 1
  ╱▔▔▔▔▔▔▔▔╲
