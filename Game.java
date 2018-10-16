@@ -19,7 +19,7 @@ public class Game{
 			currentWeapon = game.getPlayer().getCurrentWeapon();
 		}
 
-		System.out.println("Congratulations, you've escaped the haunted house!\n");
+		System.out.println("Congratulations, you've escaped the haunted house!\nBut unfortunately, the princess is in another house...");
 	}
 
 
