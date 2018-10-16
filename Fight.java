@@ -56,7 +56,7 @@ public class Fight
 
 		System.out.println("You took " + damageTaken + " damage and the monster took " + damageGiven + " damage.");
 		System.out.println("Your health is now " + currentPlayer.getHealth() + "\nand the monster's health is now " + currentMonster.getCurrentHealth());
-
+		System.out.println("-----------------------");
 		if (currentPlayer.getHealth() <= 0)
 		{
 			System.out.println("You're dead!");

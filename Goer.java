@@ -10,15 +10,6 @@ public class Goer implements Action {
 
 
 	public boolean execute() {
-		/*if (tokens.length == 1)
-		{
-			System.out.println("Go where? Please enter: go roomName");
-			return false;
-		}*/
-
-		//String roomName = tokens[1];
-		//Room nextRoom = game.getNamedRoom(roomName);
-
 		System.out.println("Here are the rooms you can enter:");
 		for (String roomName : game.getRooms().keySet()) {
 			System.out.println('\t' + roomName);
@@ -31,8 +22,7 @@ public class Goer implements Action {
 			roomChosen = UI.promptLine("Select a room to enter:").trim().toLowerCase();
 		}
 
-		//roomChosen
-		if(game.getCurrentRoom().getName().equals("exit") && !game.getPlayer().checkPowerWeapon()){
+		if(roomChosen.equals("exit") && !game.getPlayer().checkPowerWeapon()){
 			System.out.println("I don't think I should go here yet...\nMaybe once I have a more powerful weapon.");
 			return false;
 		}
