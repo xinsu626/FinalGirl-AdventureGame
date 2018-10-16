@@ -1,0 +1,98 @@
+Finally! Final girl has reached the ground floor. You're almost to safety...
+
+# Welcome to the monster production base
+# The blueprint for monster production is：
+# - name
+# - maxMonsterHealth
+# - miniMonsterHealth
+# - maxMonsterStrength
+# - miniMonsterStrength
+# - category
+zombie
+90
+50
+5
+1
+ ╱▔▔▔▔▔▔▔▔▔╲
+▕     x     ▏
+▕  @     @  ▏
+▕     L   x ▏
+▕   ╭━━━╮   ▏
+▕ x ╰━━━╯   ▏
+ ╲_________╱
+
+skeleton
+90
+50
+5
+1
+ ╱▔▔▔▔▔▔▔▔▔╲
+▕           ▏
+▕  ╭╮   ╭╮  ▏
+▕  ╰╯   ╰╯  ▏
+▕     ^     ▏
+ ╲ ||||||| ╱
+   |||||||
+  ▕_______▏
+
+ghost
+90
+50
+5
+1
+ ╱▔▔▔▔▔▔▔▔╲
+▕  ╭━╮ ╭━╮ ▏
+▕  ┃╭╯ ╰╮┃ ▏
+▕  ╰╯╭━╮╰╯ ▏
+▕    ┃ ┃   ▏
+▕    ╰━╯   ▏
+▕╱╲╱╲╱╲╱╲╱╲▏
+
+vampire
+100
+80
+10
+5
+ ╱▔▔▔╲╱▔▔▔▔╲
+▕           ▏
+▕  ╲    ╱   ▏
+▕  O    O   ▏
+▕    ╰      ▏
+▕   ╱VwV╲   ▏
+ ╲  ~~~~~  ╱
+ ╱╲_______╱╲
+
+****************************************
+potion
+potion
+20
+#
+superPotion
+potion
+40
+#
+holyCrossbow
+weapon
+50
+****************************************
+# rooms data follows
+# for each room: name line, monster lines, item lines,x-coordinate, y-coordinate
+living room
+in the conservatory.
+
+kitchen
+in the closet.
+
+parlor
+in the bedroom.
+
+ball room
+in the study.
+
+hallway
+in the hallway.
+
+front door
+in the stairway.
+
+****************************************
