@@ -19,14 +19,16 @@ public class Item {
 		// empty items hashmap
 		HashMap<String, Item> items = new HashMap<String, Item>();
 
-		while (in.hasNext()) {
+		/*while (in.hasNext()) {
 			String name = FileUtil.getNonCommentLine(in);
 			String category = FileUtil.getNonCommentLine(in);
 			int attribute = FileUtil.getInt(in);
 
 			Item newItem = new Item(name, category, attribute);
 			items.put(name, newItem);
-		}
+		}*/
+
+		items.put("potion", new Item("potion", "potion", 5));
 
 		in.close();
 		return items;

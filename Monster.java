@@ -33,7 +33,7 @@ public class Monster{
 	public static HashMap<String, Monster> createMonsters(Scanner in){
 		HashMap<String, Monster> monsters = new HashMap<String, Monster>();
 
-		while(in.hasNext()){
+		/*while(in.hasNext()){
 			String monsterName = FileUtil.getNonCommentLine(in); // read monster name from txt file
 			int maxMonsterHealth = FileUtil.getInt(in); // read monster max health from txt file
 			int miniMonsterHealth = FileUtil.getInt(in); // read monster minimum health from txt file
@@ -42,7 +42,9 @@ public class Monster{
 
 			monsters.put(monsterName, new Monster(monsterName, maxMonsterHealth, miniMonsterHealth,
 					maxMonsterStrength, miniMonsterStrength));	// put the pairs in Hashmap instantiate monsters
-		}
+		}*/
+
+		monsters.put("zombie", new Monster("zombie", 50, 25, 5, 1));
 		in.close(); // close the scanner object 
 
 		return monsters;

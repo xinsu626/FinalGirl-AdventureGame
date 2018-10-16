@@ -10,7 +10,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class Audio
 {
-    // to store current position
+   /* // to store current position
     Long currentFrame;
     Clip clip;
 
@@ -186,5 +186,5 @@ public class Audio
                 new File(filePath).getAbsoluteFile());
         clip.open(audioInputStream);
         clip.loop(Clip.LOOP_CONTINUOUSLY);
-    }
+    }*/
 }

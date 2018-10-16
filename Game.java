@@ -2,6 +2,8 @@ import java.util.*;
 
 public class Game{
 
+	private static boolean gameIsOver = false;
+
 	public static void main(String[] args) {
 
 		String[] itemDataList = {"level_1_master.txt", "level_2_master.txt", "level_3_master.txt"};
@@ -13,6 +15,11 @@ public class Game{
 		for (String dataFile: itemDataList){
 			game = new Game(dataFile, playerName, currentWeapon);
 			game.play();
+			if (gameIsOver){
+				System.out.println("The game is over!");
+				break;
+			}
+
 			if (game.getPlayer().getHealth() <= 0){
 				return;
 			}
@@ -95,6 +102,7 @@ public class Game{
 	private void play()
 	{
 		System.out.println(welcomeString);
+		currentRoom = new Room("hallway", null, "in the hallway", null);
 		System.out.println("You are " + currentRoom.getDescription());
 //		ArrayList<ArrayList<Room>> map = Room.buildMap(rooms);
 //		Room.viewMap(map);
@@ -104,10 +112,13 @@ public class Game{
 		while (!processCommand()) {
 			System.out.println("Please select an action to take. [INSPECT, GO, HELP, QUIT]");
 		}
-		System.out.println("Thank you for playing our game. Bye!");
 	}
 
 	public HashMap<String,Room> getRooms(){
 	    return rooms;
+	}
+
+	public static void setGameIsOver(){
+		gameIsOver = true;
 	}
 }

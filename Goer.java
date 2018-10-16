@@ -19,7 +19,7 @@ public class Goer implements Action {
 		//String roomName = tokens[1];
 		//Room nextRoom = game.getNamedRoom(roomName);
 
-		System.out.println("Select a room to enter:");
+		System.out.println("Here are the rooms you can enter:");
 		for (String roomName : game.getRooms().keySet()) {
 			System.out.println('\t' + roomName);
 		}
@@ -48,6 +48,7 @@ public class Goer implements Action {
 			System.out.println("There is a " + monsterInRoom.getName() + " " + game.getCurrentRoom().getDescription());
 			String outcome = Fight.fight(game.getPlayer(), game.getCurrentRoom());
 			if (outcome.equals("dead")) {
+				Game.setGameIsOver();
 				return true;
 			} else if (outcome.equals("fled")) {
 				game.setCurrentRoom(game.getRooms().get("hallway"));

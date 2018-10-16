@@ -14,7 +14,7 @@ public class Fight
 
 		while (currentMonster.getCurrentHealth() > 0)
 		{
-			Boolean toFlee = UI.agree("Do you want to flee?");
+			Boolean toFlee = UI.agree("Do you want to try to flee?");
 			System.out.println("-------------------");
 
 			if (toFlee){
@@ -48,13 +48,14 @@ public class Fight
 	}
 
 	private static boolean damageTaken(Player currentPlayer, Monster currentMonster){
-		int damage = random.nextInt(currentPlayer.getCurrentWeapon().getAttribute());
-		int damageTaken = -random.nextInt(currentMonster.getCurrentStrength());
+		int damageGiven = random.nextInt(currentPlayer.getCurrentWeapon().getAttribute());
+		int damageTaken = currentMonster.getCurrentStrength()*random.nextInt(5);
 
-		currentMonster.setCurrentHealth(currentMonster.getCurrentHealth() - damage);
-		currentPlayer.incrementHealth(damageTaken);
-		currentPlayer.checkStatus();
-		currentMonster.checkStatus();
+		currentMonster.setCurrentHealth(currentMonster.getCurrentHealth() - damageGiven);
+		currentPlayer.incrementHealth(-damageTaken);
+
+		System.out.println("You took " + damageTaken + " damage and the monster took " + damageGiven + " damage.");
+		System.out.println("Your health is now " + currentPlayer.getHealth() + "\nand the monster's health is now " + currentMonster.getCurrentHealth());
 
 		if (currentPlayer.getHealth() <= 0)
 		{

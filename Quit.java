@@ -7,6 +7,7 @@ public class Quit implements Action{
      */
     public boolean execute()
     {
+        Game.setGameIsOver();
         return UI.agree("Do you really want to quit? ");
     }
 
