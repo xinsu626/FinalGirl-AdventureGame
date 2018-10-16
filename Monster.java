@@ -35,7 +35,9 @@ public class Monster{
 	public static HashMap<String, Monster> createMonsters(Scanner in){
 		HashMap<String, Monster> monsters = new HashMap<String, Monster>();
 
+
 		while(true){
+
 			String monsterName = FileUtil.getNonCommentLine(in); // read monster name from txt file
 			if(monsterName.equals("****************************************")){
 				break;
@@ -46,9 +48,17 @@ public class Monster{
 			int miniMonsterStrength = FileUtil.getInt(in); 		 // read monster minimum strength from txt file
 			String monsterPic = FileUtil.readParagraph(in);
 
+
 			monsters.put(monsterName, new Monster(monsterName, monsterPic, maxMonsterHealth, miniMonsterHealth,
 					maxMonsterStrength, miniMonsterStrength));	 // put the pairs in HashMap instantiate monsters
 		}
+
+
+		}
+
+
+		in.close(); // close the scanner object 
+
 
 		return monsters;
 	}

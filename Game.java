@@ -2,9 +2,33 @@ import java.util.*;
 
 public class Game{
 
+	private static boolean gameIsOver = false;
+
 	public static void main(String[] args) {
-		Game game = new Game("level_1_master.txt");
-		game.play();
+
+
+		String[] itemDataList = {"level_1_master.txt", "level_2_master.txt", "level_3_master.txt"};
+		Game game;
+
+		String playerName = UI.promptLine("Enter a name for your player: ").trim();
+		Item currentWeapon = new Item("slingshot", "weapon", 5);
+
+		for (String dataFile: itemDataList){
+			game = new Game(dataFile, playerName, currentWeapon);
+			game.play();
+			if (gameIsOver){
+				System.out.println("The game is over!");
+				break;
+			}
+
+			if (game.getPlayer().getHealth() <= 0){
+				return;
+			}
+			currentWeapon = game.getPlayer().getCurrentWeapon();
+		}
+
+		System.out.println("Congratulations, you've escaped the haunted house!\nBut unfortunately, the princess is in another house...");
+
 	}
 
 	// declare instance variable
@@ -45,26 +69,27 @@ public class Game{
 	}
 
 	// constructor
-	public Game(String level01Txt)
-	{
-		// welcome 
-		Scanner worldDataScanner = ResourceUtil.openFileScanner(level01Txt); // create a scanner object, read txt file in
-		welcomeString = FileUtil.readParagraph(worldDataScanner);
 
-		// rooms
-		rooms = Room.createRooms(worldDataScanner);
+	public Game(String txt, String name, Item currentWeapon)
+	{
+		Scanner levelScanner = ResourceUtil.openFileScanner(txt);
+		welcomeString = FileUtil.readParagraph(levelScanner);
+		rooms = Room.createRooms(levelScanner);
 		currentRoom = rooms.get("hallway");
 
 		// player
-		currentPlayer = Player.createPlayer(this);
+		currentPlayer = Player.createPlayer(this, name, currentWeapon);
 
-		// initialize command mapper
-		CommandMapper.init(this, currentRoom, currentPlayer);
+		CommandMapper.init(this);
+
 	}
 
 	private boolean processCommand()
 	{
-		String line = UI.promptLine("> ").trim(); // get user input
+
+
+		String line = UI.promptLine("> ").trim().toUpperCase(); // get user input
+
 
 		if (line.equals("quit")){
 			return true;
@@ -76,24 +101,28 @@ public class Game{
 			return false;
 		}
 
-		Action action = CommandMapper.getAction(line); // the response here is any "object" implement response interface
+		Action action = CommandMapper.getAction(line);
 		return action.execute();
 	}
 
 	private void play()
 	{
 		System.out.println(welcomeString);
+		currentRoom = new Room("hallway", null, "in the hallway", null);
 		System.out.println("You are " + currentRoom.getDescription());
 		currentPlayer.checkStatus();
-		System.out.println("What would you like to do? [INSPECT, GO, QUIT]");
+		System.out.println("Please select an action to take. [INSPECT, GO, HELP, QUIT]");
 
 		while (!processCommand()) {
-			System.out.println("What would you like to do? [INSPECT, GO, QUIT]");
+			System.out.println("Please select an action to take. [INSPECT, GO, HELP, QUIT]");
 		}
-		System.out.println("Thank you for playing our game. Bye");
 	}
 
 	public HashMap<String,Room> getRooms(){
 	    return rooms;
+	}
+
+	public static void setGameIsOver(){
+		gameIsOver = true;
 	}
 }

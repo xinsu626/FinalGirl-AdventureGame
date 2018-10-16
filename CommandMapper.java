@@ -6,10 +6,10 @@ public class CommandMapper
 	private static String allCmds;
 
 	// class method for initializing responses hashmap and allCmds string
-	public static void init(Game game, Room currentRoom, Player currentPlayer)
+	public static void init(Game game)
 	{
 		actions = new HashMap<>();
-		Action[] actionArray = {new Goer(game), new Inspect(game)};
+		Action[] actionArray = {new Goer(game), new Inspect(game), new Help(game), new Quit()};
 		allCmds = "Your command words are:";
 		for (Action r: actionArray)
 		{

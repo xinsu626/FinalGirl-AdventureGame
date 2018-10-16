@@ -19,7 +19,11 @@ public class Item {
 		// empty items HashMap
 		HashMap<String, Item> items = new HashMap<String, Item>();
 
+
 		while (true) {
+
+		
+
 			String name = FileUtil.getNonCommentLine(in);
 			if(name.equals("****************************************")){
 				break;

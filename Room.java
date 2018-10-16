@@ -24,9 +24,13 @@ public class Room{
 
 		// empty rooms hashmap
 		HashMap<String, Room> rooms = new HashMap<String, Room>();
-
+		Scanner testScanner = ResourceUtil.openFileScanner("level_1_master.txt");
+		HashMap<String, Monster> monsters = Monster.createMonsters(testScanner);
+		HashMap<String, Item> items = Item.createItems(testScanner);
 		// create HashMap of monsters
+
 		HashMap<String, Monster> monsters = Monster.createMonsters(in);
+
 
 		// create HashMap of items
 		HashMap<String, Item> items = Item.createItems(in);
@@ -50,8 +54,8 @@ public class Room{
 
 			Room newRoom = new Room(name, item, description, monster);
 			rooms.put(name, newRoom);
-		}
-
+		}*/
+		rooms.put("closet", new Room("closet",items.get("potion"),"in closet", monsters.get("zombie")));
 		in.close();
 
 		// create ArrayList of room names
