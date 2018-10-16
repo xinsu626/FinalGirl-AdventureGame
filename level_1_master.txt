@@ -1,3 +1,5 @@
+Welcome to FINAL GIRL'S ADVENTURE (unless you save her!).
+
 # Welcome to the monster production base
 # The blueprint for monster production is：
 # - name
@@ -60,7 +62,7 @@ mummy
 ▕ ┈╰━━━━╯ ┈ ▏
 ┈╲_________╱┈
 
-*******
+****************************************
 potion
 potion
 20
@@ -72,7 +74,7 @@ potion
 flameThrower
 weapon
 30
-------
+****************************************
 # rooms data follows
 # for each room: name line, monster lines, item lines,x-coordinate, y-coordinate
 conservatory
@@ -81,14 +83,16 @@ in the conservatory.
 closet
 in the closet.
 
-hallway
-in the hallway.
-
 bedroom
 in the bedroom.
 
 study
 in the study.
 
+hallway
+in the hallway.
+
 stairway
 in the stairway.
+
+****************************************
