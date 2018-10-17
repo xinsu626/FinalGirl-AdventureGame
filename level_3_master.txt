@@ -6,17 +6,13 @@ Finally! Final girl has reached the ground floor. You rested and regained your h
 # The blueprint for monster production is：
 # - name of monster
 # - maxMonsterHealth
-# - miniMonsterHealth
 # - maxMonsterStrength
-# - miniMonsterStrength
 #
 # there are many zombies, ghosts, and skeletons within the house, and one final boss monster per floor
 # zombies, ghosts, and skeletons are weaker monsters
 zombie
 75
-50
 30
-1
 ..╱▔▔▔▔▔╲..
 .▕    x     ▏ .
 .▕  @    @  ▏ .
@@ -27,9 +23,7 @@ zombie
 
 skeleton
 75
-50
 30
-1
 ..╱▔▔▔▔▔╲..
 .▕          ▏ .
 .▕  ╭╮   ╭╮  ▏ .
@@ -41,9 +35,7 @@ skeleton
 
 ghost
 75
-50
 30
-1
 ..╱▔▔▔▔▔╲..
 .▕  ╭━╮ ╭━╮  ▏ .
 .▕  ┃╭╯ ╰╮┃  ▏ .
@@ -56,9 +48,7 @@ ghost
 # the boss monster for level 3 is a vampire
 Dr. "Dracula" Harrington
 100
-80
 40
-5
 ..╱▔▔▔▔▔╲..
 .▕           ▏ .
 .▕  ╲   ╱   ▏ .

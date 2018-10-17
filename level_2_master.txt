@@ -6,17 +6,13 @@ Ah, you've made it to the next level of the house. You rested and regained your 
 # The blueprint for monster production is：
 # - name of monster
 # - maxMonsterHealth
-# - minMonsterHealth
 # - maxMonsterStrength
-# - minMonsterStrength
 #
 # there are many zombies, ghosts, and skeletons within the house, and one final boss monster per floor
 # zombies, ghosts, and skeletons are weaker monsters
 zombie
 50
-25
 20
-1
 ..╱▔▔▔▔▔╲..
 .▕    x     ▏ .
 .▕  @    @  ▏ .
@@ -27,9 +23,7 @@ zombie
 
 skeleton
 50
-25
 20
-1
 ..╱▔▔▔▔▔╲..
 .▕          ▏ .
 .▕  ╭╮   ╭╮  ▏ .
@@ -41,9 +35,7 @@ skeleton
 
 ghost
 50
-25
 20
-1
 ..╱▔▔▔▔▔╲..
 .▕  ╭━╮ ╭━╮  ▏ .
 .▕  ┃╭╯ ╰╮┃  ▏ .
@@ -56,9 +48,7 @@ ghost
 # the boss monster for level 2 is a werewolf
 werewolf
 100
-80
 30
-5
 ..A________A..
 .╱          ╲.
 .╱ ___  ___ ╲.

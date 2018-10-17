@@ -20,7 +20,7 @@ public class Monster{
 	private int currentStrength;
 
 	// constructor 
-	public Monster(String monsterName, String monsterPic, int maxMonsterHealth, int miniMonsterHealth, int maxMonsterStrength, int miniMonsterStrength){
+	public Monster(String monsterName, String monsterPic, int maxMonsterHealth, int maxMonsterStrength){
 		this.monsterName = monsterName;
 		this.monsterPic = monsterPic;
 		//this.maxMonsterStrength = maxMonsterStrength;
@@ -45,14 +45,14 @@ public class Monster{
 				break;
 			}
 			int maxMonsterHealth = FileUtil.getInt(in); 		 // read monster max health from txt file
-			int miniMonsterHealth = FileUtil.getInt(in); 		 // read monster minimum health from txt file
+			//int miniMonsterHealth = FileUtil.getInt(in); 		 // read monster minimum health from txt file
 			int maxMonsterStrength = FileUtil.getInt(in); 		 // read monster max strength from txt file
-			int miniMonsterStrength = FileUtil.getInt(in); 		 // read monster minimum strength from txt file
+			//int miniMonsterStrength = FileUtil.getInt(in); 		 // read monster minimum strength from txt file
 			String monsterPic = FileUtil.readParagraph(in);
 
 
-			monsters.put(monsterName, new Monster(monsterName, monsterPic, maxMonsterHealth, miniMonsterHealth,
-					maxMonsterStrength, miniMonsterStrength));	 // put the pairs in HashMap instantiate monsters
+			monsters.put(monsterName, new Monster(monsterName, monsterPic, maxMonsterHealth,
+					maxMonsterStrength));	 // put the pairs in HashMap instantiate monsters
 		}
 
 
