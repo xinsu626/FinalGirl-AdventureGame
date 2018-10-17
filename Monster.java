@@ -54,12 +54,7 @@ public class Monster{
 		}
 
 
-		}
-
-
-		in.close(); // close the scanner object 
-
-
+		//in.close(); // close the scanner object
 		return monsters;
 	}
 

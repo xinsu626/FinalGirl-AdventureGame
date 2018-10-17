@@ -18,12 +18,12 @@ public class Game{
 			game.play();
 			if (gameIsOver){
 				System.out.println("The game is over!");
-				break;
-			}
-
-			if (game.getPlayer().getHealth() <= 0){
 				return;
 			}
+
+			//if (game.getPlayer().getHealth() <= 0){
+			//	return;
+			//}
 			currentWeapon = game.getPlayer().getCurrentWeapon();
 		}
 
@@ -86,14 +86,7 @@ public class Game{
 
 	private boolean processCommand()
 	{
-
-
 		String line = UI.promptLine("> ").trim().toUpperCase(); // get user input
-
-
-		if (line.equals("quit")){
-			return true;
-		}
 
 		if (line.length() == 0 || !CommandMapper.isCommand(line))
 		{
