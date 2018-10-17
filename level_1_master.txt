@@ -1,19 +1,23 @@
-Welcome to FINAL GIRL'S ADVENTURE (unless you save her!).
+# text file for level 1 of Final Girl's Adventure
+#
+Welcome to FINAL GIRL'S ADVENTURE! You awake on the third floor of a house, slingshot in hand...
 
 # Welcome to the monster production base
 # The blueprint for monster production is：
-# - name
+# - name of monster
 # - maxMonsterHealth
 # - miniMonsterHealth
 # - maxMonsterStrength
 # - miniMonsterStrength
-# - category
+#
+# There are many zombies, ghosts, and skeletons within the house, and one final boss monster per floor
+# zombies, ghosts, and skeletons are weaker monsters
 zombie
-50
-25
+30
+10
 5
 1
-..╱▔▔▔▔▔▔▔▔▔╲..
+..╱▔▔▔▔▔▔▔▔╲..
 .▕     x     ▏.
 .▕  @     @  ▏.
 .▕     L   x ▏.
@@ -22,11 +26,11 @@ zombie
 ..╲_________╱..
 
 skeleton
-50
-25
+30
+10
 5
 1
-..╱▔▔▔▔▔▔▔▔▔╲..
+..╱▔▔▔▔▔▔▔╲..
 .▕           ▏.
 .▕  ╭╮   ╭╮  ▏.
 .▕  ╰╯   ╰╯  ▏.
@@ -36,11 +40,11 @@ skeleton
 ...▕_______▏...
 
 ghost
-50
-25
+30
+10
 5
 1
-..╱▔▔▔▔▔▔▔▔╲..
+..╱▔▔▔▔▔▔╲..
 .▕  ╭━╮ ╭━╮ ▏.
 .▕  ┃╭╯ ╰╮┃ ▏.
 .▕  ╰╯╭━╮╰╯ ▏.
@@ -48,12 +52,14 @@ ghost
 .▕    ╰━╯   ▏.
 .▕╱╲╱╲╱╲╱╲╱╲▏.
 
+#boss monsters are stronger
+#the boss monster for level 1 is a mummy
 mummy
 100
 80
 10
 5
-..╱▔▔▔▔▔▔▔▔▔╲..
+..╱▔▔▔▔▔▔▔╲..
 .▕ ┈╲┈┈┈┈╱┈  ▏.
 .▕┈╭╮ ┈┈ ╭╮┈ ▏.
 .▕┈╰╯ ┈┈ ╰╯ ┈▏.
@@ -61,8 +67,15 @@ mummy
 .▕ ┈╭━━━━╮ ┈ ▏.
 .▕ ┈╰━━━━╯ ┈ ▏.
 .┈╲_________╱┈.
+Urrrugggg Urrruugggg I've been asleep for too long!
 
 ****************************************
+# these are the items that can be found on level 1
+# items are listed as follows:
+# - itemName
+# - itemType
+# - itemAttribute
+# the item's attribute will determine its effectiveness within the game
 potion
 potion
 20
@@ -70,13 +83,16 @@ potion
 superPotion
 potion
 40
-#
+# the final item is a power weapon, and varies by floor
+# the power weapong for this floor is a flame thrower to defeat the mummy
 flameThrower
 weapon
 30
 ****************************************
 # rooms data follows
-# for each room: name line, monster lines, item lines,x-coordinate, y-coordinate
+# for each room: name, description
+# the first 4 rooms vary by floor, can contain items/monsters
+# items/monsters are randomly assigned to one of the 4 active rooms
 conservatory
 in the conservatory.
 
@@ -89,11 +105,13 @@ in the bedroom.
 study
 in the study.
 
+# the last two rooms, hallway and exit, are the same on each floor
+# hallway contains null items/monsters, exit is where player will fight the boss monster
 hallway
 in the hallway.
 
 exit
-in the exit.
+at the exit.
 
 ****************************************
 
