@@ -1,19 +1,23 @@
+# text file for level 3 of Final Girl's Adventure
+#
 Finally! Final girl has reached the ground floor. You're almost to safety...
 
 # Welcome to the monster production base
 # The blueprint for monster production is：
-# - name
+# - name of monster
 # - maxMonsterHealth
 # - miniMonsterHealth
 # - maxMonsterStrength
 # - miniMonsterStrength
-# - category
+#
+# there are many zombies, ghosts, and skeletons within the house, and one final boss monster per floor
+# zombies, ghosts, and skeletons are weaker monsters
 zombie
-90
+75
 50
 5
 1
-..╱▔▔▔▔▔▔▔▔▔╲..
+..╱▔▔▔▔▔▔▔╲..
 .▕     x     ▏.
 .▕  @     @  ▏.
 .▕     L   x ▏.
@@ -22,11 +26,11 @@ zombie
 ..╲_________╱..
 
 skeleton
-90
+75
 50
 5
 1
-..╱▔▔▔▔▔▔▔▔▔╲..
+..╱▔▔▔▔▔▔▔╲..
 .▕           ▏.
 .▕  ╭╮   ╭╮  ▏.
 .▕  ╰╯   ╰╯  ▏.
@@ -36,11 +40,11 @@ skeleton
 ...▕_______▏...
 
 ghost
-90
+75
 50
 5
 1
-..╱▔▔▔▔▔▔▔▔╲..
+..╱▔▔▔▔▔▔╲..
 .▕  ╭━╮ ╭━╮ ▏.
 .▕  ┃╭╯ ╰╮┃ ▏.
 .▕  ╰╯╭━╮╰╯ ▏.
@@ -48,12 +52,14 @@ ghost
 .▕    ╰━╯   ▏.
 .▕╱╲╱╲╱╲╱╲╱╲▏.
 
+# boss monsters are stronger
+# the boss monster for level 3 is a vampire
 vampire
 100
 80
 10
 5
-..╱▔▔▔╲╱▔▔▔▔╲..
+..╱▔▔▔╲╱▔▔▔╲..
 .▕           ▏.
 .▕  ╲    ╱   ▏.
 .▕  O    O   ▏.
@@ -61,8 +67,15 @@ vampire
 .▕   ╱VwV╲   ▏.
 ..╲  ~~~~~  ╱..
 ..╱╲_______╱╲..
+Muahahaha I smell blood! You'll never make it out of my house alive!
 
 ****************************************
+# these are the items that can be found on level 3
+# items are listed as follows:
+# - itemName
+# - itemType
+# - itemAttribute
+# the item's attribute will determine its effectiveness within the game
 potion
 potion
 20
@@ -71,12 +84,15 @@ superPotion
 potion
 40
 #
+# the power weapon on this floor is a holy crossbow, to kill the vampire
 holyCrossbow
 weapon
 50
 ****************************************
 # rooms data follows
-# for each room: name line, monster lines, item lines,x-coordinate, y-coordinate
+# for each room: name, description
+# the first 4 rooms vary by floor, can contain items/monsters
+# items/monsters are randomly assigned to one of the 4 active rooms
 living room
 in the living room.
 
@@ -86,13 +102,16 @@ in the kitchen.
 parlor
 in the parlor.
 
-ball room
-in the ball room.
+ballroom
+in the ballroom.
 
+# the last two rooms, hallway and exit, are the same on each floor
+# hallway contains null items/monsters, exit is where player will fight the boss monster
+# on this level, the exit is the last step before winning the game
 hallway
 in the hallway.
 
 exit
-in the exit.
+at the exit.
 
 ****************************************
