@@ -7,7 +7,7 @@ public class Player{
 	private int health;
 	private Item currentWeapon;
 	private Game game;
-	private boolean hasPowerWeapon = true;
+	private boolean hasPowerWeapon;
 
 	// constructor
 	public Player(String name, Game game, Item currentWeapon)

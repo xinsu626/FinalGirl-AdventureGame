@@ -6,9 +6,9 @@ Ah, you've made it to the next level of the house. You rested and regained your 
 # The blueprint for monster production is：
 # - name of monster
 # - maxMonsterHealth
-# - miniMonsterHealth
+# - minMonsterHealth
 # - maxMonsterStrength
-# - miniMonsterStrength
+# - minMonsterStrength
 #
 # there are many zombies, ghosts, and skeletons within the house, and one final boss monster per floor
 # zombies, ghosts, and skeletons are weaker monsters

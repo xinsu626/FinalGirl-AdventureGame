@@ -23,12 +23,14 @@ public class Monster{
 	public Monster(String monsterName, String monsterPic, int maxMonsterHealth, int miniMonsterHealth, int maxMonsterStrength, int miniMonsterStrength){
 		this.monsterName = monsterName;
 		this.monsterPic = monsterPic;
-		this.maxMonsterStrength = maxMonsterStrength;
-		this.miniMonsterStrength = miniMonsterStrength;
-		this.maxMonsterHealth = maxMonsterHealth;
-		this.miniMonsterHealth = miniMonsterHealth;
-		this.currentHealth = rand.nextInt(maxMonsterHealth - miniMonsterHealth) + miniMonsterHealth; //generate random number from range
-		this.currentStrength = rand.nextInt(maxMonsterStrength - miniMonsterStrength) + miniMonsterStrength;
+		//this.maxMonsterStrength = maxMonsterStrength;
+		//this.miniMonsterStrength = miniMonsterStrength;
+		//this.maxMonsterHealth = maxMonsterHealth;
+		//this.miniMonsterHealth = miniMonsterHealth;
+		//this.currentHealth = rand.nextInt(maxMonsterHealth - miniMonsterHealth) + miniMonsterHealth; //generate random number from range
+		//this.currentStrength = rand.nextInt(maxMonsterStrength - miniMonsterStrength) + miniMonsterStrength;
+        this.currentStrength = maxMonsterStrength;
+        this.currentHealth = maxMonsterHealth;
 	}
 
 	// Create a monster 

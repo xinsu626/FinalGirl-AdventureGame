@@ -8,7 +8,7 @@ public class Quit implements Action{
     public boolean execute()
     {
         Game.setGameIsOver();
-        return UI.agree("Do you really want to quit? ");
+        return UI.agree("Leaving so soon! Do you really want to quit? ");
     }
 
     public String getCommandName()

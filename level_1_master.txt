@@ -6,9 +6,9 @@ Welcome to FINAL GIRL'S ADVENTURE! You awaken on the third floor of a house, sli
 # The blueprint for monster production is：
 # - name of monster
 # - maxMonsterHealth
-# - miniMonsterHealth
+# - minMonsterHealth
 # - maxMonsterStrength
-# - miniMonsterStrength
+# - minMonsterStrength
 #
 # There are many zombies, ghosts, and skeletons within the house, and one final boss monster per floor
 # zombies, ghosts, and skeletons are weaker monsters
