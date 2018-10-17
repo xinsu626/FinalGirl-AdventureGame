@@ -1,19 +1,23 @@
+# text file for level 2 of Final Girl's Adventure
+#
 Ah, you've made it to the next level of the house. Let's see what this floor has in store...
 
 # Welcome to the monster production base
 # The blueprint for monster production is：
-# - name
+# - name of monster
 # - maxMonsterHealth
 # - miniMonsterHealth
 # - maxMonsterStrength
 # - miniMonsterStrength
-# - category
+#
+# there are many zombies, ghosts, and skeletons within the house, and one final boss monster per floor
+# zombies, ghosts, and skeletons are weaker monsters
 zombie
-65
-30
+50
+25
 5
 1
-..╱▔▔▔▔▔▔▔▔▔╲..
+..╱▔▔▔▔▔▔▔╲..
 .▕     x     ▏.
 .▕  @     @  ▏.
 .▕     L   x ▏.
@@ -22,8 +26,8 @@ zombie
 ..╲_________╱..
 
 skeleton
-65
-30
+50
+25
 5
 1
 ..╱▔▔▔▔▔▔▔▔▔╲..
@@ -36,11 +40,11 @@ skeleton
 ...▕_______▏...
 
 ghost
-65
-30
+50
+25
 5
 1
-..╱▔▔▔▔▔▔▔▔╲..
+..╱▔▔▔▔▔▔╲..
 .▕  ╭━╮ ╭━╮ ▏.
 .▕  ┃╭╯ ╰╮┃ ▏.
 .▕  ╰╯╭━╮╰╯ ▏.
@@ -48,6 +52,8 @@ ghost
 .▕    ╰━╯   ▏.
 .▕╱╲╱╲╱╲╱╲╱╲▏.
 
+# boss monsters are stronger
+# the boss monster for level 2 is a werewolf
 werewolf
 100
 80
@@ -61,8 +67,15 @@ werewolf
 .╱   VVVVV  ╲.
 .╱   ^^^^^  ╲.
 ..╲________╱..
+Ooowwwwoooooo Final Girl is my favorite fooood...
 
 ****************************************
+# these are the items that can be found on level 2
+# items are listed as follows:
+# - itemName
+# - itemType
+# - itemAttribute
+# the item's attribute will determine its effectiveness within the game
 potion
 potion
 20
@@ -71,28 +84,33 @@ superPotion
 potion
 40
 #
+# the power weapon for this level is a silverSword, to kill the werewolf
 silverSword
 weapon
 40
 ****************************************
 # rooms data follows
-# for each room: name line, monster lines, item lines,x-coordinate, y-coordinate
+# for each room: name, description
+# the first 4 rooms vary by floor, can contain items/monsters
+# items/monsters are randomly assigned to one of the 4 active rooms
 library
 in the library.
 
 bathroom
 in the bathroom.
 
-bedroom2
-in the bedroom2.
+nursery
+in the nursery.
 
 gameroom
 in the gameroom.
 
+# the last two rooms, hallway and exit, are the same on each floor
+# hallway contains null items/monsters, exit is where player will fight the boss monster
 hallway
 in the hallway.
 
 exit
-in the exit.
+at the exit.
 
 ****************************************
