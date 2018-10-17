@@ -1,6 +1,6 @@
 # text file for level 2 of Final Girl's Adventure
 #
-Ah, you've made it to the next level of the house. Let's see what this floor has in store...
+Ah, you've made it to the next level of the house. You rested and regained your health. Let's see what this floor has in store...
 
 # Welcome to the monster production base
 # The blueprint for monster production is：
@@ -15,49 +15,49 @@ Ah, you've made it to the next level of the house. Let's see what this floor has
 zombie
 50
 25
-5
+20
 1
-..╱▔▔▔▔▔▔▔╲..
-.▕     x     ▏.
-.▕  @     @  ▏.
-.▕     L   x ▏.
-.▕   ╭━━━╮   ▏.
-.▕ x ╰━━━╯   ▏.
-..╲_________╱..
+..╱▔▔▔▔▔╲..
+.▕    x     ▏ .
+.▕  @    @  ▏ .
+.▕    L   x ▏ .
+.▕   ╭━━━╮   ▏ .
+.▕ x ╰━━━╯   ▏ .
+..╲________╱..
 
 skeleton
 50
 25
-5
+20
 1
-..╱▔▔▔▔▔▔▔▔▔╲..
-.▕           ▏.
-.▕  ╭╮   ╭╮  ▏.
-.▕  ╰╯   ╰╯  ▏.
-.▕     ^     ▏.
-..╲ ||||||| ╱..
+..╱▔▔▔▔▔╲..
+.▕          ▏ .
+.▕  ╭╮   ╭╮  ▏ .
+.▕  ╰╯   ╰╯  ▏ .
+.▕     ^    ▏ .
+..╲|||||||╱..
 ....|||||||....
-...▕_______▏...
+...▕______▏...
 
 ghost
 50
 25
-5
+20
 1
-..╱▔▔▔▔▔▔╲..
-.▕  ╭━╮ ╭━╮ ▏.
-.▕  ┃╭╯ ╰╮┃ ▏.
-.▕  ╰╯╭━╮╰╯ ▏.
-.▕    ┃ ┃   ▏.
-.▕    ╰━╯   ▏.
-.▕╱╲╱╲╱╲╱╲╱╲▏.
+..╱▔▔▔▔▔╲..
+.▕  ╭━╮ ╭━╮  ▏ .
+.▕  ┃╭╯ ╰╮┃  ▏ .
+.▕  ╰╯╭━╮╰╯  ▏ .
+.▕    ┃ ┃    ▏ .
+.▕    ╰━╯    ▏ .
+.▕╱╲╱╲╱╲▏ .
 
 # boss monsters are stronger
 # the boss monster for level 2 is a werewolf
 werewolf
 100
 80
-10
+30
 5
 ..A________A..
 .╱          ╲.
@@ -80,12 +80,12 @@ potion
 potion
 20
 #
-superPotion
+super potion
 potion
 40
 #
 # the power weapon for this level is a silverSword, to kill the werewolf
-silverSword
+silver sword
 weapon
 40
 ****************************************
@@ -102,8 +102,8 @@ in the bathroom.
 nursery
 in the nursery.
 
-gameroom
-in the gameroom.
+game room
+in the game room.
 
 # the last two rooms, hallway and exit, are the same on each floor
 # hallway contains null items/monsters, exit is where player will fight the boss monster

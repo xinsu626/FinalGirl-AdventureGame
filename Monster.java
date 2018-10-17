@@ -61,7 +61,10 @@ public class Monster{
 	// setters 
 	public void setCurrentHealth(int newHealth)
 	{
-		this.currentHealth = newHealth;
+		currentHealth = newHealth;
+		if (currentHealth < 0){
+			currentHealth = 0;
+		}
 	}
 
 	// getters

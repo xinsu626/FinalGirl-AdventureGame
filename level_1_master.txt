@@ -1,6 +1,6 @@
 # text file for level 1 of Final Girl's Adventure
 #
-Welcome to FINAL GIRL'S ADVENTURE! You awake on the third floor of a house, slingshot in hand...
+Welcome to FINAL GIRL'S ADVENTURE! You awaken on the third floor of a house, slingshot in hand...
 
 # Welcome to the monster production base
 # The blueprint for monster production is：
@@ -15,58 +15,58 @@ Welcome to FINAL GIRL'S ADVENTURE! You awake on the third floor of a house, slin
 zombie
 30
 10
-5
+10
 1
-..╱▔▔▔▔▔▔▔▔╲..
-.▕     x     ▏.
-.▕  @     @  ▏.
-.▕     L   x ▏.
-.▕   ╭━━━╮   ▏.
-.▕ x ╰━━━╯   ▏.
-..╲_________╱..
+..╱▔▔▔▔▔╲..
+.▕    x     ▏ .
+.▕  @    @  ▏ .
+.▕    L   x ▏ .
+.▕   ╭━━━╮   ▏ .
+.▕ x ╰━━━╯   ▏ .
+..╲________╱..
 
 skeleton
 30
 10
-5
+10
 1
-..╱▔▔▔▔▔▔▔╲..
-.▕           ▏.
-.▕  ╭╮   ╭╮  ▏.
-.▕  ╰╯   ╰╯  ▏.
-.▕     ^     ▏.
-..╲ ||||||| ╱..
+..╱▔▔▔▔▔╲..
+.▕          ▏ .
+.▕  ╭╮   ╭╮  ▏ .
+.▕  ╰╯   ╰╯  ▏ .
+.▕     ^    ▏ .
+..╲|||||||╱..
 ....|||||||....
-...▕_______▏...
+...▕______▏...
 
 ghost
 30
 10
-5
+10
 1
-..╱▔▔▔▔▔▔╲..
-.▕  ╭━╮ ╭━╮ ▏.
-.▕  ┃╭╯ ╰╮┃ ▏.
-.▕  ╰╯╭━╮╰╯ ▏.
-.▕    ┃ ┃   ▏.
-.▕    ╰━╯   ▏.
-.▕╱╲╱╲╱╲╱╲╱╲▏.
+..╱▔▔▔▔▔╲..
+.▕  ╭━╮ ╭━╮  ▏ .
+.▕  ┃╭╯ ╰╮┃  ▏ .
+.▕  ╰╯╭━╮╰╯  ▏ .
+.▕    ┃ ┃    ▏ .
+.▕    ╰━╯    ▏ .
+.▕╱╲╱╲╱╲▏ .
 
 #boss monsters are stronger
 #the boss monster for level 1 is a mummy
 mummy
 100
 80
-10
+20
 5
-..╱▔▔▔▔▔▔▔╲..
-.▕ ┈╲┈┈┈┈╱┈  ▏.
+..╱▔▔▔▔╲..
+.▕ ┈╲┈┈┈╱┈ ▏.
 .▕┈╭╮ ┈┈ ╭╮┈ ▏.
 .▕┈╰╯ ┈┈ ╰╯ ┈▏.
 .▕ ┈┈┈╰┈┈┈┈  ▏.
 .▕ ┈╭━━━━╮ ┈ ▏.
 .▕ ┈╰━━━━╯ ┈ ▏.
-.┈╲_________╱┈.
+.┈ ╲______╱┈.
 Urrrugggg Urrruugggg I've been asleep for too long!
 
 ****************************************
@@ -80,12 +80,12 @@ potion
 potion
 20
 #
-superPotion
+super potion
 potion
 40
 # the final item is a power weapon, and varies by floor
 # the power weapong for this floor is a flame thrower to defeat the mummy
-flameThrower
+flame thrower
 weapon
 30
 ****************************************

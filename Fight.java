@@ -31,6 +31,9 @@ public class Fight
 					if (damageTaken(currentPlayer, currentMonster)) {
 						return "dead";
 					}
+					if (damageTaken(currentPlayer, currentMonster)) {
+						return "dead";
+					}
 				}
 			}
 
@@ -59,14 +62,18 @@ public class Fight
 		currentMonster.setCurrentHealth(currentMonster.getCurrentHealth() - damageGiven);
 		currentPlayer.incrementHealth(-damageSustained);
 
-		System.out.println("You took " + damageSustained + " damage and the monster took " + damageGiven + " damage.");
-
 		if (currentPlayer.getHealth() <= 0)
 		{
 			System.out.println("You're dead!");
 			return true;
 		}
-		System.out.println("Your health is now " + currentPlayer.getHealth() + "\nand the monster's health is now " + currentMonster.getCurrentHealth());
+
+		if (currentMonster.getCurrentHealth() > 0) {
+			System.out.println("-----------------------");
+			System.out.println("You took " + damageSustained + " damage and the monster took " + damageGiven + " damage.");
+		}
+
+		System.out.println("Your health is now " + currentPlayer.getHealth() + " and the monster's health is now " + currentMonster.getCurrentHealth());
 		System.out.println("-----------------------");
 		return false;
 	}

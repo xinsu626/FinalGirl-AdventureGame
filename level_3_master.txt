@@ -1,6 +1,6 @@
 # text file for level 3 of Final Girl's Adventure
 #
-Finally! Final girl has reached the ground floor. You're almost to safety...
+Finally! Final girl has reached the ground floor. You rested and regained your health. You're almost to safety...
 
 # Welcome to the monster production base
 # The blueprint for monster production is：
@@ -15,59 +15,59 @@ Finally! Final girl has reached the ground floor. You're almost to safety...
 zombie
 75
 50
-5
+30
 1
-..╱▔▔▔▔▔▔▔╲..
-.▕     x     ▏.
-.▕  @     @  ▏.
-.▕     L   x ▏.
-.▕   ╭━━━╮   ▏.
-.▕ x ╰━━━╯   ▏.
-..╲_________╱..
+..╱▔▔▔▔▔╲..
+.▕    x     ▏ .
+.▕  @    @  ▏ .
+.▕    L   x ▏ .
+.▕   ╭━━━╮   ▏ .
+.▕ x ╰━━━╯   ▏ .
+..╲_______╱..
 
 skeleton
 75
 50
-5
+30
 1
-..╱▔▔▔▔▔▔▔╲..
-.▕           ▏.
-.▕  ╭╮   ╭╮  ▏.
-.▕  ╰╯   ╰╯  ▏.
-.▕     ^     ▏.
-..╲ ||||||| ╱..
+..╱▔▔▔▔▔╲..
+.▕          ▏ .
+.▕  ╭╮   ╭╮  ▏ .
+.▕  ╰╯   ╰╯  ▏ .
+.▕     ^    ▏ .
+..╲|||||||╱..
 ....|||||||....
-...▕_______▏...
+...▕______▏...
 
 ghost
 75
 50
-5
+30
 1
-..╱▔▔▔▔▔▔╲..
-.▕  ╭━╮ ╭━╮ ▏.
-.▕  ┃╭╯ ╰╮┃ ▏.
-.▕  ╰╯╭━╮╰╯ ▏.
-.▕    ┃ ┃   ▏.
-.▕    ╰━╯   ▏.
-.▕╱╲╱╲╱╲╱╲╱╲▏.
+..╱▔▔▔▔▔╲..
+.▕  ╭━╮ ╭━╮  ▏ .
+.▕  ┃╭╯ ╰╮┃  ▏ .
+.▕  ╰╯╭━╮╰╯  ▏ .
+.▕    ┃ ┃    ▏ .
+.▕    ╰━╯    ▏ .
+.▕╱╲╱╲╱╲▏ .
 
 # boss monsters are stronger
 # the boss monster for level 3 is a vampire
-vampire
+Dr. "Dracula" Harrington
 100
 80
-10
+40
 5
-..╱▔▔▔╲╱▔▔▔╲..
-.▕           ▏.
-.▕  ╲    ╱   ▏.
-.▕  O    O   ▏.
-.▕    ╰      ▏.
-.▕   ╱VwV╲   ▏.
-..╲  ~~~~~  ╱..
+..╱▔▔▔▔▔╲..
+.▕           ▏ .
+.▕  ╲   ╱   ▏ .
+.▕ (O} - (O} ▏ .
+.▕     <     ▏ .
+.▕  ╱VwwV╲ ▏ .
+.▕   ~~~~~~  ▏...
 ..╱╲_______╱╲..
-Muahahaha I smell blood! You'll never make it out of my house alive!
+Muahahaha you should have studied harder! You'll never pass this class!
 
 ****************************************
 # these are the items that can be found on level 3
@@ -80,12 +80,12 @@ potion
 potion
 20
 #
-superPotion
+super potion
 potion
 40
 #
 # the power weapon on this floor is a holy crossbow, to kill the vampire
-holyCrossbow
+holy crossbow
 weapon
 50
 ****************************************

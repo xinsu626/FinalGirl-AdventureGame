@@ -11,7 +11,7 @@ public class Game{
 		Game game;
 
 		String playerName = UI.promptLine("Enter a name for your player: ").trim();
-		Item currentWeapon = new Item("slingshot", "weapon", 5);
+		Item currentWeapon = new Item("slingshot", "weapon", 10);
 
 		for (String dataFile: itemDataList){
 			game = new Game(dataFile, playerName, currentWeapon);

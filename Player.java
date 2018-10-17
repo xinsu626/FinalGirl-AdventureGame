@@ -15,7 +15,7 @@ public class Player{
 	{
 		this.name = name;
 		this.currentWeapon = currentWeapon;
-		health = 500; //initial health
+		health = 100; //initial health
 
 		this.game = game;
 	}
@@ -37,9 +37,17 @@ public class Player{
 	public void setCurrentWeapon(Item weapon){
 		currentWeapon = weapon;}
 
-	public void incrementHealth(int x) {
+	public void incrementHealth(int x)
+	{
 		health += x;
+		if (health > 100){
+			health = 100;
+		}
+		if (health < 0){
+			health = 0;
+		}
 	}
+
 
 	public void hasPowerWeapon(){
 		hasPowerWeapon = true;
