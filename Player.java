@@ -7,7 +7,7 @@ public class Player{
 	private int health;
 	private Item currentWeapon;
 	private Game game;
-	private boolean hasPowerWeapon;
+	private boolean hasPowerWeapon = true;
 
 	// constructor
 	public Player(String name, Game game, Item currentWeapon)
@@ -15,7 +15,7 @@ public class Player{
 	{
 		this.name = name;
 		this.currentWeapon = currentWeapon;
-		health = 100; //initial health
+		health = 500; //initial health
 
 		this.game = game;
 	}
@@ -23,7 +23,6 @@ public class Player{
 	// create player
 	public static Player createPlayer(Game game, String name, Item currentWeapon){
 		Player newPlayer = new Player(name, game, currentWeapon);
-		System.out.println("Your player's name is now " + name);
 		return newPlayer;
 	}
 
@@ -51,8 +50,12 @@ public class Player{
 	}
 
 	public void checkStatus(){
-		System.out.println("Your health: " + health);
-		System.out.println("Your weapon: " + currentWeapon.name);
+		System.out.println(name + "'s health: " + health);
+		System.out.println(name + "'s weapon: " + currentWeapon.name);
 		System.out.println("Current room: " + game.getCurrentRoom().getName());
+	}
+
+	public String getName(){
+		return name;
 	}
 } 

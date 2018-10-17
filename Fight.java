@@ -14,14 +14,15 @@ public class Fight
 		currentMonster.checkStatus();
 
 		while (currentMonster.getCurrentHealth() > 0) {
-			String toFlee = "";
+			String toFlee = UI.promptLine("Do you want to FIGHT [F] or RUN [R]?").toUpperCase();
 
-			while (!toFlee.equals("FIGHT") && !toFlee.equals("FLEE")) {
-				toFlee = UI.promptLine("Do you want to FIGHT or FLEE?").toUpperCase();
+			while (!toFlee.equals("F") && !toFlee.equals("R")) {
+				System.out.println("Not a valid command. Enter F for fight or R for run.");
+				toFlee = UI.promptLine("Do you want to FIGHT [F] or RUN [R]?").toUpperCase();
 				System.out.println("-------------------");
 			}
 
-			if (toFlee.equals("FLEE")) {
+			if (toFlee.equals("R")) {
 				if (random.nextBoolean()) {
 					System.out.println("You successfully fled from the monster. You're back in the hallway.");
 					return "fled";
@@ -33,7 +34,7 @@ public class Fight
 				}
 			}
 
-			if (toFlee.equals("FIGHT")) {
+			if (toFlee.equals("F")) {
 				if (damageTaken(currentPlayer, currentMonster)) {
 					return "dead";
 				}
@@ -45,7 +46,7 @@ public class Fight
 		}
 
 		System.out.println("------------------fight over-------------------------");
-		System.out.println(currentMonster.getName() + " was defeated!");
+		System.out.println(currentMonster.getName() + " was defeated! Good job, " + currentPlayer.getName() + ".");
 		currentRoom.killMonster();
 		currentPlayer.checkStatus();
 		return "won";

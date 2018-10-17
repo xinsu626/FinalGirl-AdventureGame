@@ -34,14 +34,14 @@ public class Room{
 				break;
 			}
 			String description = FileUtil.readParagraph(in);
-			Monster monster;
+			Monster monster = null;
 			Item item;
 
-			if(name.equals("exit")){
+			/*if(name.equals("exit")){
 				monster = monsters.get("mummy");
 			} else{
 				monster = null;
-			}
+			}*/
 
 			item = null;
 
@@ -78,7 +78,12 @@ public class Room{
 			itemNameArrayList.add(itemName);
 		}
 
-		monsterNameArrayList.remove(monsterNameArrayList.indexOf("mummy"));
+		for (String monster: monsterNameArrayList){
+			if (monster.equals("mummy") || monster.equals("werewolf") || monster.equals("vampire")) {
+				monsterNameArrayList.remove(monsterNameArrayList.indexOf(monster));
+				rooms.get("exit").setMonster(monsters.get(monster));
+			}
+		}
 
 		Collections.shuffle(roomNameArrayList);
 
@@ -92,7 +97,6 @@ public class Room{
 		for(int i = 0; i < monsterNameArrayList.size(); i++){
 			String roomName = roomNameArrayList.get(i);
 			String monsterName = monsterNameArrayList.get(i);
-
 			rooms.get(roomName).setMonster(monsters.get(monsterName));
 		}
 	}

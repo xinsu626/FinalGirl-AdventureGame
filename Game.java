@@ -21,9 +21,6 @@ public class Game{
 				return;
 			}
 
-			//if (game.getPlayer().getHealth() <= 0){
-			//	return;
-			//}
 			currentWeapon = game.getPlayer().getCurrentWeapon();
 		}
 
@@ -90,7 +87,7 @@ public class Game{
 
 		if (line.length() == 0 || !CommandMapper.isCommand(line))
 		{
-			System.out.println("Pleas enter a command.");
+			System.out.println("Please enter a command.");
 			return false;
 		}
 
@@ -107,6 +104,9 @@ public class Game{
 		System.out.println("Please select an action to take. [INSPECT, GO, HELP, QUIT]");
 
 		while (!processCommand()) {
+			if (currentRoom.getName().equals("exit") && currentRoom.getMonster() == null){
+				break;
+			}
 			System.out.println("Please select an action to take. [INSPECT, GO, HELP, QUIT]");
 		}
 	}
