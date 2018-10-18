@@ -5,8 +5,8 @@ import java.util.Set;
 import java.util.Collections;
 
 /**
- *Creates a given room and its attributes, such as 
- *its item, monster, and description.
+ * Creates a given room and its attributes, such as 
+ * its item, monster, and description.
  */
 public class Room{
 
