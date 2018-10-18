@@ -2,8 +2,8 @@ import java.util.Scanner;
 import java.util.HashMap;
 
 /**
- *Creates a given monster and sets its attributes, such as health
- *and attack power, and tracks and tracks them during battle.
+ * Creates a given monster and sets its attributes, such as health
+ * and attack power, and tracks and tracks them during battle.
  */
 public class Monster{
 	private String monsterName;
