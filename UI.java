@@ -1,9 +1,8 @@
 import java.util.Scanner;
 
 /**
- * Aid user keyboard input with prompts and error catching.
- *
- * @version 2017.09.24
+ * Guides the player through the game with text prompts, accept key
+ * inputs, and identifies errors in inputs when they occur.
  */
 public class UI
 {
