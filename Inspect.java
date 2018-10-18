@@ -29,7 +29,7 @@ public class Inspect implements Action
 
 			if (itemInRoom.getCategory().equals("potion")){
 				player.incrementHealth(itemInRoom.getAttribute());
-				System.out.println(game.getCurrentRoom().getDescription()+"You drink " + itemInRoom.getName() + "! Your health increases by " + itemInRoom.getAttribute() + ".");
+				System.out.println("You drink " + itemInRoom.getName() + "! Your health increases by " + itemInRoom.getAttribute() + ".");
 			}
 			else if (itemInRoom.getCategory().equals("weapon")){
 				System.out.println("You take the " + itemInRoom.getName() + ".");
