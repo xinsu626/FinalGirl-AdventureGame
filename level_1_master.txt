@@ -47,8 +47,8 @@ ghost
 #boss monsters are stronger
 #the boss monster for level 1 is a mummy
 mummy
-75
-20
+60
+15
 ..╱▔▔▔▔╲..
 .▕ ┈╲┈┈┈╱┈ ▏.
 .▕┈╭╮ ┈┈ ╭╮┈ ▏.
