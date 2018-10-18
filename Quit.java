@@ -1,6 +1,6 @@
 /**
- *Initializes "quit" and confirms that the player wishes
- *to end their game session
+ * Initializes "quit" and confirms that the player wishes
+ * to end their game session
  */
 public class Quit implements Action{
     
