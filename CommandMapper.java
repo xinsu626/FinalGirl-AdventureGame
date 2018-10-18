@@ -1,7 +1,7 @@
 import java.util.HashMap;
 
 /**
- *Assigns command phrases to the appropriate user input.
+ * Assigns command phrases to the appropriate user input.
  */
 public class CommandMapper
 {
