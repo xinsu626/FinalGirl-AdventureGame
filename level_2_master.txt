@@ -47,7 +47,7 @@ ghost
 # boss monsters are stronger
 # the boss monster for level 2 is a werewolf
 werewolf
-90
+80
 20
 ..A________A..
 .╱          ╲.
