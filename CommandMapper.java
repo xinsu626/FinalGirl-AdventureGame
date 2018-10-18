@@ -1,5 +1,8 @@
 import java.util.HashMap;
 
+/**
+ *Assigns command phrases to the appropriate user input.
+ */
 public class CommandMapper
 {
 	private static HashMap<String, Action> actions;
