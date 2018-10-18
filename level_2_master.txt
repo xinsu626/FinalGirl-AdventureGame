@@ -47,7 +47,7 @@ ghost
 # boss monsters are stronger
 # the boss monster for level 2 is a werewolf
 werewolf
-100
+90
 30
 ..A________A..
 .╱          ╲.
@@ -68,11 +68,11 @@ Ooowwwwoooooo Final Girl is my favorite fooood...
 # the item's attribute will determine its effectiveness within the game
 potion
 potion
-20
+30
 #
 super potion
 potion
-40
+50
 #
 # the power weapon for this level is a silverSword, to kill the werewolf
 silver sword
