@@ -45,8 +45,8 @@ ghost
 .▕╱╲╱╲╱╲▏ .
 
 # boss monsters are stronger
-# the boss monster for level 3 is a vampire
-dr. dracula harrington
+# the boss monster for level 3 is Dr. Dradula Harrington
+dracula harrington
 100
 40
 ..╱▔▔▔▔▔╲..
