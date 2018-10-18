@@ -1,3 +1,8 @@
+/**
+ *Presents the player with a list of available "rooms" that can
+ *be traversed, allows one to be selected, and moves the
+ *player to that room.
+ */
 public class Goer implements Action {
 
 	private Game game;
