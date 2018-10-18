@@ -83,10 +83,8 @@ public class Fight
 			return true;
 		}
 
-		//if (currentMonster.getCurrentHealth() > 0) {
 		System.out.println("-----------------------");
 		System.out.println("You took " + damageSustained + " damage and the monster took " + damageGiven + " damage.");
-		//}
 
 		System.out.println("Your health is now " + currentPlayer.getHealth() + " and the monster's health is now " + currentMonster.getCurrentHealth());
 		System.out.println("-----------------------");

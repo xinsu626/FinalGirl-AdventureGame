@@ -21,9 +21,10 @@ public class Game{
 
 		String playerName = UI.promptLine("Enter a name for your player: ").trim();
 		Item currentWeapon = new Item("slingshot", "weapon", 10);
+		int health = 100;
 
 		for (String dataFile: itemDataList){
-			game = new Game(dataFile, playerName, currentWeapon);
+			game = new Game(dataFile, playerName, currentWeapon, health);
 			game.play();
 			if (gameIsOver){
 				System.out.println("The game is over!");
@@ -31,6 +32,7 @@ public class Game{
 			}
 
 			currentWeapon = game.getPlayer().getCurrentWeapon();
+			health += 50;
 		}
 
 		System.out.println("Congratulations, you've escaped the haunted house!\nBut unfortunately, the princess is in another house...");
@@ -56,7 +58,7 @@ public class Game{
 		return currentPlayer;
 	}
 
-	public Game(String txt, String name, Item currentWeapon)
+	public Game(String txt, String name, Item currentWeapon, int health)
 	{
 		Scanner levelScanner = ResourceUtil.openFileScanner(txt);
 		welcomeString = FileUtil.readParagraph(levelScanner);
@@ -64,7 +66,7 @@ public class Game{
 		currentRoom = rooms.get("hallway");
 
 		// player
-		currentPlayer = Player.createPlayer(this, name, currentWeapon);
+		currentPlayer = Player.createPlayer(this, name, currentWeapon, health);
 
 		CommandMapper.init(this);
 

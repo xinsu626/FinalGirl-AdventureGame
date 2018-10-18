@@ -9,17 +9,19 @@ public class Player{
 	private Item currentWeapon;
 	private Game game;
 	private boolean hasPowerWeapon;
+	private int maxHealth;
 
-	public Player(String name, Game game, Item currentWeapon)
+	public Player(String name, Game game, Item currentWeapon, int health)
 	{
 		this.name = name;
 		this.currentWeapon = currentWeapon;
-		health = 100; //initial health
+		this.health = health; //initial health
+		this.maxHealth = health;
 		this.game = game;
 	}
 
-	public static Player createPlayer(Game game, String name, Item currentWeapon){
-		Player newPlayer = new Player(name, game, currentWeapon);
+	public static Player createPlayer(Game game, String name, Item currentWeapon, int health){
+		Player newPlayer = new Player(name, game, currentWeapon, health);
 		return newPlayer;
 	}
 
@@ -37,8 +39,8 @@ public class Player{
 	public void incrementHealth(int x)
 	{
 		health += x;
-		if (health > 100){
-			health = 100;
+		if (health > maxHealth){
+			health = maxHealth;
 		}
 		if (health < 0){
 			health = 0;
