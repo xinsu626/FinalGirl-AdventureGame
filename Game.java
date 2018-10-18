@@ -6,7 +6,6 @@ public class Game{
 
 	public static void main(String[] args) {
 
-
 		String[] itemDataList = {"level_1_master.txt", "level_2_master.txt", "level_3_master.txt"};
 		Game game;
 
@@ -28,18 +27,11 @@ public class Game{
 
 	}
 
-	// declare instance variable
 	private Room currentRoom;
 	private HashMap<String, Room> rooms; // allow all rooms to be found by name
-	private Item currentWeapon;
-	private HashMap<String, Item> items; // allow all items to be found by name
 	private Player currentPlayer;
-
-	//private Scanner userInputScanner;
 	private String welcomeString;
-	private HashMap<String, Monster> monsters; // allow all monsters to be found by name
 
-	// getters and setters for room
 	public Room getCurrentRoom()
 	{
 		return currentRoom;
@@ -53,19 +45,6 @@ public class Game{
 	public Player getPlayer(){
 		return currentPlayer;
 	}
-
-	// getters and setters for weapon
-	public Item getCurrentWeapon()
-	{
-		return currentWeapon;
-	}
-
-	public void setCurrentWeapon(Item newWeapon)
-	{
-		this.currentWeapon = newWeapon;
-	}
-
-	// constructor
 
 	public Game(String txt, String name, Item currentWeapon)
 	{

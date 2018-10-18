@@ -1,10 +1,5 @@
 public class Quit implements Action{
 
-    /**
-     * "quit" was entered. Check the rest of the command to see
-     * whether we really quit the game.
-     * @return true, if this command quits the game, false otherwise.
-     */
     public boolean execute()
     {
         Game.setGameIsOver();

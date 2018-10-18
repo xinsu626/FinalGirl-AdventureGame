@@ -46,7 +46,7 @@ ghost
 
 # boss monsters are stronger
 # the boss monster for level 3 is a vampire
-Dr. "Dracula" Harrington
+dr. dracula harrington
 100
 40
 ..╱▔▔▔▔▔╲..

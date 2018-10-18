@@ -1,7 +1,4 @@
-import java.util.Scanner;
-
 public class Player{
-	// declare instance variables 
 
 	private String name;
 	private int health;
@@ -9,18 +6,14 @@ public class Player{
 	private Game game;
 	private boolean hasPowerWeapon;
 
-	// constructor
 	public Player(String name, Game game, Item currentWeapon)
-
 	{
 		this.name = name;
 		this.currentWeapon = currentWeapon;
 		health = 100; //initial health
-
 		this.game = game;
 	}
 
-	// create player
 	public static Player createPlayer(Game game, String name, Item currentWeapon){
 		Player newPlayer = new Player(name, game, currentWeapon);
 		return newPlayer;
@@ -48,7 +41,6 @@ public class Player{
 		}
 	}
 
-
 	public void hasPowerWeapon(){
 		hasPowerWeapon = true;
 	}
@@ -59,7 +51,7 @@ public class Player{
 
 	public void checkStatus(){
 		System.out.println(name + "'s health: " + health);
-		System.out.println(name + "'s weapon: " + currentWeapon.name);
+		System.out.println(name + "'s weapon: " + currentWeapon.getName());
 		System.out.println("Current room: " + game.getCurrentRoom().getName());
 	}
 

@@ -19,7 +19,7 @@ public class Fight
 			while (!toFlee.equals("F") && !toFlee.equals("R")) {
 				System.out.println("Not a valid command. Enter F for fight or R for run.");
 				toFlee = UI.promptLine("Do you want to FIGHT [F] or RUN [R]?").trim().toUpperCase();
-				System.out.println("-------------------");
+				System.out.println("-----------------------");
 			}
 
 			if (toFlee.equals("R")) {

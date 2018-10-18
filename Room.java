@@ -5,13 +5,12 @@ import java.util.Set;
 import java.util.Collections;
 
 public class Room{
-	// declare instance variables
+
 	private String name;
 	private Item item;
 	private String description;
     private Monster monster;
 
-	// constructor
 	public Room(String name, Item item, String description, Monster monster){
 		this.name = name;
 		this.item = item;
@@ -19,12 +18,10 @@ public class Room{
         this.monster = monster;
 	}
 
-	// create rooms
 	public static HashMap<String, Room> createRooms(Scanner in){
 
 		// empty rooms hashmap
 		HashMap<String, Room> rooms = new HashMap<String, Room>();
-		//Scanner testScanner = ResourceUtil.openFileScanner("level_1_master.txt");
 		HashMap<String, Monster> monsters = Monster.createMonsters(in);
 		HashMap<String, Item> items = Item.createItems(in);
 
@@ -35,20 +32,11 @@ public class Room{
 			}
 			String description = FileUtil.readParagraph(in);
 			Monster monster = null;
-			Item item;
-
-			/*if(name.equals("exit")){
-				monster = monsters.get("mummy");
-			} else{
-				monster = null;
-			}*/
-
-			item = null;
+			Item item = null;
 
 			Room newRoom = new Room(name, item, description, monster);
 			rooms.put(name, newRoom);
 		}
-		//rooms.put("closet", new Room("closet",items.get("potion"),"in closet", monsters.get("zombie")));
 		in.close();
 
 		// create ArrayList of room names
@@ -79,7 +67,7 @@ public class Room{
 		}
 
 		for (String monster: monsterNameArrayList){
-			if (monster.equals("mummy") || monster.equals("werewolf") || monster.equals("vampire")) {
+			if (monster.equals("mummy") || monster.equals("werewolf") || monster.equals("dr. dracula harrington")) {
 				monsterNameArrayList.remove(monsterNameArrayList.indexOf(monster));
 				rooms.get("exit").setMonster(monsters.get(monster));
 			}
@@ -120,7 +108,6 @@ public class Room{
 		item =null;
 	}
 
-	// getters 
 	public String getName(){
 		return name;}
 
@@ -134,7 +121,6 @@ public class Room{
 		return description;
 	}
 
-	// setters
 	private void setMonster(Monster monster){
 		this.monster = monster;
 	}

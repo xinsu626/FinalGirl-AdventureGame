@@ -1,13 +1,10 @@
-import java.util.Scanner;
-
 public class Goer implements Action {
-	// declare instance variable
+
 	private Game game;
 
 	public Goer(Game game) {
 		this.game = game;
 	}
-
 
 	public boolean execute() {
 		System.out.println("Here are the rooms you can enter:");

@@ -2,12 +2,10 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Item {
-	// declare instance variable(for now there is no weight)
-	public String name;
-	public String category;
-	public int attribute; //either increase health(potion) or increase strength(weapon)
+	private String name;
+	private String category;
+	private int attribute; //either change health(potion) or increase strength(weapon)
 
-	// constructor
 	public Item(String name, String category, int attribute) {
 		this.name = name;
 		this.category = category;
@@ -19,11 +17,7 @@ public class Item {
 		// empty items HashMap
 		HashMap<String, Item> items = new HashMap<String, Item>();
 
-
 		while (true) {
-
-		
-
 			String name = FileUtil.getNonCommentLine(in);
 			if(name.equals("****************************************")){
 				break;
@@ -38,18 +32,6 @@ public class Item {
 		return items;
 	}
 
-	// setters 
-	public void setName(String name){
-		this.name = name;}
-
-	public void setCategory(String category){
-		this.category = category;}
-
-	public void setAttribute(int attribute){
-		this.attribute = attribute;
-	}
-
-	// getters 
 	public String getName(){
 		return name;}
 

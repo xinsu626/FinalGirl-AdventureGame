@@ -1,8 +1,8 @@
 public class Inspect implements Action
 {
-	public Game game;
-	public Item itemInRoom;
-	public Monster monsterInRoom;
+	private Game game;
+	private Item itemInRoom;
+	private Monster monsterInRoom;
 
 	public Inspect(Game game)
 	{
@@ -36,11 +36,6 @@ public class Inspect implements Action
 		}
 
 		player.checkStatus();
-
-//		if (monsterInRoom == null){
-//			System.out.print("There are no monsters " + game.getCurrentRoom().getDescription());
-//		}
-
 		return false;
 	}
 

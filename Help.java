@@ -1,22 +1,7 @@
-import java.util.HashMap;
-
 public class Help implements Action {
 
-    private HashMap<String, Action> responses;
-    private String helpIntro;
-    private Game game;
+    public Help() {}
 
-    public Help(Game game)
-    {
-        this.responses = responses;
-        //helpIntro = helpStr;
-    }
-
-    /**
-     * Print out some help information.
-     * Here we print some stupid, cryptic message and a list of the
-     * command words or more specific help given a command name.
-     */
     public boolean execute()
     {
         String command = UI.promptLine("What command would you like help on?").toUpperCase();
