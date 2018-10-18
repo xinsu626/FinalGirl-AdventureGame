@@ -1,3 +1,6 @@
+/**
+ *Offers the player response(s) to "help" inquiries.
+ */
 public class Help implements Action {
 
     public Help() {}
