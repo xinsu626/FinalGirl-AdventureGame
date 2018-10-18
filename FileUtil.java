@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ *Allows a file to be read with a scanner
+  */
 public class FileUtil{
 	
 	public static String getNonCommentLine(Scanner in){
