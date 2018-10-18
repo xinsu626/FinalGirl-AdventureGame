@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.io.InputStream;
 
 /**
- *Allows data within a file to be accessed
+ * Allows data within a file to be accessed
  */
 public class ResourceUtil{
 	
