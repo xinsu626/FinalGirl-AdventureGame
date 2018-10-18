@@ -12,7 +12,7 @@ Finally! Final girl has reached the ground floor. You rested and regained your h
 # zombies, ghosts, and skeletons are weaker monsters
 zombie
 75
-30
+25
 ..╱▔▔▔▔▔╲..
 .▕    x     ▏ .
 .▕  @    @  ▏ .
@@ -23,7 +23,7 @@ zombie
 
 skeleton
 75
-30
+25
 ..╱▔▔▔▔▔╲..
 .▕          ▏ .
 .▕  ╭╮   ╭╮  ▏ .
@@ -35,7 +35,7 @@ skeleton
 
 ghost
 75
-30
+25
 ..╱▔▔▔▔▔╲..
 .▕  ╭━╮ ╭━╮  ▏ .
 .▕  ┃╭╯ ╰╮┃  ▏ .
@@ -48,7 +48,7 @@ ghost
 # the boss monster for level 3 is Dr. Dradula Harrington
 dracula harrington
 100
-40
+30
 ..╱▔▔▔▔▔╲..
 .▕           ▏ .
 .▕  ╲   ╱   ▏ .
