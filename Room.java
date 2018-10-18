@@ -4,18 +4,22 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.Collections;
 
+/**
+ *Creates a given room and its attributes, such as 
+ *its item, monster, and description.
+ */
 public class Room{
 
 	private String name;
 	private Item item;
 	private String description;
-    private Monster monster;
+    	private Monster monster;
 
 	public Room(String name, Item item, String description, Monster monster){
 		this.name = name;
 		this.item = item;
 		this.description = description;
-        this.monster = monster;
+        	this.monster = monster;
 	}
 
 	public static HashMap<String, Room> createRooms(Scanner in){
