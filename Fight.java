@@ -28,12 +28,18 @@ public class Fight
 
 			if (toFlee.equals("R")) {
 				if (random.nextBoolean()) {
-					System.out.println("You successfully fled from the monster. You're back in the hallway.");
+					System.out.println("You successfully fled from the monster, but the monster's health regenerated. You're back in the hallway.");
 					return "fled";
 				} else {
-					System.out.println("You slipped and fell, and the monster got a second attack.");
+					System.out.println("You slipped and fell, and the monster got a second attack!");
 					if (damageTaken(currentPlayer, currentMonster)) {
 						return "dead";
+					}
+					if (currentMonster.getCurrentHealth() <= 0){
+						System.out.println("------------------fight over-------------------------");
+						System.out.println(currentMonster.getName() + " was defeated! Good job, " + currentPlayer.getName() + ".");
+						System.out.println("-----------------------------------------------------");
+						return "won";
 					}
 					if (damageTaken(currentPlayer, currentMonster)) {
 						return "dead";
@@ -77,10 +83,10 @@ public class Fight
 			return true;
 		}
 
-		if (currentMonster.getCurrentHealth() > 0) {
-			System.out.println("-----------------------");
-			System.out.println("You took " + damageSustained + " damage and the monster took " + damageGiven + " damage.");
-		}
+		//if (currentMonster.getCurrentHealth() > 0) {
+		System.out.println("-----------------------");
+		System.out.println("You took " + damageSustained + " damage and the monster took " + damageGiven + " damage.");
+		//}
 
 		System.out.println("Your health is now " + currentPlayer.getHealth() + " and the monster's health is now " + currentMonster.getCurrentHealth());
 		System.out.println("-----------------------");
