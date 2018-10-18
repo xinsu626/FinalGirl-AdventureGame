@@ -1,5 +1,13 @@
 import java.util.*;
 
+/**
+ *The main class of the 'Final Girl' application, a text-based
+ *adventure game. Users must navigate through rooms, search
+ *for items and fight monsters before proceeding through one
+ *of three levels.
+ *
+ *Sets the player stats such as name, location, and weapon.
+ */
 public class Game{
 
 	private static boolean gameIsOver = false;
