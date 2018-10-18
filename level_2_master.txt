@@ -12,7 +12,7 @@ Ah, you've made it to the next level of the house. You rested and regained your 
 # zombies, ghosts, and skeletons are weaker monsters
 zombie
 50
-20
+15
 ..╱▔▔▔▔▔╲..
 .▕    x     ▏ .
 .▕  @    @  ▏ .
@@ -23,7 +23,7 @@ zombie
 
 skeleton
 50
-20
+15
 ..╱▔▔▔▔▔╲..
 .▕          ▏ .
 .▕  ╭╮   ╭╮  ▏ .
@@ -35,7 +35,7 @@ skeleton
 
 ghost
 50
-20
+15
 ..╱▔▔▔▔▔╲..
 .▕  ╭━╮ ╭━╮  ▏ .
 .▕  ┃╭╯ ╰╮┃  ▏ .
@@ -48,7 +48,7 @@ ghost
 # the boss monster for level 2 is a werewolf
 werewolf
 90
-30
+20
 ..A________A..
 .╱          ╲.
 .╱ ___  ___ ╲.
