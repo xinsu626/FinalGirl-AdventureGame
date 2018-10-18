@@ -1,5 +1,10 @@
 import java.util.Random;
 
+
+/**
+ *Manages the interactions between the player and a monster
+ *by initializing turn-based combat with RNG mechanics.
+  */
 public class Fight
 {
 	private static Random random = new Random();
