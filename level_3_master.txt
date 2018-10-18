@@ -12,7 +12,7 @@ Finally! Final girl has reached the ground floor. You rested and regained your h
 # zombies, ghosts, and skeletons are weaker monsters
 zombie
 75
-25
+15
 ..╱▔▔▔▔▔╲..
 .▕    x     ▏ .
 .▕  @    @  ▏ .
@@ -23,7 +23,7 @@ zombie
 
 skeleton
 75
-25
+15
 ..╱▔▔▔▔▔╲..
 .▕          ▏ .
 .▕  ╭╮   ╭╮  ▏ .
@@ -35,7 +35,7 @@ skeleton
 
 ghost
 75
-25
+15
 ..╱▔▔▔▔▔╲..
 .▕  ╭━╮ ╭━╮  ▏ .
 .▕  ┃╭╯ ╰╮┃  ▏ .
