@@ -1,6 +1,6 @@
 /**
- *Creates the player and sets its attributes, such as health and
- *attack power, and tracks them throughout the game.
+ * Creates the player and sets its attributes, such as health and
+ * attack power, and tracks them throughout the game.
  */
 public class Player{
 
