@@ -1,6 +1,6 @@
 /**
- *Provides the player with a list of items and/or monsters
- *in a given room.
+ * Provides the player with a list of items and/or monsters
+ * in a given room.
  */
 public class Inspect implements Action
 {
