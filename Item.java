@@ -1,6 +1,10 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ *Creates a HashMap of "items" - potion or weapon - and sets the
+ *strength of its respective attribute
+ */
 public class Item {
 	private String name;
 	private String category;
