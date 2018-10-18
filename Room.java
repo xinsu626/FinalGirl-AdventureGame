@@ -71,7 +71,7 @@ public class Room{
 		}
 
 		for (String monster: monsterNameArrayList){
-			if (monster.equals("mummy") || monster.equals("werewolf") || monster.equals("dr. dracula harrington")) {
+			if (monster.equals("mummy") || monster.equals("werewolf") || monster.equals("dracula harrington")) {
 				monsterNameArrayList.remove(monsterNameArrayList.indexOf(monster));
 				rooms.get("exit").setMonster(monsters.get(monster));
 			}
