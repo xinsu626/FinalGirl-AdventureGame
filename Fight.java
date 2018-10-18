@@ -41,9 +41,6 @@ public class Fight
 						System.out.println("-----------------------------------------------------");
 						return "won";
 					}
-					if (damageTaken(currentPlayer, currentMonster)) {
-						return "dead";
-					}
 				}
 			}
 
