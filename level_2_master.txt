@@ -12,7 +12,7 @@ Ah, you've made it to the next level of the house. You rested and regained your 
 # zombies, ghosts, and skeletons are weaker monsters
 zombie
 50
-15
+10
 ..╱▔▔▔▔▔╲..
 .▕    x     ▏ .
 .▕  @    @  ▏ .
@@ -23,7 +23,7 @@ zombie
 
 skeleton
 50
-15
+10
 ..╱▔▔▔▔▔╲..
 .▕          ▏ .
 .▕  ╭╮   ╭╮  ▏ .
@@ -35,7 +35,7 @@ skeleton
 
 ghost
 50
-15
+10
 ..╱▔▔▔▔▔╲..
 .▕  ╭━╮ ╭━╮  ▏ .
 .▕  ┃╭╯ ╰╮┃  ▏ .
